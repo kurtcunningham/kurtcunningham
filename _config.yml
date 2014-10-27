@@ -13,6 +13,6 @@ markdown: kramdown
 #Gems
 gems: [bourbon, neat]
 
-sass:
+css:
   sass_dir: _sass
   style: :compressed
