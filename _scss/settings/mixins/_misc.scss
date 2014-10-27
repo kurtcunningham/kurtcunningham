@@ -1,0 +1,15 @@
+//SITE MISC MIXINS
+
+//BOX SHADOW
+@mixin box-shadow($dims:0 0 10px, $color:#000) {
+	  box-shadow: $dims $color; // Opera, FFX4
+	  -moz-box-shadow:$dims $color; // FFX3.5
+	  -webkit-box-shadow:$dims $color; // Safari/Chrome/WebKit
+	}
+
+//TEXT SHADOW
+@mixin text-shadow($dims:1px 1px 1px, $color:rgba(0,0,0,0.3)) {
+      text-shadow: $dims $color; // Opera, FFX4
+      -moz-text-shadow:$dims $color; // FFX3.5
+      -webkit-text-shadow:$dims $color; // Safari/Chrome/WebKit
+    }
