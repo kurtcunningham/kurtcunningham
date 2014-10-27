@@ -2,21 +2,21 @@
 
 ---
 
-//IMPORTS
+
 @import "bourbon";
 @import "neat";
 
-//SETTINGS
+
 @import "settings/settings";
 
-//BASE
+
 @import "base/layout";
 @import "base/typography";
 
-//COMPONENTS
+
 @import "components/buttons";
 
-//PAGE STYLES
+
 @import "pages/shared/navbar";
 @import "pages/shared/footer";
 @import "pages/home";
