@@ -2,7 +2,7 @@
 title: Kurt Cunningham | UI/UX Designer
 email: cunningham.kurt@gmail.com
 description: UI/UX Design
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/kurtcunningahm" # the subpath of your site, e.g. /blog/
 url: "http://kurtcunningham.com"
 twitter_username: "@kurtcunningham"
 github_username:  kurtcunningham
@@ -13,6 +13,6 @@ markdown: kramdown
 #Gems
 gems: [bourbon, neat]
 
-css:
+sass:
   sass_dir: _sass
   style: :compressed
