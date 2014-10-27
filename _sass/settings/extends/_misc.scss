@@ -1,8 +1,0 @@
-//MISC EXTENDS
-
-	//CURSOR STYLE EXTEND
-	@each $cursor in $cursors{
-		%cursor-#{$cursor}{
-		 	cursor: $cursor
-		}
-	}
