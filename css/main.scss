@@ -1,23 +1,23 @@
----
-# Front matter comment to ensure Jekyll properly reads file.
----
-@charset "utf-8";
+// ---
+// # Front matter comment to ensure Jekyll properly reads file.
+// ---
+// @charset "utf-8";
 
-//IMPORTS
-@import "bourbon";
-@import "neat";
+// //IMPORTS
+// @import "bourbon";
+// @import "neat";
 
-//SETTINGS
-@import "settings/settings";
+// //SETTINGS
+// @import "settings/settings";
 
-//BASE
-@import "base/layout";
-@import "base/typography";
+// //BASE
+// @import "base/layout";
+// @import "base/typography";
 
-//COMPONENTS
-@import "components/buttons";
+// //COMPONENTS
+// @import "components/buttons";
 
-//PAGE STYLES
-@import "pages/shared/navbar";
-@import "pages/shared/footer";
-@import "pages/home";
+// //PAGE STYLES
+// @import "pages/shared/navbar";
+// @import "pages/shared/footer";
+// @import "pages/home";
