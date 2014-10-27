@@ -17,7 +17,7 @@ $(document).ready(function () {
 });
 
 //Active homepage browser
-$( "li" ).on( "click", function() {
+$( ".clip" ).on( "click", function() {
   event.preventDefault();
   $(this).toggleClass('selected');
 });
