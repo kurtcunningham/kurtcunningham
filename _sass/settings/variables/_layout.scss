@@ -1,0 +1,18 @@
+//LAYOUT VARIABLES
+
+	//ALIGNMENT STYLES
+	$alignments: bottom, middle, center, top, right, left;
+	$displays:   block, inline, inline-block, table, table-cell, inherit, none;
+	$floats:     left, none, right;
+	$positions:  relative, absolute, fixed;
+	$zeros:      bottom, border, left, margin, padding,right, top, height, width;
+
+	//CURSOR STYLES
+	$cursors: default, not-allowed, pointer, text, zoom-in, zoom-out;
+
+	//BACKGROUND LISTS
+	$backgrounds:(
+		light   $white-light $grey-light,
+		dark    $black-base  $black-light,
+		darker  $black-base  $black-dark
+	);

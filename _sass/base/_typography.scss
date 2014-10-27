@@ -1,0 +1,62 @@
+//BASE TYPOGRAPHY
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font: 100%/1.618 sans-serif;
+  @extend %font-size-base;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %color-grey-dark;
+  @extend %font-type-sans-bold;
+  @extend .margin-0;
+  @include rem(margin-bottom, 12px);
+  line-height: 1.0;
+  text-rendering: optimizeLegibility;
+}
+
+h1 { font-size: $font-size-base * 4.25; }
+h2 { font-size: $font-size-base * 3.25; }
+h3 { font-size: $font-size-base * 2.75; }
+h4 { font-size: $font-size-base * 2.25; }
+h5 { font-size: $font-size-base * 1.74; }
+h6 { font-size: $font-size-base; }
+
+p {
+  @extend %font-type-sans-base;
+  @extend %font-size-base;
+  @include rem(margin-bottom, 12px);
+  line-height: $base-line-height;
+
+}
+
+li{
+  @extend %font-type-sans-base;
+  @include rem(margin-top, 3px);
+  line-height: $base-line-height;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    @extend %cursor-pointer;
+    text-decoration: none;
+  }
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}

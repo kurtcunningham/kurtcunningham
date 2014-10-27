@@ -1,0 +1,53 @@
+//FONTS VARIABLES
+	
+  //FONT FAMILY
+  $sans-serif:  'freight-sans-pro', Helvetica, sans-serif;
+  $serif:       'ff-tisa-web-pro', Georgia, serif;
+
+	//SIZES
+	$font-size-tiny:         11px;
+	$font-size-small:        12px;
+	$font-size-base:         14px;
+	$font-size-medium:       18px;
+	$font-size-big:          26px;
+	$font-size-bigger:       30px;
+	$font-size-huge:         35px;
+	$font-size-toobig:       45px;
+
+	$font-size-mega:         75px;
+	$font-size-doublemega:   150px;
+
+	//LINE HEIGHT
+	$base-line-height: $font-size-base * 1.3;
+
+
+	//FONT FAMILY LIST
+	$fonts: (
+		sans-light         300 normal $sans-serif,
+		sans-base          400 normal $sans-serif,
+		sans-italic        400 italic $sans-serif,
+		sans-bold          700 normal $sans-serif,
+		sans-bold-italic   700 italic $sans-serif,
+		serif-base         400 normal $serif,
+		serif-base-italic  400 italic $serif
+	);
+
+	//FONT SIZES LIST
+	$font-sizes: (
+		tiny	        $font-size-tiny,
+		small	        $font-size-small,
+		base	        $font-size-base,
+		medium	      $font-size-medium,
+		big	          $font-size-big,
+		bigger	      $font-size-bigger,
+		huge	        $font-size-huge,
+		toobig	      $font-size-toobig,
+		mega          $font-size-mega,
+		doublemega    $font-size-doublemega
+	);
+
+	//FONT COLORS
+	$font-colors: (
+		"white" $white-base,
+		"blue"	$blue-base
+	);

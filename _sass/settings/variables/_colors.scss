@@ -1,0 +1,36 @@
+//SITE COLOR PALETTE
+
+//BLACK
+		$black-light:  #262B2F;
+		$black-base:   #333333;
+		$black-dark:   #000000;
+
+	//BLUE
+		$blue-light:   #4CCEFF;
+		$blue-base:    #00ADEF;
+		$blue-dark:    #0094CC;
+
+	//GREY
+		$grey-light: 	 #E9EAED;
+		$grey-base:    #CCCCCC;
+		$grey-dark:    #999999;
+
+	//WHITE
+		$white-light:  #FAFAFA;
+		$white-base:   #FFFFFF;
+		$white-dark:   #F5F5F5;
+
+	//MAIN PALETTE LIST
+	$colors: (
+		black-base		$black-base,
+		black-dark		$black-dark,
+		blue-light		$blue-light,
+		blue-base			$blue-base,
+		blue-dark			$blue-dark,
+		grey-light		$grey-light,
+		grey-base			$grey-base,
+		grey-dark			$grey-dark,
+		white-light		$white-light,
+		white-base		$white-base,
+		white-dark		$white-dark
+	);
