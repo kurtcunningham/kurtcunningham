@@ -1,0 +1,13 @@
+//JOURNAL STYLES
+
+.journal-message-header{
+	
+	h2, h5{
+		@extend %color-grey-dark;
+		@extend %font-type-sans-light;
+	}
+}
+
+.blog-posts-container{
+	@include outer-container;
+}
