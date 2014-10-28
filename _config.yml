@@ -17,6 +17,10 @@ markdown: kramdown
 #Gems
 gems: [bourbon, neat]
 
+exclude:
+  - "bower_components"
+  - "bower.json"
+
 sass:
   sass_dir: _scss
   style: :compressed
