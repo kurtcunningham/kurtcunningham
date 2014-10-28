@@ -11,3 +11,11 @@
 	@include outer-container;
 	@include rem(margin, 50px auto); 
 }
+
+
+//DIVIDER
+hr{
+	border: none;
+	border-bottom: 1px solid $grey-light;
+	@include rem(padding, 10px 0);
+}

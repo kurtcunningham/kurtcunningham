@@ -1,4 +1,20 @@
 ---
 layout: default
-title: Kurt Cunningham | Thoughts &amp; Tips
+title: Kurt Cunningham | Thoughts on web design and development
 ---
+
+<section class="section-block">
+	<div class="journal-message-header">
+		<h2>People tell me I like to talk</h2>
+		<h5>My thoughts on design and development, with just a dash of personal humor</h5>
+		<hr>
+	</div>
+</section>
+
+<section class="blog-posts-container">
+	{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</section>

@@ -14,9 +14,6 @@ relative_permalinks: true
 # Build settings
 markdown: kramdown
 
-#Gems
-gems: [bourbon, neat]
-
 exclude:
   - "bower_components"
   - "bower.json"
