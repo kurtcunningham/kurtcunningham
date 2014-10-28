@@ -19,4 +19,11 @@ gems: [bourbon, neat]
 
 sass:
   sass_dir: _scss
+  sass_dir: _scss/base
+  sass_dir: _scss/components
+  sass_dir: _scss/pages
+  sass_dir: _scss/settings
+  sass_dir: _scss/settings/extends
+  sass_dir: _scss/settings/mixins
+  sass_dir: _scss/settings/variables
   style: :compressed
