@@ -12,9 +12,16 @@ title: Kurt Cunningham | Thoughts on web design and development
 </section>
 
 <section class="blog-posts-container">
-	{% for post in site.posts %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
+	<ul>
+		{% for post in site.posts %}
+	  <li>
+	  	<div class="blog-post-content">
+		  	<p class="post-meta">{{ post.date }} | {{post.categories}}</p>
+		    <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+		    <p>{{ post.description }}</p>
+		    <a href="{{ post.url }}" class="blue-link post-link">Read More</a>
+	    </div>
+	  </li>
+	  {% endfor %}
+  </ul>
 </section>
