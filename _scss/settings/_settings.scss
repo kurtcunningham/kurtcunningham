@@ -4,18 +4,18 @@
 	@import "reset";
 
 	//VARIABLES
-	@import "variables/colors";
-	@import "variables/buttons";
-	@import "variables/layout";
-	@import "variables/typography";
+	@import "settings/variables/colors";
+	@import "settings/variables/buttons";
+	@import "settings/variables/layout";
+	@import "settings/variables/typography";
 
 	//MIXINS
-	@import "mixins/layout";
-	@import "mixins/misc";
-	@import "mixins/rem";
+	@import "settings/mixins/layout";
+	@import "settings/mixins/misc";
+	@import "settings/mixins/rem";
 
 	//EXTENDS
-	@import "extends/colors";
-	@import "extends/layout";
-	@import "extends/misc";
-	@import "extends/typography";
+	@import "settings/extends/colors";
+	@import "settings/extends/layout";
+	@import "settings/extends/misc";
+	@import "settings/extends/typography";

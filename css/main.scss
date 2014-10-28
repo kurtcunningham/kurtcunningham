@@ -7,8 +7,25 @@
 @import "bourbon";
 @import "neat";
 
-//SETTINGS
-@import "settings/settings";
+//RESET
+@import "settings/reset";
+
+//VARIABLES
+@import "settings/variables/colors";
+@import "settings/variables/buttons";
+@import "settings/variables/layout";
+@import "settings/variables/typography";
+
+//MIXINS
+@import "settings/mixins/layout";
+@import "settings/mixins/misc";
+@import "settings/mixins/rem";
+
+//EXTENDS
+@import "settings/extends/colors";
+@import "settings/extends/layout";
+@import "settings/extends/misc";
+@import "settings/extends/typography";
 
 //BASE
 @import "base/layout";
