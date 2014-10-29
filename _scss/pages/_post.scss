@@ -1,0 +1,31 @@
+//SITE POST PAGE STYLES
+
+.post-container{
+	@include outer-container;
+	@include rem(margin-top, 50px);
+}
+
+.post-header{
+	border-bottom: 1px solid $grey-light;
+	@include rem(margin-bottom, 25px);
+	@include rem(padding-bottom, 15px);
+
+	.post-title{
+		@extend %color-grey-dark;
+		@extend %font-type-sans-light;
+	}
+
+	.post-meta{
+		@extend %font-size-tiny;
+		@extend %font-type-sans-bold;
+	}
+}
+
+.post-content{
+	@include span-columns(3 of 4);
+	@include rem(margin-bottom, 50px);
+
+	@include media($tablet){
+		@include span-columns(9 of 12);
+	}
+}

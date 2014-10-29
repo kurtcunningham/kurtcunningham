@@ -2,25 +2,20 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2014-10-26 12:48:40
-categories: jekyll update
+author: Kurt Cunningham
+categories: Design
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Jekyll also offers powerful support for code snippets:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim nisi, luctus id molestie vel, tristique sit amet metus. Morbi vel nisi urna. Sed ut nulla lacinia, auctor sem vitae, malesuada purus. Cras viverra, nisi vitae tristique semper, tellus neque maximus leo, vitae interdum mauris ante non purus. Sed ac dolor viverra erat blandit ornare vel hendrerit nisl. Vivamus sodales leo sit amet tortor convallis accumsan eget sit amet eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris aliquam libero ac neque malesuada, a rhoncus risus malesuada. Maecenas turpis libero, facilisis a commodo vel, volutpat et libero.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Duis vel orci sed ligula sollicitudin mollis in vel ex. Vivamus eget dui in odio mattis facilisis at nec enim. Pellentesque fringilla, justo a aliquam laoreet, nunc nibh pretium erat, a mattis massa enim id ligula. Cras libero ligula, facilisis vitae tellus lobortis, accumsan pretium mauris. Aliquam elementum nisl sed nisi iaculis scelerisque. Donec enim mauris, fringilla et mauris eu, aliquet malesuada urna. Sed ullamcorper eros id elementum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras bibendum interdum fringilla. Pellentesque suscipit id massa ac elementum. Sed elementum diam in vestibulum auctor.
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+Nunc eu pulvinar quam. Integer a nunc quis metus tempus convallis id ut risus. Fusce fringilla luctus nulla in gravida. Phasellus non sollicitudin nunc, in bibendum risus. Phasellus ut eros nec metus efficitur dictum id non libero. Sed a sodales ipsum. Cras dolor justo, pretium vitae diam eu, hendrerit aliquet lorem. Mauris eros orci, interdum a orci sit amet, suscipit tempor magna. Fusce ac molestie ligula. Duis non dapibus urna. Nam maximus justo augue, id varius nunc commodo id. Integer efficitur iaculis dolor, nec rhoncus nisl feugiat vitae. Cras eu tortor ut libero rhoncus tincidunt. Donec tincidunt aliquam eleifend. Pellentesque vulputate vel nisl vitae feugiat. Sed hendrerit quam vitae purus pellentesque, at dictum neque blandit.
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim nisi, luctus id molestie vel, tristique sit amet metus. Morbi vel nisi urna. Sed ut nulla lacinia, auctor sem vitae, malesuada purus. Cras viverra, nisi vitae tristique semper, tellus neque maximus leo, vitae interdum mauris ante non purus. Sed ac dolor viverra erat blandit ornare vel hendrerit nisl. Vivamus sodales leo sit amet tortor convallis accumsan eget sit amet eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris aliquam libero ac neque malesuada, a rhoncus risus malesuada. Maecenas turpis libero, facilisis a commodo vel, volutpat et libero.
+
+Duis vel orci sed ligula sollicitudin mollis in vel ex. Vivamus eget dui in odio mattis facilisis at nec enim. Pellentesque fringilla, justo a aliquam laoreet, nunc nibh pretium erat, a mattis massa enim id ligula. Cras libero ligula, facilisis vitae tellus lobortis, accumsan pretium mauris. Aliquam elementum nisl sed nisi iaculis scelerisque. Donec enim mauris, fringilla et mauris eu, aliquet malesuada urna. Sed ullamcorper eros id elementum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras bibendum interdum fringilla. Pellentesque suscipit id massa ac elementum. Sed elementum diam in vestibulum auctor.
+
+Nunc eu pulvinar quam. Integer a nunc quis metus tempus convallis id ut risus. Fusce fringilla luctus nulla in gravida. Phasellus non sollicitudin nunc, in bibendum risus. Phasellus ut eros nec metus efficitur dictum id non libero. Sed a sodales ipsum. Cras dolor justo, pretium vitae diam eu, hendrerit aliquet lorem. Mauris eros orci, interdum a orci sit amet, suscipit tempor magna. Fusce ac molestie ligula. Duis non dapibus urna. Nam maximus justo augue, id varius nunc commodo id. Integer efficitur iaculis dolor, nec rhoncus nisl feugiat vitae. Cras eu tortor ut libero rhoncus tincidunt. Donec tincidunt aliquam eleifend. Pellentesque vulputate vel nisl vitae feugiat. Sed hendrerit quam vitae purus pellentesque, at dictum neque blandit.

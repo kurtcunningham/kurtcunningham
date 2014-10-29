@@ -30,6 +30,8 @@
     "tests"
   ],
   "dependencies": {
-    "neat": "~1.7.0"
+    "neat":      "~1.7.0",
+    "jquery":    "~2.1.1",
+    "modernizr": "~2.8.3"
   }
 }
