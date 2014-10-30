@@ -1,0 +1,58 @@
+//SITE FORM STYLES
+
+//FIELDSET
+fieldset{
+
+	&.small--fieldset{
+		width: 100%;
+		@include media($tablet){ @include span-columns(6 of 12); 
+
+			&.last{ margin-right: 0; }
+		}
+	}
+
+	&.large--fieldset{ width: 100%; }
+}
+
+//LABELS
+label{
+	@extend %font-type-sans-bold;
+	@extend %font-size-small;
+	@include rem(margin-bottom, 5px);
+}
+
+//INPUTS
+#{$all-text-inputs}, textarea{
+		@include box-shadow(inset 0 0 0, transparent);
+		@include appearance(none);
+
+		&:focus{
+			border: 1px solid $grey-base;
+			@include box-shadow(0 0 0, transparent);
+		}
+	}
+
+	#{$all-text-inputs}, textarea{
+		@include appearance(none);
+		border: 1px solid $grey-base;
+		border-radius: 3px;
+		@extend %background-white-dark;
+		@extend %color-grey-dark;
+		@extend %font-type-sans-base;
+		@extend %font-size-small;
+		height: 45px;
+		@include box-shadow(inset 0 0 0, transparent);
+		margin-bottom: 1.5em;
+		margin-top: 0.5em;
+		padding: 8px 6px;
+		width: 100%;
+		-webkit-font-smoothing: antialiased;
+
+		&:focus{
+			@extend %background-white-base;
+			@include box-shadow(0 0 0, transparent);
+			outline: none;
+		}
+	}
+
+	textarea{ height: 100px; }
