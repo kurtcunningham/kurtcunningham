@@ -1,6 +1,7 @@
 //SITE POST PAGE STYLES
 
 .post-container{
+	@extend %site-layout-padding;
 	@include outer-container;
 	@include rem(margin-top, 50px);
 }
@@ -9,6 +10,11 @@
 	border-bottom: 1px solid $grey-light;
 	@include rem(margin-bottom, 25px);
 	@include rem(padding-bottom, 15px);
+	@include span-columns(4 of 4);
+
+	@include media($tablet){
+		@include span-columns(9 of 12);
+	}
 
 	.post-title{
 		@extend %color-grey-dark;
@@ -22,10 +28,37 @@
 }
 
 .post-content{
-	@include span-columns(3 of 4);
+	@include span-columns(4 of 4);
 	@include rem(margin-bottom, 50px);
 
 	@include media($tablet){
 		@include span-columns(9 of 12);
+	}
+}
+
+//IMAGES
+.post-img{
+	margin: 10px auto 30px;
+	width: 100%;
+}
+
+//LEAD IN QUOTE
+.lead-quote{
+	@extend %color-grey-dark;
+	@extend %font-type-serif-base;
+	@extend %font-size-big;
+	line-height: 45px;
+	@include rem(margin, 75px auto);
+
+	@include media($tablet){
+		width: 120%;
+	}
+
+	cite{
+		@extend %color-blue-base;
+		@extend %font-type-sans-bold;
+		@extend %font-size-small;
+		// @extend .display-block;
+		@extend .text-align-right;
 	}
 }
