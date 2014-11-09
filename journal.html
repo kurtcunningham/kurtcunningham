@@ -17,9 +17,9 @@ title: Kurt Cunningham | Thoughts on web design and development
 	  <li>
 	  	<div class="blog-post-content">
 		  	<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • {{post.categories}}</p>
-		    <a href="{{ site.baseurl }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+		    <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
 		    <p>{{ post.description }}</p>
-		    <a href="{{ site.baseurl }}{{ post.url }}" class="blue-link post-link">Read More</a>
+		    <a href="{{ post.url }}" class="blue-link post-link">Read More</a>
 	    </div>
 	  </li>
 	  {% endfor %}
