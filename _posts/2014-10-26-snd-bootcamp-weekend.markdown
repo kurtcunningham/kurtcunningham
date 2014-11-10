@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Inspiration from SND Bootcamp Weekend
-date: {}
+date: 2014-11-09
 author: Kurt Cunningham
 categories: Development
 description: "This past weekend I had the pleasure of teaching a group of eager journalists at the University of Missouri about HTML and CSS. I couldn't have asked for a better group of individuals to work with."
