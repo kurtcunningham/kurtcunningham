@@ -12,6 +12,15 @@
 	@include rem(margin, 50px auto); 
 }
 
+//MOBILE HIDE
+.mobile-hide{
+	@extend .display-none;
+
+	@include media($tablet){
+		display: block;
+	}
+}
+
 
 //DIVIDER
 hr{

@@ -62,7 +62,7 @@
 			&:hover{ @extend %cursor-zoom-in; }
 
 			&.screenshot--1{
-				background:url('../images/oneparish-browser.png') no-repeat center center;
+				background:url('../images/contentweb-browser.png') no-repeat center center;
 				height: 100%;
 				@include transform(scale(0.5) translateX(-45%));				
 			}
@@ -171,12 +171,12 @@
 
 	}
 
-	.arni{ 
-		background: url('../images/arni_grey.png') no-repeat center center;
+	.contentweb{ 
+		background: url('../images/cw_grey.png') no-repeat center center;
 
 		&:hover{ 
-			background-color:#2c3e50;
-			background-image: url('../images/arni_white.png'); }
+			background-color:#40bbcb;
+			background-image: url('../images/cw_white.png'); }
 	}
 
 	.oneparish{ 
