@@ -29,7 +29,8 @@
 	@include rem(margin-top, 20px);
 
 	p{
-		@extend %font-size-small;
+		@extend %font-size-base;
+		line-height: normal;
 		width: 100%;
 
 		@include media($tablet){

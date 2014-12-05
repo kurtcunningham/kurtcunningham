@@ -33,7 +33,7 @@
 	.post-title {
 		@extend %color-blue-base;
 		@extend .display-inline-block;
-		@extend %font-size-medium;
+		@extend %font-size-big;
 		@include rem(margin-bottom, 20px);
 		@include transition(all 0.3s ease-in);
 
@@ -43,6 +43,14 @@
 	.post-meta{
 		@extend %color-grey-dark;
 		@extend %font-size-tiny;
+		@extend %font-type-sans-bold;
+	}
+
+	p{
+		@extend %font-type-serif-base;
+		@extend %font-size-base;
+		@include rem(margin-bottom, 25px);
+		line-height: 25px;
 	}
 
 	.post-link{

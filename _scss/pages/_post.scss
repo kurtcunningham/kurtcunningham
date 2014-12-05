@@ -13,7 +13,8 @@
 	@include span-columns(4 of 4);
 
 	@include media($tablet){
-		@include span-columns(9 of 12);
+		@include span-columns(8 of 12);
+		@include shift(2);
 	}
 
 	.post-title{
@@ -32,7 +33,14 @@
 	@include rem(margin-bottom, 50px);
 
 	@include media($tablet){
-		@include span-columns(9 of 12);
+		@include span-columns(8 of 12);
+		@include shift(2);
+	}
+
+	p{
+		@extend %font-type-serif-base;
+		@extend %font-size-medium;
+		line-height: 30px;
 	}
 }
 
