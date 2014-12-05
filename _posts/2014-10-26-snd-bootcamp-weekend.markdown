@@ -8,7 +8,7 @@ description: "This past weekend I had the pleasure of teaching a group of eager 
 published: true
 ---
 
-<img src="http://cl.ly/YRNw/mizzou.jpg" class="post-img">
+<img src="http://cl.ly/Yr5r/mizzou.jpg" class="post-img">
 
 This past weekend I had the pleasure of teaching a group of eager journalists at the University of Missouri about HTML and CSS. I couldn't have asked for a better group of individuals to work with.
 
