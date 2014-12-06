@@ -2,14 +2,31 @@
 layout: default
 ---
 <section class="post-container">
-
   <header class="post-header">
     <h2 class="post-title">{{ page.title }}</h2>
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
-
   <article class="post-content">
     {{ content }}
   </article>
-
 </section>
+<section class="more-posts-container">
+	{% if page.previous.url %} 
+		<div class="previous-next-post-trigger previous">
+			<small class="trigger-label">PREV</small>
+		  <a class="prev anchor-post-title" href="{{page.previous.url}}">
+		  	<h6>Previous Post</h6>
+		  	{{page.previous.title}}
+		 	</a> 
+		</div>
+	{% endif %} 
+	{% if page.next.url %} 
+		<div class="previous-next-post-trigger next">
+			<small class="trigger-label">NEXT</small>
+	    <a class="next anchor-post-title" href="{{page.next.url}}">
+	    	<h6>Next Post</h6>
+	    	{{page.next.title}}
+	    </a> 
+		</div>
+	{% endif %}
+</section>	

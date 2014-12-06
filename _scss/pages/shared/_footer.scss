@@ -1,6 +1,7 @@
 //SITE FOOTER STYLES
 
 footer{
+	@extend .position-relative;
 
 	h6{ 
 		@extend %color-white-base;
