@@ -95,11 +95,13 @@
 			@extend %color-grey-dark;
 			@extend %font-size-small;
 			@extend %font-type-sans-bold;
-			@extend .left-0;
 			@extend .position-absolute;
 			@include transform(rotate(90deg));
 			text-transform: uppercase;
 			top: 25px;
+
+			&.prev{ right: -5px; }
+			&.next{ left: -5px; }
 		}
 
 		&.previous{
