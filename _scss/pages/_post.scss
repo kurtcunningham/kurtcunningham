@@ -42,6 +42,15 @@
 		@extend %font-size-medium;
 		line-height: 30px;
 	}
+
+	ul, ol{
+		text-indent: 20px;
+
+		li{
+			@extend %font-size-medium;
+			line-height: 28px;
+		}
+	}
 }
 
 //IMAGES

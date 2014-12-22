@@ -46,6 +46,15 @@
 		@extend %color-grey-dark;
 		@extend %font-size-tiny;
 		@extend %font-type-sans-bold;
+		text-transform: uppercase;
+
+		.post-category{
+
+			&:before{
+				content: "•";
+				padding: 0 10px;
+			}
+		}
 	}
 
 	p{

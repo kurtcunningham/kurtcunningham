@@ -16,7 +16,7 @@ title: Kurt Cunningham | Thoughts on web design and development
 		{% for post in site.posts %}
 	  <li>
 	  	<div class="blog-post-content">
-		  	<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • {{post.categories}}</p>
+		  	<p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}<span class="post-category">{{post.categories}}</span></p>
 		    <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
 		    <p>{{ post.description }}</p>
 		    <a href="{{ post.url }}" class="blue-link post-link">Read More</a>
