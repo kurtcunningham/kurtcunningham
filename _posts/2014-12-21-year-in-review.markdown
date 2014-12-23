@@ -22,13 +22,13 @@ At the start of 2014 I was working at <a href="http://thinkcerca.com" class="blu
 
 In typical start up fashion, I was the middleman between the technology and marketing teams. Taking requests from both sides and defending each new feature with user interviews and the application's analytics. 
 
-Tedious? Yes. Exhausting? Not at all. I certainly wouldn't say this is a normal role for a one man design team, but this opportunity gave me insight into two domains I didn't have a lot of expereience in: Business development and project management.
+Tedious? Yes. Exhausting? Not at all. I certainly wouldn't say all of my role was normal for a one man design team, but this opportunity gave me insight into two domains I didn't have a lot of expereience in: Business development and project management.
 
 Additionally, it gave me the opportunity to drive the shape of a web application that provided a great service for its users.
 
-During this same time, I was running a freelance business - <a href="http://madebymunsters.com" class="blue-link" target="_blank">Made By Munsters</a> - with a good friend of mine, <a href="https://twitter.com/joeykirk" class="blue-link" target="_blank">Joey Kirk</a>. I want to pause here and congradulate Joey on his new job during this timeframe. Joey is the UX Design Course Director at <a href="http://bloc.io" class="blue-link" target="_blank">Bloc</a>.
+During this same time, I was running a freelance business - <a href="http://madebymunsters.com" class="blue-link" target="_blank">Made By Munsters</a> - with a good friend of mine, <a href="https://twitter.com/joeykirk" class="blue-link" target="_blank">Joey Kirk</a>. I want to pause here and congradulate Joey on his new job during this timeframe. Joey is the UX Design Course Director at <a href="http://bloc.io" class="blue-link" target="_blank">Bloc</a>. He graciously hired me as the course's first mentor.
 
-After about a year at ThinkCERCA, I was ready for something new. A job that allowed me to build on my development skills and continued to shape the way users interact with web products. 
+After about a year at ThinkCERCA and freelancing with Made By Munsters, I was ready for something new. A job that allowed me to build on my development skills and continued to shape the way users interact with web products. 
 
 <br>
 
@@ -38,14 +38,14 @@ Around the same time I started my search for new opportunities, Made By Munsters
 
 The Chicago-based development shop was formed by three Starter Leauge alum - Tom, Scott and Brendan. All entrepreneurs at heart. Who have one goal: Grow businesses through the use of technology.
 
-I had been doing freelance work for about a year now, but this was the first time I got the opportunity to work with a full-stack development team. It was exciting and yet I was scared as hell.
+I had been doing freelance work for about a year now, but this was the first time I got the opportunity to work with a full-stack development team face-to-face. It was exciting and yet I was scared as hell.
 
-I say scared because one of the frist projects Tom approahced me to work on, Topstep Trader, he gave me a two week deadline. Not only did the deadline seem impossible for design work, I sold Tom on the fact that I could do the front-end development. I may have over sold myself. Full disclousure the current site/app is no longer our design. That's a story for another time.
+I say scared because one of the frist projects Tom approahced me to work on, Topstep Trader, came with a two week deadline. Not only did the deadline seem impossible for design work; I sold Tom on the fact that I could do the front-end development. I may have over sold myself. Full disclousure the current site/app is no longer our design. That's a story for another time.
 
-Though, two-week sprints were nothing new to me; a two-week sprint for an entire application and marketing site seemed impossible. Additionally, I had to learn how to integrate static HTML/CSS into the Ruby on Rails application.
+Though two-week sprints were nothing new to me; a two-week sprint for an entire application and marketing site seemed impossible. Additionally, I had to learn how to integrate static HTML/CSS into a Ruby on Rails application.
 
 The takes aways from this project:  
-  • Time boxing designs helps one focus on the most important details  
+  • Time boxing designs help a designer to focus on the most important details  
   • The best way to learn something is to dive in head first  
   • Refactoring saves lives
 
