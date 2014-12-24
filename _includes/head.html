@@ -13,6 +13,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
+  <link rel="stylesheet" media="screen, projection" href="{{ site.baseurl }}css/main.css?bust={{ site.time | date_to_xmlschema | cgi_escape }}">
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 </head>
