@@ -8,6 +8,7 @@ layout: default
   </header>
   <article class="post-content">
     {{ content }}
+    <hr>
   </article>
 </section>
 <section class="more-posts-container mobile-hide">
@@ -29,4 +30,7 @@ layout: default
 	    </a> 
 		</div>
 	{% endif %}
-</section>	
+</section>
+<section class="post-container">
+	{% include comments.html %}
+</section>

@@ -6,6 +6,7 @@ author: Kurt Cunningham
 categories: Development
 description: As a practitioner of Sass, one thing I have struggled with over the years is writing clean, component-driven stylesheets or stylesheets that seperate reusable chunks of code from page specific code.
 published: true
+comments: true
 ---
 
 <img src="http://cl.ly/Yqel/sass-post.jpg" class="post-img">

@@ -30,7 +30,6 @@
 
 .post-content{
 	@include span-columns(4 of 4);
-	@include rem(margin-bottom, 50px);
 
 	@include media($tablet){
 		@include span-columns(8 of 12);
@@ -51,6 +50,8 @@
 			line-height: 28px;
 		}
 	}
+
+	hr{ @include rem(margin-top, 35px); }
 }
 
 //IMAGES

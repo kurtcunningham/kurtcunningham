@@ -6,6 +6,7 @@ author: Kurt Cunningham
 categories: Personal
 description: This past year - 2014 - brought on several new challenges. I saw myself leave one company, help grow another and picked up some new skills along the way. It was frustrating and exciting all at the same time. Here's why. 
 published: true
+comments: true
 ---
 
 <img src="http://cl.ly/Z4Ja/2014-year-in-review-img.jpg" class="post-img" alt="2014 Year In Review">
@@ -80,7 +81,7 @@ A few projects from 2014:<br>
 
 Key learnings:
 <ul>
-	<li>• Modular SASS</li>
+	<li>• Modular Sass</li>
 	<li>• Scalable Stylesheets</li>
 	<li>• Accessible HTML</li>
 	<li>• Responsible Responsive Web Design</li>
@@ -91,7 +92,7 @@ Key learnings:
 
 #####What's To Come
 
-This coming year I personally want to continue to gain a deeper understanding of of SASS and responsible responsive design. Along with Monique and LaunchPad Lab, I want to push our perception of web design to break the traditional mold the web is becoming. Too often I see the same design from site to site sans the pictures and colors.
+This coming year I personally want to continue to gain a deeper understanding of of Sass and responsible responsive design. Along with Monique and LaunchPad Lab, I want to push our perception of web design to break the traditional mold the web is becoming. Too often I see the same design from site to site sans the pictures and colors.
 
 I am excited to watch my good friend Ryan get married to his lovely fiancée. I can't wait to see what Joey's crazy kids - Henry and Emma - do; not to mention what <a href="https://twitter.com/bacunnin" class="blue-link" target="_blank">Ben Cunningham's</a> awesome daughter Ellie will do this year.
 
