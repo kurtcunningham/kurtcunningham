@@ -26,21 +26,18 @@
 	@extend %clearfix;
 	@extend .display-block;
 	@extend %site-layout-padding;
+	@include columns(1);
 	@include rem(margin-top, 20px);
+
+	@include media($tablet){ @include columns(2); }
 
 	p{
 		@extend %font-size-base;
 		line-height: normal;
-		width: 100%;
-
-		@include media($tablet){
-			@include span-columns(6 of 12);
-		}
 	}
 }
 
 .work-clips{
-	@extend %site-layout-padding;
 
 	.browser-img{
 		background: transparent url('../images/browser-bg.png') no-repeat center center;

@@ -1,10 +1,6 @@
 //SITE BASE LAYOUT
 %site-layout-padding{
 	@include rem(padding, 0 20px);
-
-	@include media($tablet){
-		@include rem(padding, 0);
-	}
 }
 
 .section-block{ 
