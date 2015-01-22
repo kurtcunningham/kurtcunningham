@@ -26,14 +26,14 @@
 	@extend %clearfix;
 	@extend .display-block;
 	@extend %site-layout-padding;
-	@include columns(1);
 	@include rem(margin-top, 20px);
-
-	@include media($tablet){ @include columns(2); }
 
 	p{
 		@extend %font-size-base;
 		line-height: normal;
+		width: 100%;
+
+		@include media($tablet){ @include span-columns(6 of 12); }
 	}
 }
 
@@ -142,13 +142,13 @@
 
 	}
 
-	.cerca{ 
-		background: url('../images/cerca_grey.png') no-repeat center center;
+	.lpl{ 
+		background: url('../images/lpl_grey.png') no-repeat center center;
 
 		&:hover{ 
-			background-color:#83b83b; 
-			background-image: url('../images/cerca_white.png'); }
-
+			background-color:#00ADEF; 
+			background-image: url('../images/lpl_white.png');
+		}
 	}
 
 	.parkmuch{ 
