@@ -60,7 +60,7 @@
 			&:hover{ @extend %cursor-zoom-in; }
 
 			&.screenshot--1{
-				background:url('../images/contentweb-browser.png') no-repeat center center;
+				background: transparent url('../images/contentweb-browser.png') no-repeat center center;
 				height: 100%;
 				@include transform(scale(0.5) translateX(-45%));				
 			}
@@ -114,75 +114,36 @@
 		}
 	}
 
-	.client-logo{ height: 100%; @include transition(all 0.3s ease-in-out); width: 100%; }
+	.client-logo{ 
+		height: 100%; 
+		@include transition(all 0.3s ease-in-out); width: 100%; 
+	}
+}
 
-	.tbc{
-		background: url('../images/tbc_grey.png') no-repeat center center;
+//Logo List
+$logos: (
+	tbc        #3498DB,
+	slotswap   #EB3206,
+	mbm        #429dEE,
+	lpl        #00ADEF,
+	parkmuch   #1ABC9C,
+	payvalet   #99D1DC,
+	contentweb #7AC043,
+	oneparish  #EB6E1F
+);
 
-		&:hover{ 
-			background-color:#3498db; 
-			background-image: url('../images/tbc_white.png'); 
+@each $logo in $logos {
+	$name:  nth($logo, 1);
+	$color: nth($logo, 2);
+
+	.#{$name}{
+		background: url('../images/#{$name}_grey.png') no-repeat center center;
+		background-size: 80%;
+
+		&:hover{
+			background-color: $color;
+			background-image: url('../images/#{$name}_white.png')
 		}
-	}
-
-	.slotswap{ 
-		background: url('../images/slotswap-grey2.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#eb3206; 
-			background-image: url('../images/slotswap.png'); }
-
-	}
-
-	.mbm{ 
-		background: url('../images/mbm_grey.png') no-repeat center center;
-
-		&:hover{ background-color:#429dee; 
-			background-image: url('../images/mbm_white.png'); }
-
-	}
-
-	.lpl{ 
-		background: url('../images/lpl_grey.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#00ADEF; 
-			background-image: url('../images/lpl_white.png');
-		}
-	}
-
-	.parkmuch{ 
-		background: url('../images/parkmuch_grey.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#1abc9c; 
-			background-image: url('../images/parkmuch_white.png'); }
-
-	}
-
-	.payvalet{ 
-		background: url('../images/pv_grey.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#99d1dc; 
-			background-image: url('../images/pv_white.png'); }
-
-	}
-
-	.contentweb{ 
-		background: url('../images/cw_grey.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#40bbcb;
-			background-image: url('../images/cw_white.png'); }
-	}
-
-	.oneparish{ 
-		background: url('../images/op_grey.png') no-repeat center center;
-
-		&:hover{ 
-			background-color:#eb6e1f;
-			background-image: url('../images/op_white.png'); }
 	}
 }
 
