@@ -95,7 +95,19 @@
 	h3{ 
 		@extend %font-type-sans-light;
 		@include text-shadow(0 1px 1px, rgba(255,255,255,0.75));
+	}
+
+	.clients--footnote{
+		@extend %clearfix;
+		@extend .display-block;
+		@extend %font-type-sans-italic;
+		@extend %font-size-tiny;
+		@include rem(margin, 20px auto 0);
 	}	
+
+	.client--block-row{
+		@include row();
+	}
 
 	.client-block{
 		border-radius: 3px;
@@ -123,6 +135,7 @@
 //Logo List
 $logos: (
 	tbc        #3498DB,
+	cerca      #FEAE1B,
 	slotswap   #EB3206,
 	mbm        #429dEE,
 	lpl        #00ADEF,
