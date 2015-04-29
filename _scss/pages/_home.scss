@@ -27,14 +27,6 @@
 	@extend .display-block;
 	@extend %site-layout-padding;
 	@include rem(margin-top, 20px);
-
-	p{
-		@extend %font-size-base;
-		line-height: normal;
-		width: 100%;
-
-		@include media($tablet){ @include span-columns(6 of 12); }
-	}
 }
 
 .work-clips{
@@ -55,14 +47,14 @@
 			@include rem(margin, 0 auto);
 			list-style: none;
 			width: 800px;
-			
+
 
 			&:hover{ @extend %cursor-zoom-in; }
 
 			&.screenshot--1{
 				background: transparent url('../images/contentweb-browser.png') no-repeat center center;
 				height: 100%;
-				@include transform(scale(0.5) translateX(-45%));				
+				@include transform(scale(0.5) translateX(-45%));
 			}
 
 			&.screenshot--2{
@@ -73,7 +65,7 @@
 
 			&.screenshot--3{
 				background: transparent url('../images/payvalet-browser.png') no-repeat center center;
-				@include transform(scale(0.5) translateX(45%));	
+				@include transform(scale(0.5) translateX(45%));
 				height:100%;
 			}
 
@@ -92,7 +84,7 @@
 	@extend %site-layout-padding;
 	@include outer-container;
 
-	h3{ 
+	h3{
 		@extend %font-type-sans-light;
 		@include text-shadow(0 1px 1px, rgba(255,255,255,0.75));
 	}
@@ -103,7 +95,7 @@
 		@extend %font-type-sans-italic;
 		@extend %font-size-tiny;
 		@include rem(margin, 20px auto 0);
-	}	
+	}
 
 	.client--block-row{
 		@include row();
@@ -126,9 +118,9 @@
 		}
 	}
 
-	.client-logo{ 
-		height: 100%; 
-		@include transition(all 0.3s ease-in-out); width: 100%; 
+	.client-logo{
+		height: 100%;
+		@include transition(all 0.3s ease-in-out); width: 100%;
 	}
 }
 
@@ -165,7 +157,7 @@ $logos: (
 	@include outer-container;
 	@include rem(padding, 30px 0);
 
-	h4{ 
+	h4{
 		@extend %color-white-base;
 		@extend %font-type-sans-bold-italic;
 		@extend .text-align-center;
@@ -174,7 +166,7 @@ $logos: (
 		@include rem(margin-bottom, 30px);
 	}
 
-	ul{ 
+	ul{
 		clear: both;
 		@extend .text-align-center;
 		margin-bottom: 0;

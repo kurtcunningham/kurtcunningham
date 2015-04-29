@@ -3,7 +3,7 @@
 footer{
 	@extend .position-relative;
 
-	h6{ 
+	h6{
 		@extend %color-white-base;
 		@extend %font-type-sans-bold;
 	}
@@ -15,12 +15,12 @@ footer{
 	@extend %site-layout-padding;
 	@extend .text-align-center;
 
-	h3{ 
+	h3{
 		@extend %color-white-base;
 		@extend %font-type-sans-light;
-		@include rem(margin-bottom, 25px); 
+		@include rem(margin-bottom, 25px);
 	}
-} 
+}
 
 .jribbble-feature{
 	@include outer-container;
@@ -36,6 +36,7 @@ footer{
 			@include transition(all 0.3s ease-in);
 			overflow: hidden;
 			width: 48%;
+			vertical-align: top;
 
 			@include media($tablet){
 				@include span-columns(3 of 12);
@@ -44,18 +45,18 @@ footer{
 
 			img{ width: 95%; }
 
-			p, h6{ 
+			p, h6{
 				@extend %color-white-base;
 				@extend .position-relative;
 				@include rem(top, 100px);
-				visibility: hidden; 
+				visibility: hidden;
 			}
 
 			&:hover{
 				@extend %cursor-pointer;
 
-				h6, p{ visibility: visible; opacity: 1; } 
-				
+				h6, p{ visibility: visible; opacity: 1; }
+
 				img{ opacity: 0.2;}
 			}
 
