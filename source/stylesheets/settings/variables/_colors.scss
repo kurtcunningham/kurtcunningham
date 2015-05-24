@@ -1,0 +1,64 @@
+// Colors
+// ========================================
+
+  // Black
+  $black-base:   #4A4A4A;
+  $black-dark:   #000000;
+
+  // Blue
+  $blue-base:    #4B76BD;
+
+  // Brown
+  $brown-base:   #BFB68F;
+  $brown-dark:   #8E8663;
+
+  // Green
+  $green-base:  #00B1AC;
+  $green-dark:  #0FA19D;
+
+  $green-alt-1:  #C1E770;
+  $green-alt-2:  #85A938;
+  $green-alt-3:  #588C73;
+
+  // Grey
+  $grey-light:   #CCCCCC;
+  $grey-base:    #C3C3C3;
+  $grey-dark:    #A2A2A2;
+
+  // Pink
+  $pink-base:    #E81E75;
+  $pink-dark:    #B60C55;
+
+  // Purple
+  $purple-base:  #83389B;
+  $purple-dark:  #602772;
+
+  // White
+  $white-light:  #FAFAFA;
+  $white-base:   #FFFFFF;
+  $white-dark:   #F1F1F1;
+
+
+  //MAIN PALETTE LIST
+  $colors: (
+    black-base    $black-base,
+    black-dark    $black-dark,
+    blue-base     $blue-base,
+    brown-base    $brown-base,
+    brown-dark    $brown-dark,
+    grey-light    $grey-light,
+    grey-base     $grey-base,
+    grey-dark     $grey-dark,
+    green-base    $green-base,
+    green-dark    $green-dark,
+    green-alt-1   $green-alt-1,
+    green-alt-2   $green-alt-2,
+    green-alt-3   $green-alt-3,
+    pink-base     $pink-base,
+    pink-dark     $pink-dark,
+    purple-base   $purple-base,
+    purple-dark   $purple-dark,
+    white-light   $white-light,
+    white-base    $white-base,
+    white-dark    $white-dark
+  );
