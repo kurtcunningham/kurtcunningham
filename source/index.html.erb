@@ -37,10 +37,22 @@ title: Kurt Cunningham | Designer &amp; Developer
         <li class="post">
           <time class="post-date"><%= pretty_date(article.date) %></time>
           <h4 class="post-title"><%= article.title %></h4>
-          <p class="post-description"><%= Nokogiri::HTML(article.summary).text %></p>
-          <%= link_to 'Read more', article %>
+          <p class="post-description"><%= Nokogiri::HTML(article.summary).text %> <%= link_to 'Read more', article, class: 'post-link' %> </p>
+
         </li>
       <% end %>
     </ul>
+  </div>
+</section>
+<section role="region" aria-label="blog-posts" class="page-section">
+  <div class="page-section--left">
+    <h2 class="section-tag">03.</h2>
+    <hr class="section-tag-border">
+  </div>
+  <div class="page-section--right">
+    <header>
+      <h6 class="uppercase">What I've been up to</h6>
+      <h2 class="page-section--header">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h2>
+    </header>
   </div>
 </section>

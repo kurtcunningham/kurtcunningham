@@ -1,0 +1,38 @@
+// Navbar Styles
+// ========================================
+
+
+// Variables
+$navbar-padding:         0 20px;
+$navbar-position:        absolute;
+$navbar-position-left:   0;
+$navbar-position-right:  0;
+$navbar-position-top:    20px;
+$navbar-width:           100%;
+
+$navbar-link-color:      $white-base;
+$navbar-link-offset:     20px;
+
+
+// Navbar Structure
+.navbar{
+  @include outer-container;
+  @include rem(padding, $navbar-padding);
+  @include position($navbar-position, $navbar-position-top $navbar-position-right null $navbar-position-left);
+  width: $navbar-width;
+
+  @include media($tablet-landscape){ padding: 0; }
+}
+
+.navbar-left--container{ float: left; }
+.navbar-right--container{ float: right; }
+
+.navbar-item{
+  @include font-type($primary-sans-serif, normal, 700);
+  @include rem(margin-right, $navbar-link-offset);
+  display: inline;
+
+  &:last-child{ margin-right: 0; }
+}
+
+.navbar-link{ color: $navbar-link-color; }

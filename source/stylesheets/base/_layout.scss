@@ -9,8 +9,9 @@ $page-section-header-font:  $primary-serif;
 $section-tag-color:         $blue-base;
 $section-tag-border:        1px solid $grey-base;
 
-$post-date-color:           $yellow-base;
 $post-border-bottom:        1px solid $grey-base;
+$post-date-color:           $yellow-base;
+$post-offset:               40px;
 
 
 // Page Section
@@ -56,7 +57,23 @@ $post-border-bottom:        1px solid $grey-base;
 
 // Post List
 .post{
+  @include rem(margin, $post-offset 0);
+  @include rem(padding, 0 0 $post-offset - 10px 0);
+  border-bottom: $post-border-bottom;
+
+  &:last-child{
+    padding-bottom: 0;
+    border: none;
+  }
+
   .post-date{
+    @include rem(margin-bottom, 10px);
     color: $post-date-color;
+    display: inline-block;
+  }
+
+  .post-link{
+    @include font-type($primary-serif, italic, 400);
+    color: $blue-base;
   }
 }

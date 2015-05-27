@@ -9,6 +9,7 @@
     <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body class="<%= page_classes %>">
+    <%= partial 'components/navbar' %>
     <%= yield %>
     <%= javascript_include_tag  "application" %>
   </body>
