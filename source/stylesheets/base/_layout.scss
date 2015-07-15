@@ -32,11 +32,12 @@ body {
   border-bottom: $page-divider-border;
 }
 
+.left { float: left; }
+.right { float: right; }
+
 
 // Page Section
-.page {
-  clear: both;
-}
+.page { clear: both; }
 
 .page--section{
   @include clearfix;

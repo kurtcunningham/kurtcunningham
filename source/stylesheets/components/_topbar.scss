@@ -24,10 +24,25 @@ $navbar-link-offset:     20px;
   @include media($tablet-landscape){ padding: 0; }
 }
 
-.navbar-left--container{ @include span-columns(4 of 12); }
-.navbar-right--container{ float: right; }
+.navbar-left--container{
+  display: block;
+  text-align: center;
 
-.navbar-item{
+  @include media($tablet) {
+    float: left;
+  }
+}
+.navbar-right--container{
+  display: block;
+  text-align: center;
+
+  @include media($tablet) {
+    float: right;
+  }
+}
+
+.navbar-item,
+.navbar-link {
   @include font-type($primary-sans-serif, normal, 600);
   @include rem(margin-right, $navbar-link-offset);
   display: inline-block;

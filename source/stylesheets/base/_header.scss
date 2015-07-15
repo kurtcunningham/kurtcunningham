@@ -14,34 +14,47 @@ $tag-border-width:    70px;
 
 // Page Header
 .page-header{
-  @include background-size(100%);
+  @include background-size(cover);
   background-image: image-url($page-header-image);
   background-repeat: no-repeat;
+  background-position: right center;
   height: 100%;
   width: 100%;
 
   @include media($tablet-landscape){
     @include rem(height, $page-header-height);
-    @include background-size(cover);
+    background-position: center top;
   }
 }
 
 .page-header--content{
-  @include rem(padding-top, 300px);
+  @include rem(padding, 150px 20px 50px);
   @include outer-container;
 
+  @include media($tablet-landscape) {
+    @include rem(padding, 300px 0 0 0);
+  }
+
   .content--container{
-    @include span-columns(6 of 12);
+    @include span-columns(4 of 4);
+
+    @include media($tablet-landscape) {
+      @include span-columns(6 of 12);
+    }
   }
 
   .title{
     @include font-type($primary-sans-serif, normal, 700);
     @include rem(margin-bottom, 10px);
-    @include s-giga;
+    @include s-mega;
     color: $white-base;
     line-height: none;
 
     &.top{ @include rem(margin-bottom, -15px); }
+
+    @include media($tablet-landscape) {
+      @include s-giga;
+    }
   }
 
   .tag{

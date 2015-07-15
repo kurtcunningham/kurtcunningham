@@ -27,11 +27,15 @@ $footer-item-margin:  5px;
 }
 
 .footer--item,
-.footer--item a {
+.footer--item a,
+label.footer--item {
   @include font-type($primary-sans-serif, normal, 600);
   @include rem(margin-right, $footer-item-margin);
+  @include s-foxtrot;
   color: $footer-item-color;
   display: inline;
+
+  &:hover { cursor: pointer; }
 
   &:last-child { margin-right: 0; }
 }
