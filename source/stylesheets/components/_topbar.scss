@@ -42,10 +42,18 @@ $navbar-link-offset:     20px;
 }
 
 .navbar-item,
-.navbar-link {
+.navbar-link,
+.navbar-link label {
   @include font-type($primary-sans-serif, normal, 600);
   @include rem(margin-right, $navbar-link-offset);
+  @include s-foxtrot;
+  @include transition(all 0.3s ease-in-out);
   display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8
+  }
 
   &:last-child{ margin-right: 0; }
 }
