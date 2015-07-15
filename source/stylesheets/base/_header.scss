@@ -3,13 +3,19 @@
 
 
 // Variables
-$page-header-height: 550px;
+$page-header-height:  650px;
+$page-header-image:  'header-img.jpg';
+
+$tag-border:          5px solid $yellow-base;
+$tag-border-margin:   10px;
+$tag-border-width:    70px;
+
 
 
 // Page Header
 .page-header{
   @include background-size(100%);
-  background-image: image-url('header-img.jpg');
+  background-image: image-url($page-header-image);
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
@@ -29,7 +35,7 @@ $page-header-height: 550px;
   }
 
   .title{
-    @include font-type($primary-serif, normal, 400);
+    @include font-type($primary-sans-serif, normal, 700);
     @include rem(margin-bottom, 10px);
     @include s-giga;
     color: $white-base;
@@ -46,9 +52,9 @@ $page-header-height: 550px;
 
     .tag-border{
       @include position(absolute, 0 null 4px null);
-      @include rem(margin-left, 30px);
-      @include rem(width, 40px);
-      border-bottom: 5px solid $yellow-base;
+      @include rem(margin-left, $tag-border-margin);
+      @include rem(width, $tag-border-width);
+      border-bottom: $tag-border;
     }
   }
 

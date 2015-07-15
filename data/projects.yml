@@ -1,0 +1,15 @@
+- title: PayValet
+  service: Frontend Development • UI/UX Design
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  image: projects/payvalet-img.jpg
+  url: http://www.payvalet.io
+- title: Fuel
+  service: Frontend Development • UI/UX Design
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  image: projects/fuel-img.jpg
+  url: http://www.fuel.launchpadlab.com
+- title: ContentWeb
+  service: Frontend Development • UI/UX Design
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  image: projects/contentweb-img.jpg
+  url: http://www.contentweb.com/home

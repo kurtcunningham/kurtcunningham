@@ -13,46 +13,49 @@ title: Kurt Cunningham | Designer &amp; Developer
     </div>
   </div>
 </section>
-<section role="region" aria-label="about-me" class="page-section">
-  <div class="page-section--left">
-    <h2 class="section-tag">01.</h2>
-    <hr class="section-tag-border">
-  </div>
-  <div class="page-section--right">
-    <h1 class="page-section--header">Motivated and adaptive innovative thinker with a strong background in user experience design and frontend web development. Lover of Sass, MVC frameworks and preformance budgets.</h1>
+<section class="page--section yellow" role="region">
+  <div class="page--container">
+    <header class="page-section--header" role="banner" aria-labelledby="services">
+      <h5 class="tag inverse">Why Work With me</h5>
+      <h1 class="title inverse">Motivated, Adaptive Innovative Thinker</h1>
+      <p class="inverse">Designer and frontend developer with a strong background in user experience design and web development. Lover of Sass, frontend-MVC frameworks and responsive web design.</p>
+    </header>
+    <div class="page--section-body small">
+      <ul class="services grid">
+        <% data.services.each do |f| %>
+          <li class="service grid--item">
+            <i class="grid--item-icon"><%= f.icon %></i>
+            <h5 class="grid--item-title inverse"><%= f.title %></h5>
+            <p class="grid--item-description inverse"><%= f.description %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </section>
-<section role="region" aria-label="blog-posts" class="page-section">
-  <div class="page-section--left">
-    <h2 class="section-tag">02.</h2>
-    <hr class="section-tag-border">
-  </div>
-  <div class="page-section--right">
-    <header>
-      <h6 class="uppercase">A few thoughts</h6>
-      <h2 class="page-section--header">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h2>
+<section class="page--section" role="region">
+  <div class="page--container">
+    <header class="page-section--header" role="banner" aria-labelledby="past-work">
+      <h5 class="tag">A Few Projects</h5>
+      <h1 class="title">Curret And Past Clients</h1>
+      <p>Over the past six years I have spent my time working with several different Chicago-based startups.  Below are a few of the clients I have worked with during these years.</p>
     </header>
-    <ul class="post-list">
-      <% blog.articles[0...3].each do |article| %>
-        <li class="post">
-          <time class="post-date"><%= pretty_date(article.date) %></time>
-          <h4 class="post-title"><%= article.title %></h4>
-          <p class="post-description"><%= Nokogiri::HTML(article.summary).text %> <%= link_to 'Read more', article, class: 'post-link' %> </p>
-
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</section>
-<section role="region" aria-label="blog-posts" class="page-section">
-  <div class="page-section--left">
-    <h2 class="section-tag">03.</h2>
-    <hr class="section-tag-border">
-  </div>
-  <div class="page-section--right">
-    <header>
-      <h6 class="uppercase">What I've been up to</h6>
-      <h2 class="page-section--header">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h2>
-    </header>
+    <div class="page--section-body">
+      <ul class="projects">
+        <% data.projects.each do |f| %>
+          <li class="project card card__hover">
+            <div class="card--content__left">
+              <h6 class="card--tag"><%= f.service %></h6>
+              <h3 class="card--title"><%= f.title %></h3>
+              <p class="card--description"><%= f.description %></p>
+              <%= link_to 'View Project', f.url, target: '_blank', class: 'button button--secondary' %>
+            </div>
+            <div class="card--content__right">
+              <%= image_tag f.image, class: 'card--image' %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </section>

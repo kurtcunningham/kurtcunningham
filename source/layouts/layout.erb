@@ -5,14 +5,17 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <title>Kurt Cunningham | Designer &amp; Developer</title>
     <%= stylesheet_link_tag "application" %>
-    <script src="//use.typekit.net/vvf7ued.js"></script>
+    <script src="//use.typekit.net/xev4maz.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body class="<%= page_classes %>">
-    <%= partial 'components/navbar' %>
-    <main class="page-layout" role="main">
+    <%= partial 'components/topbar' %>
+    <main class="page" role="main">
       <%= yield %>
     </main>
+    <hr class="divider">
+    <%= partial 'components/cta' %>
+    <%= partial 'components/footer' %>
     <%= javascript_include_tag  "application" %>
   </body>
 </html>

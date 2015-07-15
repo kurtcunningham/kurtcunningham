@@ -22,7 +22,6 @@ end
 
 
 # Blog Config
-
 activate :blog do |blog|
   blog.prefix = "blog"
   blog.layout = "blog"

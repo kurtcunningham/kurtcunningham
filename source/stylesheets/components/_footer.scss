@@ -1,0 +1,37 @@
+// Footer Component
+// ========================================
+
+
+// Variables
+$footer-border:       1px solid $grey-light;
+$footer-padding:      30px 0;
+
+$footer-item-color:   $grey-dark;
+$footer-item-margin:  5px;
+
+
+// Structure
+.footer {
+  @include outer-container;
+  @include rem(padding, $footer-padding);
+  border-top: $footer-border;
+  clear: both;
+}
+
+.footer--content__left {
+  float: left;
+}
+
+.footer--content__right {
+  float: right;
+}
+
+.footer--item,
+.footer--item a {
+  @include font-type($primary-sans-serif, normal, 600);
+  @include rem(margin-right, $footer-item-margin);
+  color: $footer-item-color;
+  display: inline;
+
+  &:last-child { margin-right: 0; }
+}

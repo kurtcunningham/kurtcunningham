@@ -1,0 +1,40 @@
+// Grid Component
+// ========================================
+
+
+// Variables
+$grid-item-margin:           30px auto 0;
+
+$grid-item-icon-dimension:   50px;
+$grid-item-icon-offset:      50px;
+
+$grid-item-title-margin:     0 auto 10px;
+
+
+// Structure
+.grid--item {
+  @include rem(margin, $grid-item-margin);
+  @include span-columns(4 of 4);
+
+  @include media($tablet-landscape) {
+    @include span-columns(6 of 12);
+
+    &:nth-child(2) { margin-right: 0; }
+  }
+}
+
+.grid--item-icon {
+  @include rem(height, $grid-item-icon-dimension);
+  @include rem(margin-bottom, $grid-item-icon-offset);
+  @include rem(width, $grid-item-icon-dimension);
+  display: inline-block;
+  float: left;
+  text-indent: -9999px;
+}
+
+.grid--item-title {
+  @include font-type($primary-sans-serif, normal, 600);
+  @include rem(margin, $grid-item-title-margin);
+  @include s-foxtrot;
+  text-transform: uppercase;
+}

@@ -2,78 +2,96 @@
 // ========================================
 
 // Variables
-$page-section-offset:       50px auto 100px;
-$page-section-header-color: $grey-base;
 $page-section-header-font:  $primary-serif;
+$page-section-offset:       0 auto 60px;
+$page-section-padding:      60px 0;
 
-$section-tag-color:         $blue-base;
-$section-tag-border:        1px solid $grey-base;
+$section-tag-color:         $yellow-base;
 
-$post-border-bottom:        1px solid $grey-base;
-$post-date-color:           $yellow-base;
-$post-offset:               40px;
+$page-section-title-color:  $black-base;
+
+$page-divider-border:       1px solid $grey-light;
+
+
+// Global Styles
+html,
+body {
+  overflow-x: hidden;
+
+  &.is-fixed {
+    @include position(absolute);
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.divider {
+  @include outer-container;
+  @include rem(margin, $page-section-offset);
+  border: none;
+  border-bottom: $page-divider-border;
+}
 
 
 // Page Section
-.page-section{
-  @include outer-container;
+.page {
+  clear: both;
+}
+
+.page--section{
+  @include clearfix;
   @include rem(margin, $page-section-offset);
+
+  &.yellow {
+    @include rem(padding, $page-section-padding);
+    background-color: $yellow-base;
+  }
 }
 
-.page-section--left{
-  @include position(relative);
-  @include span-columns(1 of 12);
-  @include shift(1 of 12);
-}
-
-.page-section--right{
-  @include span-columns(9 of 12);
-  @include shift(1 of 12);
-}
-
-
-// Section Tag
-.section-tag{
-  @include font-type($primary-serif, italic, 400);
-  @include shift(1 of 12);
-  color: $section-tag-color;
-}
-
-.section-tag-border{
-  @include position(absolute, null null null -400%);
-  border: none;
-  border-bottom: $section-tag-border;
-  width: 485%;
+.page--container {
+  @include outer-container;
 }
 
 
 // Page Section Header
-.page-section--header{
-  @include font-type($page-section-header-font, normal, 400);
-  @include s-bravo;
-  @include rem(line-height, 30px);
+.page-section--header {
+  @include span-columns(4 of 4);
+  text-align: center;
+
+  @include media($tablet-landscape) {
+    @include span-columns(8 of 12);
+    @include shift(2 of 12);
+  }
+
+  .tag {
+    @include font-type($primary-sans-serif, normal, 700);
+    @include s-foxtrot;
+    color: $section-tag-color;
+    text-transform: uppercase;
+  }
+
+  .title {
+    @include font-type($primary-sans-serif, normal, 200);
+    @include s-alpha;
+    text-transform: capitalize;
+  }
 }
 
 
-// Post List
-.post{
-  @include rem(margin, $post-offset 0);
-  @include rem(padding, 0 0 $post-offset - 10px 0);
-  border-bottom: $post-border-bottom;
+// Page Section Body
+.page--section-body {
+  @include span-columns(4 of 4);
+  clear: both;
 
-  &:last-child{
-    padding-bottom: 0;
-    border: none;
+  @include media($tablet-landscape) {
+    @include span-columns(12 of 12);
   }
 
-  .post-date{
-    @include rem(margin-bottom, 10px);
-    color: $post-date-color;
-    display: inline-block;
-  }
+  &.small {
 
-  .post-link{
-    @include font-type($primary-serif, italic, 400);
-    color: $blue-base;
+    @include media($tablet-landscape) {
+      @include span-columns(10 of 12);
+      @include shift(1 of 12);
+    }
   }
 }

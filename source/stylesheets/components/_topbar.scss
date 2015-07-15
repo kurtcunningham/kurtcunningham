@@ -1,4 +1,4 @@
-// Navbar Styles
+// topbar Styles
 // ========================================
 
 
@@ -24,15 +24,19 @@ $navbar-link-offset:     20px;
   @include media($tablet-landscape){ padding: 0; }
 }
 
-.navbar-left--container{ float: left; }
+.navbar-left--container{ @include span-columns(4 of 12); }
 .navbar-right--container{ float: right; }
 
 .navbar-item{
-  @include font-type($primary-sans-serif, normal, 700);
+  @include font-type($primary-sans-serif, normal, 600);
   @include rem(margin-right, $navbar-link-offset);
-  display: inline;
+  display: inline-block;
 
   &:last-child{ margin-right: 0; }
 }
 
-.navbar-link{ color: $navbar-link-color; }
+.navbar-link{
+  @include font-type($primary-sans-serif, normal, 600);
+  color: $navbar-link-color;
+  text-transform: uppercase;
+}
