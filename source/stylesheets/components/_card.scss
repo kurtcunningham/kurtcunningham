@@ -30,24 +30,43 @@ $card-image-border-hover:  1px solid $white-base;
 }
 
 .card__hover:hover {
-  @include box-shadow($card-hover-spread, $card-hover-shadow);
-  background-color: $black-base;
-  border: $card-hover-border;
-  border-radius: $card-border-radius;
+  @include media($tablet-landscape) {
+    @include box-shadow($card-hover-spread, $card-hover-shadow);
+    background-color: $black-base;
+    border: $card-hover-border;
+    border-radius: $card-border-radius;
 
-  .card--image { border: $card-image-border-hover; }
+    .card--image { border: $card-image-border-hover; }
 
-  .card--tag,
-  .card--title,
-  .card--description {
-    @extend .inverse;
-    @include transition(all 0.6s ease-in-out);
+    .card--tag,
+    .card--title,
+    .card--description {
+      @include transition(all 0.6s ease-in-out);
+      color: $white-base;
+    }
   }
 }
 
-.card--content__left { @include span-columns(4 of 12); }
+.card--content__left {
 
-.card--content__right { @include span-columns(8 of 12); }
+  @include media($tablet) {
+    @include span-columns(4 of 9);
+  }
+
+  @include media($tablet-landscape) {
+    @include span-columns(4 of 12);
+  }
+}
+
+.card--content__right {
+  @include media($tablet) {
+    @include span-columns(5 of 9);
+  }
+
+  @include media($tablet-landscape) {
+    @include span-columns(8 of 12);
+  }
+}
 
 .card--tag {
   text-transform: uppercase;
@@ -66,5 +85,13 @@ $card-image-border-hover:  1px solid $white-base;
   @include position(absolute, 0 0 0 null);
   @include transition(all 0.6s ease-in-out);
   border: $card-image-border;
+  display: none;
   height: 100%;
+
+  @include media($tablet) {
+    display: block;
+  }
+
+  @include media($tablet-landscape) {
+  }
 }

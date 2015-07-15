@@ -2,15 +2,16 @@
 // ========================================
 
 // Variables
-$page-section-header-font:  $primary-serif;
-$page-section-offset:       0 auto 60px;
-$page-section-padding:      60px 0;
+$page-section-header-font:   $primary-serif;
+$page-section-offset:        0 auto 60px;
+$page-section-padding:       60px 0;
 
-$section-tag-color:         $yellow-base;
+$section-tag-color:          $yellow-base;
 
-$page-section-title-color:  $black-base;
+$page-section-title-color:   $black-base;
 
-$page-divider-border:       1px solid $grey-light;
+$page-divider-border:        1px solid $grey-light;
+$page-divider-margin-mobile: 0 20px 60px;
 
 
 // Global Styles
@@ -27,9 +28,11 @@ body {
 
 .divider {
   @include outer-container;
-  @include rem(margin, $page-section-offset);
+  @include rem(margin, $page-divider-margin-mobile);
   border: none;
   border-bottom: $page-divider-border;
+
+  @include media($tablet-landscape) { @include rem(margin, $page-section-offset); }
 }
 
 .left { float: left; }
@@ -56,6 +59,7 @@ body {
 
 // Page Section Header
 .page-section--header {
+  @include rem(padding, 0 20px);
   @include span-columns(4 of 4);
   text-align: center;
 
