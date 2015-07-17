@@ -24,7 +24,7 @@ title: Kurt Cunningham | Designer &amp; Developer
       <ul class="services grid">
         <% data.services.each do |f| %>
           <li class="service grid--item">
-            <i class="grid--item-icon"><%= f.icon %></i>
+            <i class="grid--item-icon <%= f.icon %>--icon"><%= f.icon %></i>
             <h5 class="grid--item-title inverse"><%= f.title %></h5>
             <p class="grid--item-description inverse"><%= f.description %></p>
           </li>
