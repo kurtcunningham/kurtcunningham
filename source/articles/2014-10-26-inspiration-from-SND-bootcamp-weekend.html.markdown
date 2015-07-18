@@ -1,7 +1,5 @@
 ---
 title: Inspiration from SND Bootcamp Weekend
-date: 2014-10-26
-tags: Design, Development
 ---
 
 <img src="http://cl.ly/Yr5r/mizzou.jpg" class="post-img">

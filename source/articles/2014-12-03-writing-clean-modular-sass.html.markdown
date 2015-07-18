@@ -1,7 +1,5 @@
 ---
 title: Writing Clean, Modular Sass
-date: 2014-12-03
-tags: Design, Development
 ---
 
 <img src="http://cl.ly/Yqel/sass-post.jpg" class="post-img">

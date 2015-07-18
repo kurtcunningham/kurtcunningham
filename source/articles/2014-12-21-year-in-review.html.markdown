@@ -1,7 +1,5 @@
 ---
 title: 2014 - Year In Review
-date: 2014-12-21
-tags: Design, Development
 ---
 
 <img src="http://cl.ly/Z4Ja/2014-year-in-review-img.jpg" class="post-img" alt="2014 Year In Review">
