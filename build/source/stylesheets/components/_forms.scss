@@ -1,0 +1,77 @@
+// Form Styles Stylesheet
+// ========================================
+
+// Labels
+label {
+  @include font-type($primary-sans-serif, normal, 700);
+  @include rem(margin-bottom, 10px);
+  @include s-golf;
+  display: block;
+  text-transform: capitalize;
+}
+
+fieldset {
+  @include rem(margin-bottom, 20px);
+
+  &.border {
+    @include rem(margin-bottom, 15px);
+    @include rem(padding-bottom, 15px);
+    border-bottom: 1px solid $grey-base;
+  }
+}
+
+.fieldset--action {
+  display: block;
+  margin-bottom: 0;
+  text-align: right;
+
+  .button { margin-bottom: 0 }
+}
+
+.half-group { @include span-columns(6 of 12); }
+.third-group { @include span-columns(4 of 12); }
+
+// Inputs
+#{$all-text-inputs},
+input,
+select,
+textarea {
+  @include appearance(none);
+  @include font-type($primary-sans-serif, normal, 300);
+  @include placeholder{ font-style: italic; }
+  @include s-golf;
+  background-color: $white-base;
+  border: 1px solid $grey-light;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 8px 6px;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -ms-appearance: none;
+
+  &:focus {
+    @include box-shadow(0 0 0, transparent);
+    border-color: $grey-light;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $white-dark;
+    border: 1px solid $grey-base;
+
+    &:hover { cursor: disabled; }
+  }
+}
+
+input[type="submit"] {
+  @include rem(padding, 10px);
+  @include s-golf;
+  width: inherit;
+
+  &:hover { cursor: pointer; }
+}
+
+textarea.contact-form--textarea {
+  @include rem(height, 80px);
+}

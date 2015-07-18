@@ -1,0 +1,61 @@
+---
+title: Kurt Cunningham | Designer &amp; Developer
+---
+<section class="page-header" role="region">
+  <div class="page-header--content">
+    <div class="content--container">
+      <h2 class="title top">kurt</h2>
+      <h2 class="title">cunningham</h2>
+      <h5 class="tag">Product Designer &bull; Developer
+        <span class="tag-border"></span>
+      </h5>
+      <p class="description">UI Engineer. Frontend Fan. Product of The Great Hawkeye State. Follow me on <%= link_to 'Twitter', 'https://twitter.com/KurtCunningham' %> &amp; <%= link_to 'Dribbble', 'https://dribbble.com/cunninghamkurt' %>.</p>
+    </div>
+  </div>
+</section>
+<section class="page--section yellow" role="region">
+  <div class="page--container">
+    <header class="page-section--header" role="banner" aria-labelledby="services">
+      <h5 class="tag inverse">Why Work With me</h5>
+      <h1 class="title inverse">Motivated, Adaptive Innovative Thinker</h1>
+      <p class="inverse">Designer and developer with a strong background in user experience design and web development. Lover of Sass, frontend-MVC frameworks and responsive web design.</p>
+    </header>
+    <div class="page--section-body small">
+      <ul class="services grid">
+        <% data.services.each do |f| %>
+          <li class="service grid--item">
+            <i class="grid--item-icon <%= f.icon %>--icon"><%= f.icon %></i>
+            <h5 class="grid--item-title inverse"><%= f.title %></h5>
+            <p class="grid--item-description inverse"><%= f.description %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="page--section" role="region">
+  <div class="page--container">
+    <header class="page-section--header" role="banner" aria-labelledby="past-work">
+      <h5 class="tag">A Few Projects</h5>
+      <h1 class="title">Current And Past Clients</h1>
+      <p>Over the past six years I have worked with several Chicago-based startups fulltime and as a consultant.  Below are a few of the projects I have had the pleasure of working on during these years.</p>
+    </header>
+    <div class="page--section-body">
+      <ul class="projects">
+        <% data.projects.each do |f| %>
+          <li class="project card card__hover">
+            <div class="card--content__left">
+              <h6 class="card--tag"><%= f.service %></h6>
+              <h3 class="card--title"><%= f.title %></h3>
+              <p class="card--description"><%= f.description %></p>
+              <%= link_to 'View Project', f.url, target: '_blank', class: 'button button--secondary' %>
+            </div>
+            <div class="card--content__right">
+              <%= image_tag f.image, class: 'card--image' %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+// topbar Styles
+// ========================================
+
+
+// Variables
+$navbar-padding:         0 20px;
+$navbar-position:        absolute;
+$navbar-position-left:   0;
+$navbar-position-right:  0;
+$navbar-position-top:    20px;
+$navbar-width:           100%;
+
+$navbar-link-color:      $white-base;
+$navbar-link-offset:     20px;
+
+
+// Navbar Structure
+.navbar{
+  @include outer-container;
+  @include rem(padding, $navbar-padding);
+  @include position($navbar-position, $navbar-position-top $navbar-position-right null $navbar-position-left);
+  width: $navbar-width;
+
+  @include media($tablet-landscape){ padding: 0; }
+}
+
+.navbar-left--container{
+  display: block;
+  text-align: center;
+
+  @include media($tablet) {
+    float: left;
+  }
+}
+.navbar-right--container{
+  display: block;
+  text-align: center;
+
+  @include media($tablet) {
+    float: right;
+  }
+}
+
+.navbar-item,
+.navbar-link,
+.navbar-link label {
+  @include font-type($primary-sans-serif, normal, 600);
+  @include rem(margin-right, $navbar-link-offset);
+  @include s-foxtrot;
+  @include transition(all 0.3s ease-in-out);
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8
+  }
+
+  &:last-child{ margin-right: 0; }
+}
+
+.navbar-link{
+  @include font-type($primary-sans-serif, normal, 600);
+  color: $navbar-link-color;
+  text-transform: uppercase;
+}
