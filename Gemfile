@@ -7,7 +7,7 @@ gem 'middleman-blog'
 gem 'middleman-livereload', '~> 3.1.0'
 gem 'middleman-imageoptim'
 gem 'middleman-minify-html'
-gem 'wmiddleman-google-analytics'w
+gem 'middleman-google-analytics'
 gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
