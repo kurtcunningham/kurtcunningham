@@ -21,6 +21,11 @@ after_configuration do
 end
 
 
+#Google Analytics
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-44827406-1'
+end
+
 # Blog Config
 activate :blog do |blog|
   blog.prefix = "blog"
