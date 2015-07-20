@@ -49,7 +49,7 @@ label.footer--item {
   @include rem(margin-right, $footer-item-margin);
   @include s-foxtrot;
   color: $footer-item-color;
-  display: inline;
+  display: inline-block;
 
   &:hover { cursor: pointer; }
 
