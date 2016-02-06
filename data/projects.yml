@@ -1,15 +1,15 @@
 - title: PayValet
-  service: Frontend Development • UI/UX Design
+  service: Front-end Development • UI/UX Design
   description: Accepting payments as a small business can be frustrating. PayValet aimed to simplify this process. Through user research and A/B testing I led the design and frontend development of this web application.
   image: projects/payvalet-img.jpg
   url: http://www.payvalet.io
-- title: Fuel
-  service: Frontend Development • UI/UX Design
-  description: All sites need a blog. They help generate fresh content and keep websites active. Fuel, an open source project, was created to help Ruby on Rails based sites integrate a blog in seconds. Users maintain drafts and posts through a web interface.
-  image: projects/fuel-img.jpg
-  url: http://fuel.launchpadlab.com/
-- title: ContentWeb
-  service: Frontend Development • UI/UX Design
-  description: Emails get lost. Memos are old news. ContentWeb was built to help teams store and organize content and assets for active projects. This application is 100% responsive and uses progressive HTML5 techniques such as push notifications.
-  image: projects/contentweb-img.jpg
-  url: http://app.contentweb.com/home
+- title: Schlep.It
+  service: Front-end Development • UI/UX Design
+  description: Schlep is a crowd-sourced platform that connects businesses and individuals who need to move large or awkward items with the muscle and truck needed to get the job done. Think of them as Your Neighbor With A Truck™.
+  image: projects/schlep-img.jpg
+  url: https://www.schlep.it/
+- title: Red Ventures
+  service: Front-end Development • UI/UX Design
+  description: Red Ventures uses data to optimize and improve the life-cycle for brands across the U.S. I worked with them to design and develop an application to help manage and rate employees. The goal was to make employee reviews fun again.
+  image: projects/rv-img.jpg
+  url: https://dribbble.com/shots/2262461-Tasks-Dashboard
