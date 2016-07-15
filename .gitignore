@@ -2,3 +2,4 @@ _site
 .sass-cache
 /bower_components/
 .DS_Store
+build/
