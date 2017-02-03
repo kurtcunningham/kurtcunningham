@@ -37,7 +37,7 @@ configure :build do
 end
 
 # Deploy To GH-Pages
-# activate :deploy do |deploy|
-#   deploy.method = :git
-#   deploy.build_before = true
-# end
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+end
