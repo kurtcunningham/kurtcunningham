@@ -25,19 +25,19 @@ set :relative_links, true
 
 # Build-specific configuration
 configure :build do
-
+  config[:host] = "http://www.kurtcunningham.com"
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
   # activate :asset_hash
   activate :directory_indexes
   activate :gzip
-  activate :imageoptim, pngout: false
+  # activate :imageoptim, pngout: false
   activate :relative_assets
 end
 
 # Deploy To GH-Pages
 activate :deploy do |deploy|
-  deploy.method = :git
+  deploy.deploy_method = :git
   deploy.build_before = true
 end

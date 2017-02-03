@@ -6,11 +6,11 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
-gem 'middleman-imageoptim'
+# gem 'middleman-imageoptim'
 gem 'middleman-minify-html'
 gem 'middleman-sprockets', '~> 4.0.0.rc.1'
 gem 'middleman-google-analytics'
-gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
+gem 'middleman-deploy', git: 'https://github.com/middleman-contrib/middleman-deploy', branch: 'master'
 
 # Added Gems
 gem 'bourbon'
