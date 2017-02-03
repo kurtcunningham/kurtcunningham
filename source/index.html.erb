@@ -1,61 +1,61 @@
 ---
-title: Kurt Cunningham | Designer + Developer
+page_header_title: Kurt Cunningham
+page_header_description: Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <a href="http://madebymunsters.com" targe="_blank">madebymunsters.com</a>.
+social_link:
+  - title: Dribbble
+    url: https://dribbble.com/cunninghamkurt
+  - title: Medium
+    url: https://medium.com/@kurtcunningham
+  - title: Twitter
+    url: https://twitter.com/KurtCunningham
+  - title: Made By Munsters
+    url: http://madebymunsters.com
+page_post_title: Recent Thoughts
+page_post_description: People say I like to talk. I don't know if that is a good thing or a bad thing, but nevertheless here are some things I like to talk about. If you are interested in following along subscribe to Made By Munsters' publication on Medium or sign up for our newsletter on our website.
 ---
-<section class="page-header" role="region">
-  <div class="page-header--content">
-    <div class="content--container">
-      <h2 class="title top">kurt</h2>
-      <h2 class="title">cunningham</h2>
-      <h5 class="tag">Product Designer &bull; Developer
-        <span class="tag-border"></span>
-      </h5>
-      <p class="description">UI Engineer. Front-end Fan. Product of The Great Hawkeye State. Made By Munsters. Follow me on <%= link_to 'Twitter', 'https://twitter.com/KurtCunningham' %> &amp; <%= link_to 'Dribbble', 'https://dribbble.com/cunninghamkurt' %>.</p>
+<header role="banner" aria-labelledby="introduction" class="margin-top--alpha">
+  <div class="container page__section-container">
+    <div class="row">
+      <div class="columns-5__m columns-5__l">
+        <h1 id="introduction"><%= current_page.data.page_header_title %></h1>
+        <p><%= current_page.data.page_header_description %></p>
+      </div>
+      <div class="columns-4__m columns-4__l offset-3__l">
+        <ul class="homepage__social-links float--right">
+          <% current_page.data.social_link.each do |i| %>
+            <li class="homepage__social-link">
+              <%= link_to i.title, i.url, class: 'link--alpha', target: '_blank' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</section>
-<section class="page--section yellow" role="region">
-  <div class="page--container">
-    <header class="page-section--header" role="banner" aria-labelledby="services">
-      <h5 class="tag inverse">Why Work With me</h5>
-      <h1 class="title inverse">Motivated, Adaptive Innovative Thinker</h1>
-      <p class="inverse">Designer and developer with a strong background in user experience design and web development. Lover of Sass, frontend-MVC frameworks and responsive web design.</p>
-    </header>
-    <div class="page--section-body small">
-      <ul class="services grid">
-        <% data.services.each do |f| %>
-          <li class="service grid--item">
-            <i class="grid--item-icon <%= f.icon %>--icon"><%= f.icon %></i>
-            <h5 class="grid--item-title inverse"><%= f.title %></h5>
-            <p class="grid--item-description inverse"><%= f.description %></p>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+</header>
+<section role="region" aria-label="dribbble-images" class="background-color--alpha margin-top--alpha">
+  <div class="container page__section-container">
+    <ul class="homepage__dribbble-list"></ul>
+    <%= link_to 'More Samples', 'https://dribbble.com/cunninghamkurt', class: 'link--alpha link--icon float--right', data: {hover: 'More Samples'} %>
   </div>
 </section>
-<section class="page--section" role="region">
-  <div class="page--container">
-    <header class="page-section--header" role="banner" aria-labelledby="past-work">
-      <h5 class="tag">A Few Projects</h5>
-      <h1 class="title">Current And Past Projects</h1>
-      <p>Over the past six years I have worked with several Chicago-based startups fulltime and as a consultant.  Below are a few of the projects I have had the pleasure of working on.</p>
-    </header>
-    <div class="page--section-body">
-      <ul class="projects">
-        <% data.projects.each do |f| %>
-          <li class="project card card__hover">
-            <div class="card--content__left">
-              <h6 class="card--tag"><%= f.service %></h6>
-              <h3 class="card--title"><%= f.title %></h3>
-              <p class="card--description"><%= f.description %></p>
-              <%= link_to 'View Project', f.url, target: '_blank', class: 'button button--secondary' %>
-            </div>
-            <div class="card--content__right">
-              <%= image_tag f.image, class: 'card--image' %>
-            </div>
+<section role="region" aria-labelledby="recent-blog-posts" class="margin-top--alpha">
+  <div class="container page__section-container">
+    <div class="row">
+      <div class="columns-5__m columns-5__l margin-bottom--bravo">
+        <h2 id="recent-blog-posts" class="title"><%= current_page.data.page_post_title %></h2>
+        <p><%= current_page.data.page_post_description %></p>
+      </div>
+      <div class="columns-4__m columns-6__l offset-1__l">
+        <ul class="homepage__medium-posts">
+          <li class="homepage__medium-post" id="postTemplate" style="display: none;">
+            <time class="post-date"></time>
+            <h4 class="post-title">
+              <%= link_to '', '', rel: 'external', target: '_blank', class: 'link--alpha', data: {hover: ''} %>
+            </h4>
           </li>
-        <% end %>
-      </ul>
+        </ul>
+        <%= link_to 'More Posts', 'https://medium.com/@kurtcunningham/', class: 'link--alpha link--icon float--right', data: {hover: 'More Posts'} %>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,50 @@
+// Grid Stylesheet
+// ========================================
+
+// Variables
+$columns: 12;
+
+// Container
+.container { @include outer-container; }
+
+// Row
+.row { @include row }
+
+// Columns
+@for $column from 1 to $columns {
+
+  // Small Devices
+  .columns-#{$column}__s {
+    @include span-columns($column in 4);
+  }
+
+  .offset-#{$column}__s {
+    @include shift($column in 4);
+  }
+
+  // Medium Devices
+  .columns-#{$column}__m {
+    @include media($medium) {
+      @include span-columns($column in 9);
+    }
+  }
+
+  .offset-#{$column}__m {
+    @include media($medium) {
+      @include shift($column in 9);
+    }
+  }
+
+  // Large Devices
+  .columns-#{$column}__l {
+    @include media($large) {
+      @include span-columns($column in 12);
+    }
+  }
+
+  .offset-#{$column}__l {
+    @include media($large) {
+      @include shift($column in 12);
+    }
+  }
+}

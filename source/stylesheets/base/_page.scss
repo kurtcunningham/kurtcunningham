@@ -1,0 +1,15 @@
+// Page Base Stylesheets
+// ========================================
+
+// Variables
+$page-padding:  0 $spacer-delta;
+
+
+// Structure
+.page__section-container {
+  padding: $page-padding;
+
+  @include media($extra-large) {
+    padding: 0;
+  }
+}

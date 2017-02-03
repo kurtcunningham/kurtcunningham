@@ -1,0 +1,20 @@
+<footer role="footer" class="marketing-footer margin-top--alpha">
+  <div class="container page__section-container">
+    <div class="row">
+      <div class="columns-4__m footer--left">
+        <ul>
+          <li class="text--white">Kurt Cunningham</li>
+        </ul>
+      </div>
+      <div class="columns-5__m footer--right">
+        <ul class="footer__list">
+          <% current_page.data.social_link.each do |i| %>
+            <li class="footer__item">
+              <%= link_to i.title, i.url, class: 'link--alpha footer__link', target: '_blank' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

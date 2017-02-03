@@ -1,0 +1,68 @@
+// Visibility Styles
+// ========================================
+
+// Hide/Show Classes
+.mobile--show {
+  display: block;
+  @include media($medium){ display: none; }
+}
+
+.mobile--show-inline {
+  display: inline-block;
+  @include media($medium){ display: none; }
+}
+
+.mobile--hide {
+  display: none;
+  @include media($medium){ display: inline-block; }
+}
+
+.mobile--hide-block {
+  display: none;
+  @include media($medium){ display: block; }
+}
+
+.tablet--show {
+  display: block;
+  @include media($large){ display: none; }
+}
+
+.tablet--hide {
+  display: none;
+  @include media($large){ display: inline-block; }
+}
+
+.tablet--hide-block {
+  display: none;
+
+  @include media($large){ display: block; }
+}
+
+
+// Touch Devices
+.touch .touch--hide {
+  display: none;
+}
+
+.touch .touch--show {
+  display: block;
+}
+
+.touch .touch--show-flex {
+  display: inline-flex;
+}
+
+
+
+// Basic Hide/Show
+.hidden { display: none; }
+
+// ng-cloak (https://docs.angularjs.org/api/ng/directive/ngCloak)
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}

@@ -1,25 +1,43 @@
 // Typography Variables
 // ========================================
 
-  // Font Families
-  $primary-sans-serif: "proxima-nova", "Helvetica", sans-serif;
-  $primary-serif: "museo-slab", "Georgia", serif;
+// Font Families
+$primary-sans-serif: 'din-condensed', 'Helvetica', sans-serif;
+$primary-serif:      'ff-tisa-web-pro', 'Georgia', serif;
 
-  // Sizes
-  $font-size-base: 14px;
+// Sizes
+$font-size-base:  15px;
 
-  $s-giga:    75px;
-  $s-mega:    42px;
+$s-alpha:         45px;
+$s-bravo:         38px;
+$s-charlie:       32px;
+$s-delta:         24px;
+$s-echo:          18px;
+$s-foxtrot:       $font-size-base;
+$s-golf:          12px;
+$s-hotel:         10px;
 
-  $s-alpha:   30px;
-  $s-bravo:   24px;
-  $s-charlie: 21px;
-  $s-delta:   18px;
-  $s-echo:    16px;
-  $s-foxtrot: $font-size-base;
-  $s-golf:    12px;
-  $s-hotel:   11px;
+// Line Heights
+$base-line-height: 1.0;
+$base-line-small:  $font-size-base;
 
-  // Line Heights
-  $base-line-height: $font-size-base * 1.5;
-  $base-line-small:  $font-size-base;
+// Text Alignment
+$text-align-center:  center;
+$text-align-left:    left;
+$text-align-justify: justify;
+$text-align-right:   right;
+
+// Text Alignment List
+$text-alignments: (
+  center    $text-align-center,
+  left      $text-align-left,
+  justify   $text-align-justify,
+  right     $text-align-right
+);
+
+// Text Colors Map
+$type-colors: (
+  'blue':      ( $blue-base  ),
+  'grey':      ( $grey-dark  ),
+  'white':     ( $white-base )
+);

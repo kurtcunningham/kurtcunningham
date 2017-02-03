@@ -1,0 +1,38 @@
+// Marketing Footer Stylesheets
+// ========================================
+
+// Variables
+$marekting-footer-align-md:     left;
+$marketing-footer-background:   $black-base;
+$marketing-footer-padding:      $spacer-charlie 0;
+
+$marketing-footer-right-align:  right;
+
+$marketing-footer-item-display: inline-block;
+
+
+// Structure
+.marketing-footer {
+  @extend .text--center;
+  background-color: $marketing-footer-background;
+  padding: $marketing-footer-padding;
+
+  @include media($medium) {
+    text-align: $marekting-footer-align-md;
+  }
+}
+
+.footer--right {
+
+  @include media($medium) {
+    text-align: $marketing-footer-right-align;
+  }
+
+  .footer__item {
+    display: $marketing-footer-item-display;
+  }
+
+  .footer__link {
+    @extend .text--white;
+  }
+}

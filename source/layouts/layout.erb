@@ -1,26 +1,31 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Meta Data -->
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1 user-scalable=no">
-    <title>Kurt Cunningham | Designer &amp; Developer</title>
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Site Title -->
+    <title><%= current_page.data.title || "Kurt Cunningham | Designers + Developer" %></title>
+
+    <!-- Favicons -->
     <%= favicon_tag 'images/favicon.png' %>
-    <%= stylesheet_link_tag "application" %>
-    <script src="//use.typekit.net/xev4maz.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+
+    <!-- Stylesheets -->
+    <%= stylesheet_link_tag :application %>
+
+    <!-- Fonts -->
+    <script src="https://use.typekit.net/dlq7jiq.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body class="<%= page_classes %>">
-    <%= partial 'components/topbar' %>
-    <%= partial 'components/contact-modal' %>
-    <main class="page" role="main">
+    <main role="main">
       <%= yield %>
     </main>
-    <hr class="divider">
-    <%= partial 'components/cta' %>
-    <%= partial 'components/footer' %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <%= javascript_include_tag  "application" %>
-    <%= google_analytics_tag %>
+    <%= partial 'layouts/shared/_footer' %>
+
+    <!-- Javascript -->
+    <%= javascript_include_tag :application %>
   </body>
 </html>

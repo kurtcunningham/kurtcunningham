@@ -1,102 +1,77 @@
-// Base Layout Stylesheets
+// Base Spacers Stylesheets
 // ========================================
-
-// Variables
-$page-section-header-font:   $primary-serif;
-$page-section-offset:        0 auto 60px;
-$page-section-padding:       60px 0;
-
-$section-tag-color:          $yellow-base;
-
-$page-section-title-color:   $black-base;
-
-$page-divider-border:        1px solid $grey-light;
-$page-divider-margin-mobile: 0 20px 60px;
-
 
 // Global Styles
 html,
 body {
+  @include position(relative);
+  margin: 0 auto;
   overflow-x: hidden;
+  width: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
-  &.is-fixed {
-    @include position(absolute);
-    height: 100%;
-    overflow: hidden;
+// Clears + Resets
+.clear { clear: both; }
+.clearfix { @include clearfix; }
+
+@each $reset in $resets {
+  $position:  nth($reset, 1);
+  $zero:      nth($reset, 2);
+
+  .margin-reset--#{$position} {
+    margin-#{$position}: $zero !important;
+  }
+
+  .padding-reset--#{$position} {
+    padding-#{$position}: $zero !important;
   }
 }
 
-.divider {
-  @include outer-container;
-  @include rem(margin, $page-divider-margin-mobile);
-  border: none;
-  border-bottom: $page-divider-border;
-
-  @include media($tablet-landscape) { @include rem(margin, $page-section-offset); }
+// Center
+.center--vertical {
+  @include center($horizontal: false, $vertical: true);
 }
 
-.left { float: left; }
-.right { float: right; }
+// Displays
+.block { display: block }
+.inline-block { display: inline-block }
 
+.margin--reset   { margin:  0; }
+.padding--reeset { padding: 0; }
 
-// Page Section
-.page { clear: both; }
-
-.page--section{
-  @include clearfix;
-  @include rem(margin, $page-section-offset);
-
-  &.yellow {
-    @include rem(padding, $page-section-padding);
-    background-color: $yellow-base;
-  }
+// Floats
+.float--left {
+  @include media($medium) { float: left; }
 }
 
-.page--container {
-  @include outer-container;
+.float--right {
+  @include media($medium) { float: right; }
 }
 
-
-// Page Section Header
-.page-section--header {
-  @include rem(padding, 0 20px);
-  @include span-columns(4 of 4);
-  text-align: center;
-
-  @include media($tablet-landscape) {
-    @include span-columns(8 of 12);
-    @include shift(2 of 12);
-  }
-
-  .tag {
-    @include font-type($primary-sans-serif, normal, 700);
-    @include s-foxtrot;
-    color: $section-tag-color;
-    text-transform: uppercase;
-  }
-
-  .title {
-    @include font-type($primary-sans-serif, normal, 200);
-    @include s-alpha;
-    text-transform: capitalize;
-  }
+.float--right-mobile {
+  float: right;
 }
 
+.float--right-mobile {
+  float: right;
+}
 
-// Page Section Body
-.page--section-body {
-  @include span-columns(4 of 4);
-  clear: both;
+// Positions
+.relative {
+  @include position(relative);
+}
 
-  @include media($tablet-landscape) {
-    @include span-columns(12 of 12);
-  }
+// Spacers
+@each $spacer in $spacers {
+  $type:   nth($spacer, 1);
+  $value:  nth($spacer, 2);
 
-  &.small {
+  .padding-bottom--#{$type} { padding-bottom: $value; }
+  .padding-top--#{$type}    { padding-top:    $value; }
 
-    @include media($tablet-landscape) {
-      @include span-columns(10 of 12);
-      @include shift(1 of 12);
-    }
-  }
+  .margin-bottom--#{$type} { margin-bottom: $value; }
+  .margin-left--#{$type}   { margin-left:   $value; }
+  .margin-right--#{$type}  { margin-right:  $value; }
+  .margin-top--#{$type}    { margin-top:    $value; }
 }

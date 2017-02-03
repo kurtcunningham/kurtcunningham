@@ -1,15 +1,16 @@
-// Settings Directory
+// Setting Stylesheets
 // ========================================
 
 // Reset
 @import "reset";
 
-
 // Variables
 @import "variables/colors";
-@import "variables/buttons";
+@import "variables/borders";
+@import "variables/links";
+@import "variables/page-backgrounds";
+@import "variables/spacers";
 @import "variables/typography";
-
 
 // Mixins
 @import "mixins/layout";

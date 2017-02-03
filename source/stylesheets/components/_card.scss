@@ -3,95 +3,78 @@
 
 
 // Variables
-$card-background:          $white-base;
-$card-border:              2px solid $white-base;
-$card-border-radius:       3px;
-$card-margin:              15px;
-$card-offset:              20px;
-$card-padding:             30px;
+$card-background:               $white-base;
+$card-border:                   $border-alpha;
+$card-display:                  block;
+$card-margin:                   0 0 $spacer-charlie;
+$card-overflow:                 hidden;
+$card-padding:                  $spacer-charlie;
+$card-position:                 relative;
+$card-radius:                   1px;
+$card-spread:                   0 0 15px 1px;
+$card-shadow:                   rgba(45, 45, 45, 0.15);
 
-$card-hover-border:        2px solid $black-base;
-$card-hover-spread:        0 0 10px;
-$card-hover-shadow:        rgba(0, 0, 0, 0.15);
+$card-margin-small:             0 0 $spacer-delta;
+$card-padding-small:            $spacer-delta;
 
-$card-image-border:        1px solid $grey-light;
-$card-image-border-hover:  1px solid $white-base;
+$card-padding-large:            $spacer-bravo;
+
+$card-margin-extra-small:       0 0 $spacer-echo;
+$card-padding-extra-small:      10px $spacer-delta;
+
+$card-title-margin:             $spacer-delta;
+$card-title-padding:            $spacer-delta;
 
 
 // Structure
 .card {
-  @include position(relative);
-  @include rem(margin-top, $card-offset);
-  @include rem(padding, $card-padding);
-  @include row();
-  @include transition(all 0.8s ease-in-out);
+  @include position($card-position);
+  background: $card-background;
   border: $card-border;
-  background-color: $card-background;
+  border-radius: $card-radius;
+  display: $card-display;
+  margin: $card-margin;
+  padding: $card-padding;
 }
 
-.card__hover:hover {
-  @include media($tablet-landscape) {
-    @include box-shadow($card-hover-spread, $card-hover-shadow);
-    background-color: $black-base;
-    border: $card-hover-border;
-    border-radius: $card-border-radius;
-
-    .card--image { border: $card-image-border-hover; }
-
-    .card--tag,
-    .card--title,
-    .card--description {
-      @include transition(all 0.6s ease-in-out);
-      color: $white-base;
-    }
-  }
+// Card Sizes
+.card--large {
+  margin: $card-margin-small;
+  padding: $card-padding-large;
 }
 
-.card--content__left {
-
-  @include media($tablet) {
-    @include span-columns(4 of 9);
-  }
-
-  @include media($tablet-landscape) {
-    @include span-columns(4 of 12);
-  }
+.card--small {
+  margin: $card-margin-small;
+  padding: $card-padding-small;
 }
 
-.card--content__right {
-  @include media($tablet) {
-    @include span-columns(5 of 9);
-  }
-
-  @include media($tablet-landscape) {
-    @include span-columns(8 of 12);
-  }
+.card--extra-small {
+  margin: $card-margin-extra-small;
+  padding: $card-padding-extra-small;
 }
 
-.card--tag {
-  text-transform: uppercase;
+.card--overflow {
+  overflow: $card-overflow;
 }
 
-.card--title {
-  @include font-type($primary-sans-serif, normal, 300);
-  @include rem(margin-bottom, $card-margin);
+
+// Card Modifiers
+.card--shadow {
+  @include box-shadow($card-spread, $card-shadow);
 }
 
-.card--description {
-  @include rem(margin-bottom, $card-margin);
+
+// Card Text
+.card__title {
+  @include s-delta;
+  border-bottom: $card-border;
+  margin-bottom: $card-title-margin;
+  padding-bottom: $card-title-padding;
 }
 
-.card--image {
-  @include position(absolute, 0 0 0 null);
-  @include transition(all 0.6s ease-in-out);
-  border: $card-image-border;
-  display: none;
-  height: 100%;
-
-  @include media($tablet) {
-    display: block;
-  }
-
-  @include media($tablet-landscape) {
-  }
+.card__title--alt {
+  @include s-delta;
+  border-bottom: $card-border;
+  margin-bottom: $card-title-margin;
+  padding-bottom: $card-title-padding;
 }

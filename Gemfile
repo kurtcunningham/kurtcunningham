@@ -1,18 +1,28 @@
-# If you do not have OpenSSL installed, update
-# the following line to use "http://" instead
+# Gem File
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 3.3.12'
-gem 'middleman-blog'
-gem 'middleman-livereload', '~> 3.1.0'
+# Middleman Gems
+gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
+gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
+gem 'middleman', '>= 4.0.0'
+gem 'middleman-livereload'
 gem 'middleman-imageoptim'
 gem 'middleman-minify-html'
+gem 'middleman-sprockets', '~> 4.0.0.rc.1'
 gem 'middleman-google-analytics'
-gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
-gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
+gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 
-#Added Gems
+# Added Gems
 gem 'bourbon'
 gem 'neat'
-gem 'middleman-gh-pages'
 gem 'nokogiri'
+
+# # Rails-Assets -- Loads Bower components via gems
+source 'https://rails-assets.org' do
+
+  # jQuery
+  gem 'rails-assets-jquery'
+
+  # Dribbble Plugin
+  gem 'rails-assets-jribbble'
+end

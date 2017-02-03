@@ -3,60 +3,60 @@
 
 
 // Font Sizes
-@mixin s-giga{
-  @include rem(font-size, $s-giga);
+@mixin s-giga {
+  font-size: $s-giga;
 }
 
-@mixin s-mega{
-  @include rem(font-size, $s-mega);
+@mixin s-mega {
+  font-size: $s-mega;
 }
 
-@mixin s-alpha{
-  @include rem(font-size, $s-alpha);
+@mixin s-alpha {
+  font-size: $s-alpha;
 }
 
-@mixin s-bravo{
-  @include rem(font-size, $s-bravo);
-  @include rem(line-height, $base-line-height);
+@mixin s-bravo {
+  font-size: $s-bravo;
+  line-height: $base-line-height;
 }
 
-@mixin s-charlie{
-  @include rem(font-size, $s-charlie);
-  @include rem(line-height, $base-line-height);
+@mixin s-charlie {
+  font-size: $s-charlie;
+  line-height: $base-line-height;
 }
 
-@mixin s-delta{
-  @include rem(font-size, $s-delta);
+@mixin s-delta {
+  font-size: $s-delta;
 }
 
-@mixin s-echo{
-  @include rem(font-size, $s-echo);
+@mixin s-echo {
+  font-size: $s-echo;
 }
 
-@mixin s-foxtrot{
-  @include rem(font-size, $s-foxtrot);
+@mixin s-foxtrot {
+  font-size: $s-foxtrot;
 }
 
-@mixin s-golf{
-  @include rem(font-size, $s-golf);
-  @include rem(line-height, $base-line-small);
+@mixin s-golf {
+  font-size: $s-golf;
+  line-height: $base-line-small;
 }
 
-@mixin s-hotel{
-  @include rem(font-size, $s-hotel);
-  @include rem(line-height, $base-line-small);
+@mixin s-hotel {
+  font-size: $s-hotel;
+  line-height: $base-line-small;
 }
 
 
 // Font Styles
-@mixin font-type($type, $style, $weight){
+@mixin font-type($type, $style, $weight) {
   font-family: $type;
   font-style:  $style;
   font-weight: $weight;
 }
 
 // Text Shadow
-@mixin text-shadow($dim: 0 0 0 0, $color: $black-base){
+@mixin text-shadow($dim: 0 0 0 0, $color: $black-base) {
   -webkit-text-shadow: $dim $color;
   -moz-text-shadow:    $dim $color;
   -o-text-shadow:      $dim $color;

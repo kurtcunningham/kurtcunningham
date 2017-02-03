@@ -2,61 +2,30 @@
 # Site Config
 ###
 
-# Helpers
-helpers do
-  def pretty_date(date)
-    date.strftime('%B %d, %Y')
-  end
-end
-
 # Reload the browser
 configure :development do
   activate :livereload
 end
 
-# Have sprockets look asset files and require them
-after_configuration do
-  sprockets.append_path File.join root, 'bower_components'
-  sprockets.append_path File.join root, 'js'
-end
+# Sprockets
+activate :sprockets
 
+# Require Helpers
+require "helpers/image_helpers"
+helpers ImageHelpers
 
-#Google Analytics
-activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-44827406-1'
-end
-
-# Blog Config
-activate :blog do |blog|
-  blog.prefix = "blog"
-  blog.layout = "blog"
-  blog.permalink = "blog/{title}.html"
-  # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
-  blog.summary_separator = /READMORE/
-  blog.summary_length = 150
-  # blog.year_link = "{year}.html"
-  # blog.month_link = "{year}/{month}.html"
-  # blog.day_link = "{year}/{month}/{day}.html"
-  blog.default_extension = ".html.markdown"
-  # blog.tag_template = "tag.html"
-  # blog.calendar_template = "calendar.html"
-  blog.paginate = true
-  blog.per_page = 10
-  blog.page_link = "page/{num}"
-end
-
-page "/feed.xml", layout: false
+# Markdown
+set :markdown_engine, :kramdown
 
 # Directory Settings
 set :css_dir,    'stylesheets'
-set :js_dir,     'javascripts'
+set :js_dir,     'javascript'
 set :images_dir, 'images'
 set :relative_links, true
 
 # Build-specific configuration
 configure :build do
+
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
@@ -66,3 +35,9 @@ configure :build do
   activate :imageoptim, pngout: false
   activate :relative_assets
 end
+
+# Deploy To GH-Pages
+# activate :deploy do |deploy|
+#   deploy.method = :git
+#   deploy.build_before = true
+# end

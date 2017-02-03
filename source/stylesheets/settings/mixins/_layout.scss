@@ -1,20 +1,30 @@
-@import "neat-helpers";
+// Grid Mixin
+// ========================================
 
-//GRID SETTINGS
-  $grid-columns: 12;
+// Variables
+$small:               em(320);
+$medium:              em(720);
+$large:               em(1024);
+$extra-large:         em(1200);
+$extra-extra-large:   em(1440);
 
-//MEDIA QUERIES
+$max-width:     1140px !global;
+$column:        modular-scale(1, 65px, $golden) !global;
+$gutter:        modular-scale(1, 30px, $golden) !global;
 
-  //DEFINED VARIABLES
-  $mobile-size:em(320);
-  $tablet-size:em(720);
-  $desktop-size:em(1200);
+$fg-column:     $column;
+$fg-gutter:     $gutter;
 
-  // SPECIAL VARIABLES
-  $tablet-landscape: em(1024);
+// Breakpoints
+$small:             new-breakpoint(min-width $small 4);
+$medium:            new-breakpoint(min-width $medium 9);
+$large:             new-breakpoint(min-width $large 12);
+$extra-large:       new-breakpoint(min-width $extra-large 12);
+$extra-extra-large: new-breakpoint(min-width $extra-extra-large 12);
 
-  // Bourbon Neat Breakpoints
-  $mobile: new-breakpoint(min-width $mobile-size 4);
-  $tablet: new-breakpoint(min-width $tablet-size 9);
-  $tablet-landscape: new-breakpoint(min-width $tablet-landscape orientation landscape 9); //LPL Added
-  $desktop: new-breakpoint(min-width $desktop-size 12);
+
+// Omega Reset
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}

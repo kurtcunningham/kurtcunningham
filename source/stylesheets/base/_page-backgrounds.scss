@@ -1,0 +1,24 @@
+// Page Background Base Stylesheets
+// ========================================
+
+// Variables
+$page-background-background:              $black-base;
+$page-background-padding:                 $spacer-bravo 0;
+
+
+// Structure
+%background {
+  background-color: $page-background-background;
+  padding: $page-background-padding;
+}
+
+// Page Backgrounds Colors
+@each $color-bg in $backgrounds {
+  $name:    nth($color-bg, 1);
+  $color:   nth($color-bg, 2);
+
+  .background-color--#{$name} {
+    @extend %background;
+    background-color: $color;
+  }
+}
