@@ -1,66 +1,38 @@
-// Base Spacers Stylesheets
+// Layout Base Stylesheet
 // ========================================
 
 // Global Styles
 html,
 body {
-  @include position(relative);
+  background: $white-base;
   margin: 0 auto;
-  overflow-x: hidden;
   width: 100%;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-// Clears + Resets
-.clear { clear: both; }
-.clearfix { @include clearfix; }
+// Backgrounds
+.background {
 
-@each $reset in $resets {
-  $position:  nth($reset, 1);
-  $zero:      nth($reset, 2);
-
-  .margin-reset--#{$position} {
-    margin-#{$position}: $zero !important;
-  }
-
-  .padding-reset--#{$position} {
-    padding-#{$position}: $zero !important;
+  &--grey {
+    background-color: $white-light;
   }
 }
 
 // Center
-.center--vertical {
-  @include center($horizontal: false, $vertical: true);
+.center {
+
+  &__parent {
+    @include position(relative);
+  }
+
+  &__child--vert {
+    @include center($horizontal: false, $vertical: true);
+  }
 }
 
-// Displays
-.block { display: block }
-.inline-block { display: inline-block }
-
-.margin--reset   { margin:  0; }
-.padding--reeset { padding: 0; }
-
-// Floats
-.float--left {
-  @include media($medium) { float: left; }
-}
-
-.float--right {
-  @include media($medium) { float: right; }
-}
-
-.float--right-mobile {
-  float: right;
-}
-
-.float--right-mobile {
-  float: right;
-}
-
-// Positions
-.relative {
-  @include position(relative);
-}
+// Clears
+.clear { clear: both; }
+.clearfix { @include clearfix; }
 
 // Spacers
 @each $spacer in $spacers {
@@ -75,3 +47,32 @@ body {
   .margin-right--#{$type}  { margin-right:  $value; }
   .margin-top--#{$type}    { margin-top:    $value; }
 }
+
+// Float
+.float {
+
+  &--right {
+    float: none;
+
+    @include media($medium) {
+      float: right;
+    }
+  }
+}
+
+// Resets
+@each $reset in $resets {
+  $position:  nth($reset, 1);
+  $zero:      nth($reset, 2);
+
+  .margin-reset--#{$position} {
+    margin-#{$position}: $zero !important;
+  }
+
+  .padding-reset--#{$position} {
+    padding-#{$position}: $zero !important;
+  }
+}
+
+.margin--reset   { margin:  0; }
+.padding--reeset { padding: 0; }

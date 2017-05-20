@@ -1,0 +1,42 @@
+// Hompage Pages Stylesheet
+// ========================================
+
+// Variables
+$page-header-bg-attachment:   fixed;
+$page-header-bg-image:        image-url('images/img-top.jpg');
+$page-header-bg-position:     center;
+$page-header-bg-repeat:       no-repeat;
+$page-header-bg-size:         contain;
+$page-header-display:         block;
+$page-header-padding:         $spacer-alpha $spacer-delta 45vh;
+
+$page-section-margin-sm:      0 0 $spacer-bravo;
+$page-section-margin-md:      0 0 $spacer-alpha;
+$page-section-padding-sm:     $spacer-bravo $spacer-delta;
+$page-section-padding-md:     $spacer-alpha $spacer-delta;
+
+// Structure
+.page {
+
+  // Page Header
+  &__header {
+    background-attachment: $page-header-bg-attachment;
+    background-image: $page-header-bg-image;
+    background-position: $page-header-bg-position;
+    background-repeat: $page-header-bg-repeat;
+    background-size: $page-header-bg-size;
+    display: $page-header-display;
+    padding: $page-header-padding;
+  }
+
+  // Page Section
+  &__section {
+    margin: $page-section-margin-sm;
+    padding: $page-section-padding-sm;
+
+    @include media($medium) {
+      margin: $page-section-margin-md;
+      padding: $page-section-padding-md;
+    }
+  }
+}

@@ -23,11 +23,9 @@
     <%= google_analytics_tag %>
   </head>
   <body class="<%= page_classes %>">
-    <main role="main">
+    <main role="main" class="page">
       <%= yield %>
     </main>
-    <%= partial 'layouts/shared/_footer' %>
-
     <!-- Javascript -->
     <%= javascript_include_tag :application %>
   </body>

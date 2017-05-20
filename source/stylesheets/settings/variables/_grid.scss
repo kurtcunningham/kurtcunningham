@@ -1,0 +1,21 @@
+// Grid Variables Stylesheet
+// ========================================
+
+// Variables
+$small:         320px;
+$medium:        720px;
+$large:         1024px;
+$extra-large:   1200px;
+
+$max-width:     1140px !global;
+$column:        modular-scale(1, 65px, $golden) !global;
+$gutter:        modular-scale(1, 30px, $golden) !global;
+
+$fg-column:     $column;
+$fg-gutter:     $gutter;
+
+// Breakpoints
+$small:           new-breakpoint(min-width $small 4);
+$medium:          new-breakpoint(min-width $medium 9);
+$large:           new-breakpoint(min-width $large orientation landscape 12);
+$extra-large:     new-breakpoint(min-width $extra-large 12);

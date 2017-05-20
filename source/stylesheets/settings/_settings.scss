@@ -4,15 +4,15 @@
 // Reset
 @import "reset";
 
-// Variables
+// Global Variables
 @import "variables/colors";
-@import "variables/borders";
-@import "variables/links";
-@import "variables/page-backgrounds";
+@import "variables/grid";
 @import "variables/spacers";
 @import "variables/typography";
 
+// Component Variables
+
 // Mixins
-@import "mixins/layout";
+@import "mixins/grid";
 @import "mixins/misc";
 @import "mixins/typography";

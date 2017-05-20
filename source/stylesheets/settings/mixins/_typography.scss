@@ -17,12 +17,10 @@
 
 @mixin s-bravo {
   font-size: $s-bravo;
-  line-height: $base-line-height;
 }
 
 @mixin s-charlie {
   font-size: $s-charlie;
-  line-height: $base-line-height;
 }
 
 @mixin s-delta {
@@ -53,12 +51,4 @@
   font-family: $type;
   font-style:  $style;
   font-weight: $weight;
-}
-
-// Text Shadow
-@mixin text-shadow($dim: 0 0 0 0, $color: $black-base) {
-  -webkit-text-shadow: $dim $color;
-  -moz-text-shadow:    $dim $color;
-  -o-text-shadow:      $dim $color;
-  text-shadow:         $dim $color;
 }

@@ -1,4 +1,4 @@
-// Base Typography
+// Typography Base Stylesheet
 // ========================================
 
 html{
@@ -7,25 +7,12 @@ html{
 }
 
 body {
-  @include font-type($primary-sans-serif, normal, 400);
+  @include font-type($primary-sans-serif, normal, $font-weight-base);
   @include s-foxtrot;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
-
-
-// Highlight
-::selection {
-  background: $blue-base;
-  color: $white-base;
-}
-
-::-moz-selection {
-  background: $blue-base;
-  color: $white-base;
-}
-
 
 // Base Headers
 h1,
@@ -34,12 +21,11 @@ h3,
 h4,
 h5,
 h6 {
-   @include font-type($primary-sans-serif, normal, 400);
+  @include font-type($primary-sans-serif, normal, $font-weight-light);
   color: $black-base;
-  line-height: 1.0;
+  line-height: 1.25;
   margin-bottom: $spacer-delta;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -53,43 +39,34 @@ h6 { @include s-foxtrot; }
 
 // Base Body Copy
 p {
-  @include font-type($primary-serif, normal, 400);
+  @include font-type($primary-sans-serif, normal, $font-weight-base);
   @include s-foxtrot;
-  color: $black-base;
+  color: $grey-dark;
   line-height: 1.5;
   margin-bottom: $spacer-delta;
 }
 
-.text--small,
-p.text--small {
-  @include s-golf;
-  line-height: 1.5;
+small {
+  @include s-hotel;
 }
-
-p.text--label {
-  @include s-golf;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-}
-
 
 // Base List Styles
 li,
 dd{
+  @include font-type($primary-sans-serif, normal, $font-weight-base);
   @include s-foxtrot;
+  color: $grey-dark;
   line-height: normal;
-  list-style: none;
-  margin-bottom: $spacer-echo;
+  margin-bottom: $spacer-delta;
 }
 
 
 // Base List Style
 a {
-  @include font-type(inherit, normal, 400);
-  @include transition(all 0.5s ease);
+  @include font-type(inherit, normal, $font-weight-base);
+  text-decoration: underline;
   color: inherit;
-  text-decoration: none;
+  transition: all 0.5s ease;
 
   &:hover {
     opacity: 0.5;
@@ -99,6 +76,18 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+
+// Base Text Inline Modifiers
+b,
+strong {
+  font-weight: 600;
+}
+
+em,
+i {
+  font-style: italic;
 }
 
 // Text Alignment
@@ -111,7 +100,6 @@ a {
   }
 }
 
-
 // Text Colors
 @each $name, $tones in $type-colors {
   $tone-color: nth($tones, 1);
@@ -121,13 +109,22 @@ a {
   };
 }
 
+// Text Transforms
+@each $text-transform in $text-transforms {
+  $name:        nth($text-transform, 1);
+  $transform:   nth($text-transform, 2);
 
-// Text Hide
-.text--hide {
-  @include hide-text;
+  .text--#{$name} {
+    text-transform: $transform;
+  }
 }
 
-// Text Styles
-.text--uppercase  { text-transform: uppercase; }
-.text--capitalize { text-transform: capitalize; }
-.text--italic     { font-style: italic; }
+// Text Weights
+.text--bold {
+  font-weight: 700;
+}
+
+// Header Styles
+.header--primary {
+  font-weight: 300;
+}

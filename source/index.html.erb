@@ -1,61 +1,64 @@
 ---
-page_header_title: Kurt Cunningham
-page_header_description: Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <a href="http://madebymunsters.com" targe="_blank">madebymunsters.com</a>.
-social_link:
-  - title: Dribbble
-    url: https://dribbble.com/cunninghamkurt
-  - title: Medium
-    url: https://medium.com/@kurtcunningham
-  - title: Twitter
-    url: https://twitter.com/KurtCunningham
-  - title: Made By Munsters
-    url: http://madebymunsters.com
-page_post_title: Recent Thoughts
-page_post_description: People say I like to talk. I don't know if that is a good thing or a bad thing, but nevertheless here are some things I like to talk about. If you are interested in following along subscribe to Made By Munsters' publication on Medium or sign up for our newsletter on our website.
+working_together:
+  - title: We're a match. Let's to this.
+    reasons:
+      - reason: You have a budget and timeline.
+      - reason: You value a design process and understand it's role in your project.
+      - reason: You need a custom solution to meet your business needs.
+      - reason: You need leadership on the technology front to help you solve and implement a working solution for day one.
+  - title: Maybe we should see other people.
+    reasons:
+      - reason: You needed it yesterday.
+      - reason: You need a WordPress, Drupal, Joomla, etc. type of CMS site built.
+      - reason: You need a developer to make small updates to your exisiting site.
+      - reason: You want me to work for free.
+      - reason: You're offering equity as payment.
 ---
-<header role="banner" aria-labelledby="introduction" class="margin-top--alpha">
-  <div class="container page__section-container">
+<header role="banner" aria-labelledby="site-introduction" class="page__header">
+  <div class="container">
     <div class="row">
-      <div class="columns-5__m columns-5__l">
-        <h1 id="introduction"><%= current_page.data.page_header_title %></h1>
-        <p><%= current_page.data.page_header_description %></p>
-      </div>
-      <div class="columns-4__m columns-4__l offset-3__l">
-        <ul class="homepage__social-links float--right">
-          <% current_page.data.social_link.each do |i| %>
-            <li class="homepage__social-link">
-              <%= link_to i.title, i.url, class: 'link--alpha', target: '_blank' %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+      <h1 id="site-introduction">
+        <b>Oh hello, stranger.</b><br />
+        Thanks for stopping by.
+      </h1>
+      <p class="columns-4__m columns-5__l">Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <%= link_to 'madebymunsters.com', 'http://madebymunsters.com', target: '_blank' %>.</p>
     </div>
   </div>
 </header>
-<section role="region" aria-label="dribbble-images" class="background-color--alpha margin-top--alpha">
-  <div class="container page__section-container">
-    <ul class="homepage__dribbble-list"></ul>
-    <%= link_to 'More Samples', 'https://dribbble.com/cunninghamkurt', class: 'link--alpha link--icon float--right', data: {hover: 'More Samples'} %>
+<section role="region" aria-labelledby="working-with-me" class="page__section background--grey">
+  <div class="container">
+    <div class="row">
+      <div class="columns-4__m columns-5__l">
+        <h2 id="working-with-me">
+          <b>Should we work together?</b><br/>
+          Let's see if we are a match.
+        </h2>
+        <p class="columns-12__l">As a client, finding the right designer or developer for a project is hard. You have to form a trust and be willing to invest in the right person or agency. The same can be said about finding the right clients. Here's how I evaluate whether or not a project is right for me.</p>
+      </div>
+      <ul class="columns-5__m columns-6__l offset-1__l">
+        <% current_page.data.working_together.each do |i| %>
+          <li class="columns-4__m columns-6__l">
+            <h6><b><%= i.title %></b></h6>
+            <ul>
+              <% i.reasons.each do |r| %>
+                <li><%= r.reason %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </section>
-<section role="region" aria-labelledby="recent-blog-posts" class="margin-top--alpha">
-  <div class="container page__section-container">
-    <div class="row">
-      <div class="columns-5__m columns-5__l margin-bottom--bravo">
-        <h2 id="recent-blog-posts" class="title"><%= current_page.data.page_post_title %></h2>
-        <p><%= current_page.data.page_post_description %></p>
+<section role="region" aria-labelledby="recent-work" class="page__section">
+  <div class="container">
+    <header class="row">
+      <div class="columns-5__l offset-7__l">
+        <h2 id="working-with-me" class="float--right">
+          <b>A small collection</b><br/>
+          of my recent work.
+        </h2>
       </div>
-      <div class="columns-4__m columns-6__l offset-1__l">
-        <ul class="homepage__medium-posts">
-          <li class="homepage__medium-post" id="postTemplate" style="display: none;">
-            <time class="post-date"></time>
-            <h4 class="post-title">
-              <%= link_to '', '', rel: 'external', target: '_blank', class: 'link--alpha', data: {hover: ''} %>
-            </h4>
-          </li>
-        </ul>
-        <%= link_to 'More Posts', 'https://medium.com/@kurtcunningham/', class: 'link--alpha link--icon float--right', data: {hover: 'More Posts'} %>
-      </div>
-    </div>
+    </header>
   </div>
 </section>
