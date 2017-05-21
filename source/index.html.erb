@@ -13,15 +13,64 @@ working_together:
       - reason: You need a developer to make small updates to your exisiting site.
       - reason: You want me to work for free.
       - reason: You're offering equity as payment.
+work_samples:
+  - title: Schlep
+    description: Say hello to Schlep. A crowd-sourced platform that connects businesses and individuals who need to move large or awkward items with the muscle and truck needed to get the job done. Think of them as Your Neighbor With A Truck™. I worked along side Schlep to help design, test and develop their core web and mobile products.
+    details: UX + UI, Full-stack Development
+    image: 'samples/sample-img-1.jpg'
+    featured: false
+    url: 'http://www.schlep.it'
+  - title: MODe
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna dui, consectetur a tortor at, pretium accumsan magna. Vestibulum scelerisque mauris ut magna facilisis condimentum vitae vel lectus. Curabitur mollis enim sit amet metus lobortis molestie. Mauris in fermentum urna. In in arcu massa.
+    details: Front-end Development, Shopify Integration
+    image: 'samples/sample-img-2.jpg'
+    featured: false
+    url: 'http://www.myfitmode.com'
+  - title: Roundup
+    description: Leave poor client communication in the past. Roundup, a responsive web application, helps small internal or small to large design and development firms keep their clients up to date. Each week it scraps a set of third-party applications and relays that data via email or chat message to your clients. Keeping them in the loop.
+    details: UX + UI, Full-stack Development
+    image: 'samples/sample-img-3.jpg'
+    featured: true
+    url: 'http://www.weeklyroundup.io'
+  - title: Atomizer
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna dui, consectetur a tortor at, pretium accumsan magna. Vestibulum scelerisque mauris ut magna facilisis condimentum vitae vel lectus. Curabitur mollis enim sit amet metus lobortis molestie. Mauris in fermentum urna. In in arcu massa.
+    details: UX + UI, Front-end Development
+    image: 'samples/sample-img-4.jpg'
+    featured: false
+    url:
+  - title: Fuse
+    description: Data runs my client's company - they have requested to remain anonymous. Using various assets on partner website's, our client collects bits of information on their client's users to better help solve their problems. However, they were struggling to manage the assets used to collect this data. That's where I stepped in.
+    details: UX + UI, Pattern Library Development
+    image: 'samples/sample-img-4.jpg'
+    featured: false
+    url:
+ramblings:
+  - title: Recent Posts
+    posts:
+      - title: "When do we know if it is time to refactor our code?"
+        url: http://madebymunsters.com/blog/posts/when-do-you-know-if-it-is-time-to-refactor/
+      - title: "Designers are not just 'designers' in today's collaborative world"
+        url: http://madebymunsters.com/blog/posts/designers-are-not-just-designers-in-today-s-collaborative-world/
+      - title: "Roundup - Our missing client communication tool"
+        url: http://madebymunsters.com/blog/posts/roundup-our-missing-communication-tool/
+      - title: "Determining user needs based on user personas"
+        url: http://madebymunsters.com/blog/posts/determining-user-needs-based-on-user-personas/
+  - title: Speaking Events
+    posts:
+      - title: "Front-end Camp - Chicago"
+        url:  http://chicagocamps.org/events/2017/front-end-camp/
+      - title: "Squares - Dallas, TX"
+        url: http://squaresconference.com/
+
 ---
 <header role="banner" aria-labelledby="site-introduction" class="page__header">
   <div class="container">
     <div class="row">
-      <h1 id="site-introduction">
+      <h1 id="site-introduction" class="reveal-text">
         <b>Oh hello, stranger.</b><br />
         Thanks for stopping by.
       </h1>
-      <p class="columns-4__m columns-5__l">Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <%= link_to 'madebymunsters.com', 'http://madebymunsters.com', target: '_blank' %>.</p>
+      <p class="columns-4__m columns-5__l reveal-text">Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <%= link_to 'madebymunsters.com', 'http://madebymunsters.com', target: '_blank' %>.</p>
     </div>
   </div>
 </header>
@@ -50,7 +99,7 @@ working_together:
     </div>
   </div>
 </section>
-<section role="region" aria-labelledby="recent-work" class="page__section">
+<section role="region" aria-labelledby="recent-work" class="page__section margin-reset--bottom">
   <div class="container">
     <header class="row">
       <div class="columns-5__l offset-7__l">
@@ -60,5 +109,82 @@ working_together:
         </h2>
       </div>
     </header>
+    <ul class="row samples">
+      <% current_page.data.work_samples.each do |i| %>
+        <% if !i.featured %>
+          <li class="sample">
+            <div class="sample__image">
+              <%= image_tag i.image, alt: i.title %>
+            </div>
+            <div class="row">
+              <div class="sample__content">
+                <h4><%= i.title %></h4>
+                <p><%= i.description %></p>
+                <% if i.url %>
+                  <% link_to i.url, class: 'sample__link', target: '_blank' do %>
+                    <%= image_tag 'icons/expand.svg' %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <div class="sample__details row">
+              <p><%= i.details %></p>
+            </div>
+          </li>
+        <% else %>
+          <li class="sample sample--large">
+            <div class="sample__image">
+              <%= image_tag i.image, alt: i.title %>
+            </div>
+            <div class="row">
+              <div class="sample__content">
+                <h4><%= i.title %></h4>
+                <p><%= i.description %></p>
+                <% if i.url %>
+                  <% link_to i.url, class: 'sample__link', target: '_blank' do %>
+                    <%= image_tag 'icons/expand.svg' %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <div class="sample__details row">
+              <p><%= i.details %></p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </section>
+<section role="region" aria-labelledby="blog-posts" class="page__section background--grey margin-reset--bottom">
+  <div class="container">
+    <div class="row">
+      <div class="columns-4__m columns-5__l">
+        <h2 id="blog-posts">
+          <b>A few ramblings.</b><br/>
+          Find me rambling here next.
+        </h2>
+        <p class="columns-12__l">People say I like to talk. I don't know if that is a good thing or a bad thing, but nevertheless here are some things I like to talk about. If you are interested in following along subscribe to Made By Munsters' publication on Medium or sign up for our newsletter on our website.</p>
+      </div>
+      <ul class="columns-5__m columns-6__l offset-1__l">
+        <% current_page.data.ramblings.each do |i| %>
+          <li class="columns-4__m columns-6__l">
+            <h6><b><%= i.title %></b></h6>
+            <ul>
+              <% i.posts.each do |p| %>
+                <li>
+                  <% link_to p.url, target: '_blank' do %>
+                    <%= p.title %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer role="contentinfo" class="page__footer">
+
+</footer>

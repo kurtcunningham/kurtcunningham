@@ -2,18 +2,42 @@
 // ========================================
 
 // Variables
-$page-header-bg-attachment:   fixed;
-$page-header-bg-image:        image-url('images/img-top.jpg');
-$page-header-bg-position:     center;
-$page-header-bg-repeat:       no-repeat;
-$page-header-bg-size:         contain;
-$page-header-display:         block;
-$page-header-padding:         $spacer-alpha $spacer-delta 45vh;
+$page-header-bg-attachment:     fixed;
+$page-header-bg-image:          image-url('images/img-top.jpg');
+$page-header-bg-position:       center;
+$page-header-bg-repeat:         no-repeat;
+$page-header-bg-size:           contain;
+$page-header-display:           block;
+$page-header-padding:           $spacer-alpha $spacer-delta 45vh;
 
-$page-section-margin-sm:      0 0 $spacer-bravo;
-$page-section-margin-md:      0 0 $spacer-alpha;
-$page-section-padding-sm:     $spacer-bravo $spacer-delta;
-$page-section-padding-md:     $spacer-alpha $spacer-delta;
+$page-section-margin-sm:        0 0 $spacer-bravo;
+$page-section-margin-md:        0 0 $spacer-alpha;
+$page-section-padding-sm:       $spacer-bravo $spacer-delta;
+$page-section-padding-md:       $spacer-alpha $spacer-delta;
+
+$page-footer-bg-attachment:     fixed;
+$page-footer-bg-image:          image-url('images/img-bottom.jpg');
+$page-footer-bg-position:       center;
+$page-footer-bg-repeat:         no-repeat;
+$page-footer-bg-size:           cover;
+$page-footer-display:           block;
+$page-footer-padding:           $spacer-alpha $spacer-delta 45vh;
+
+$page-sample-margin-sm:         $spacer-bravo 0;
+$page-sample-margin-md:         $spacer-alpha;
+$page-sample-transition:        all 0.5s ease;
+
+$page-sample-content-border:    1px solid $grey-base;
+$page-sample-content-margin:    0 0 $spacer-charlie;
+$page-sample-content-padding:   0 0 $spacer-delta;
+$page-sample-content-position:  relative;
+
+$page-sample-image-bg:          $white-light;
+$page-sample-image-margin:      0 0 $spacer-charlie;
+
+$page-sample-link-cords:        5px 0 null null;
+$page-sample-link-position:     absolute;
+
 
 // Structure
 .page {
@@ -37,6 +61,72 @@ $page-section-padding-md:     $spacer-alpha $spacer-delta;
     @include media($medium) {
       margin: $page-section-margin-md;
       padding: $page-section-padding-md;
+    }
+  }
+
+  // Page Footer
+  &__footer {
+    background-attachment: $page-footer-bg-attachment;
+    background-image: $page-footer-bg-image;
+    background-position: $page-footer-bg-position;
+    background-repeat: $page-footer-bg-repeat;
+    background-size: $page-footer-bg-size;
+    display: $page-footer-display;
+    padding: $page-footer-padding;
+  }
+}
+
+
+// Page Samples
+.sample {
+  @include span-columns(4 of 4);
+  margin: $page-sample-margin-sm;
+  transition: $page-sample-transition;
+
+  @include media($medium) {
+    @include span-columns(6 of 12);
+    margin-bottom: $page-sample-margin-md;
+    margin-top: $page-sample-margin-md;
+
+    // NOTE: Make this more dynamic
+    &:nth-child(2),
+    &:nth-child(5) {
+      @include omega();
+    }
+
+    &--large {
+      @include span-columns(12 of 12);
+    }
+  }
+
+  // Sample Image
+  &__image {
+    background-color: $page-sample-image-bg;
+    margin: $page-sample-image-margin;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // Sample Content
+  &__content {
+    @include position($page-sample-content-position);
+    border-bottom: $page-sample-content-border;
+    margin: $page-sample-content-margin;
+    padding: $page-sample-content-padding;
+  }
+
+  // Sample Link
+  &__link {
+    @include position($page-sample-link-position, $page-sample-link-cords);
+  }
+
+  &__details {
+
+    & p {
+      @extend .text--uppercase;
+      @include s-golf;
     }
   }
 }
