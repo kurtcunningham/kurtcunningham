@@ -65,11 +65,11 @@ ramblings:
 <header role="banner" aria-labelledby="site-introduction" class="page__header">
   <div class="container">
     <div class="row">
-      <h1 id="site-introduction" class="reveal-text">
+      <h1 id="site-introduction" class="page__reveal-text">
         <b>Oh hello, stranger.</b><br />
         Thanks for stopping by.
       </h1>
-      <p class="columns-4__m columns-5__l reveal-text">Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <%= link_to 'madebymunsters.com', 'http://madebymunsters.com', target: '_blank' %>.</p>
+      <p class="columns-4__m columns-5__l page__reveal-text">Welcome to my little site. I’m a motivated and adaptive innovative thinker who enjoys data-driven, digital design and development. I’m currently helping lead a team of awesome designers and developers at Made By Munsters. Looking for a digital design or development firm? Reachout or learn more about us at <%= link_to 'madebymunsters.com', 'http://madebymunsters.com', target: '_blank' %>.</p>
     </div>
   </div>
 </header>
@@ -77,11 +77,11 @@ ramblings:
   <div class="container">
     <div class="row">
       <div class="columns-4__m columns-5__l">
-        <h2 id="working-with-me">
+        <h2 id="working-with-me" class="page__reveal-text">
           <b>Should we work together?</b><br/>
           Let's see if we are a match.
         </h2>
-        <p class="columns-12__l">As a client, finding the right designer or developer for a project is hard. You have to form a trust and be willing to invest in the right person or agency. The same can be said about finding the right clients. Here's how I evaluate whether or not a project is right for me.</p>
+        <p class="columns-12__l page__reveal-text">As a client, finding the right designer or developer for a project is hard. You have to form a trust and be willing to invest in the right person or agency. The same can be said about finding the right clients. Here's how I evaluate whether or not a project is right for me.</p>
       </div>
       <ul class="columns-5__m columns-6__l offset-1__l">
         <% current_page.data.working_together.each do |i| %>
@@ -102,7 +102,7 @@ ramblings:
   <div class="container">
     <header class="row">
       <div class="columns-5__l offset-7__l">
-        <h2 id="working-with-me" class="float--right">
+        <h2 id="working-with-me" class="float--right page__reveal-text">
           <b>A small collection</b><br/>
           of my recent work.
         </h2>
@@ -159,11 +159,11 @@ ramblings:
   <div class="container">
     <div class="row">
       <div class="columns-4__m columns-5__l">
-        <h2 id="blog-posts">
+        <h2 id="blog-posts" class="page__reveal-text">
           <b>A few ramblings.</b><br/>
           Find me rambling here next.
         </h2>
-        <p class="columns-12__l">People say I like to talk. I don't know if that is a good thing or a bad thing, but nevertheless here are some things I like to talk about. If you are interested in following along subscribe to Made By Munsters' publication on Medium or sign up for our newsletter on our website.</p>
+        <p class="columns-12__l page__reveal-text">People say I like to talk. I don't know if that is a good thing or a bad thing, but nevertheless here are some things I like to talk about. If you are interested in following along subscribe to Made By Munsters' publication on Medium or sign up for our newsletter on our website.</p>
       </div>
       <ul class="columns-5__m columns-6__l offset-1__l">
         <% current_page.data.ramblings.each do |i| %>
