@@ -6,10 +6,10 @@ $page-header-bg-attachment:     fixed;
 $page-header-bg-image:          image-url('images/img-top.jpg');
 $page-header-bg-position:       right bottom;
 $page-header-bg-repeat:         no-repeat;
-$page-header-bg-size:           contain;
+$page-header-bg-size:           100%;
 $page-header-display:           block;
-$page-header-padding-sm:        $spacer-bravo $spacer-delta 45vh;
-$page-header-padding-md:        $spacer-alpha $spacer-delta 45vh;
+$page-header-padding-sm:        $spacer-bravo $spacer-delta $spacer-alpha;
+$page-header-padding-md:        $spacer-alpha $spacer-delta 80vh;
 
 $page-section-margin-sm:        0 0 $spacer-bravo;
 $page-section-margin-md:        0 0 $spacer-alpha;
@@ -45,7 +45,6 @@ $page-sample-link-position:     absolute;
 
   // Page Header
   &__header {
-    background-attachment: $page-header-bg-attachment;
     background-image: $page-header-bg-image;
     background-position: $page-header-bg-position;
     background-repeat: $page-header-bg-repeat;
@@ -54,6 +53,7 @@ $page-sample-link-position:     absolute;
     padding: $page-header-padding-sm;
 
     @include media($medium) {
+      background-attachment: $page-header-bg-attachment;
       padding: $page-header-padding-md;
     }
   }
