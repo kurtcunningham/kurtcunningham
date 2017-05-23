@@ -1,7 +1,7 @@
 // Typography Base Stylesheet
 // ========================================
 
-html{
+html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -29,11 +29,28 @@ h6 {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 { @include s-alpha;   }
-h2 { @include s-bravo;   }
+h1 {
+  @include s-bravo;
+
+  @include media($medium) {
+    @include s-alpha;
+  }
+}
+
+h2 {
+  @include s-charlie;
+
+  @include media($medium) {
+    @include s-bravo;
+  }
+}
+
 h3 { @include s-charlie  }
+
 h4 { @include s-delta;   }
+
 h5 { @include s-echo;    }
+
 h6 { @include s-foxtrot; }
 
 

@@ -4,11 +4,12 @@
 // Variables
 $page-header-bg-attachment:     fixed;
 $page-header-bg-image:          image-url('images/img-top.jpg');
-$page-header-bg-position:       center;
+$page-header-bg-position:       right bottom;
 $page-header-bg-repeat:         no-repeat;
 $page-header-bg-size:           contain;
 $page-header-display:           block;
-$page-header-padding:           $spacer-alpha $spacer-delta 45vh;
+$page-header-padding-sm:        $spacer-bravo $spacer-delta 45vh;
+$page-header-padding-md:        $spacer-alpha $spacer-delta 45vh;
 
 $page-section-margin-sm:        0 0 $spacer-bravo;
 $page-section-margin-md:        0 0 $spacer-alpha;
@@ -21,7 +22,7 @@ $page-footer-bg-position:       center;
 $page-footer-bg-repeat:         no-repeat;
 $page-footer-bg-size:           cover;
 $page-footer-display:           block;
-$page-footer-padding:           $spacer-alpha $spacer-delta 45vh;
+$page-footer-padding:           $spacer-alpha $spacer-delta 100vh;
 
 $page-sample-margin-sm:         $spacer-bravo 0;
 $page-sample-margin-md:         $spacer-alpha;
@@ -50,7 +51,11 @@ $page-sample-link-position:     absolute;
     background-repeat: $page-header-bg-repeat;
     background-size: $page-header-bg-size;
     display: $page-header-display;
-    padding: $page-header-padding;
+    padding: $page-header-padding-sm;
+
+    @include media($medium) {
+      padding: $page-header-padding-md;
+    }
   }
 
   // Page Section
