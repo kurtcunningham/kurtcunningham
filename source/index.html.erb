@@ -108,7 +108,7 @@ ramblings:
         </h2>
       </div>
     </header>
-    <ul class="row samples">
+    <ul id="scroll-in-items" class="row samples">
       <% current_page.data.work_samples.each do |i| %>
         <% if !i.featured %>
           <li class="sample">
@@ -136,9 +136,9 @@ ramblings:
               <%= image_tag i.image, alt: i.title %>
             </div>
             <div class="row">
-              <div class="sample__content">
+              <div class="sample__content row">
                 <h4><%= i.title %></h4>
-                <p><%= i.description %></p>
+                <p class="columns-5__m columns-6__l"><%= i.description %></p>
                 <% if i.url %>
                   <% link_to i.url, class: 'sample__link', target: '_blank' do %>
                     <%= image_tag 'icons/expand.svg' %>

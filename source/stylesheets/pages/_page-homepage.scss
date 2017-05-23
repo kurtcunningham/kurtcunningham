@@ -8,8 +8,8 @@ $page-header-bg-position:       right bottom;
 $page-header-bg-repeat:         no-repeat;
 $page-header-bg-size:           100%;
 $page-header-display:           block;
-$page-header-padding-sm:        $spacer-bravo $spacer-delta $spacer-alpha;
-$page-header-padding-md:        $spacer-alpha $spacer-delta 80vh;
+$page-header-padding-sm:        $spacer-charlie;
+$page-header-padding-md:        $spacer-alpha $spacer-delta;
 
 $page-section-margin-sm:        0 0 $spacer-bravo;
 $page-section-margin-md:        0 0 $spacer-alpha;
@@ -22,11 +22,11 @@ $page-footer-bg-position:       center;
 $page-footer-bg-repeat:         no-repeat;
 $page-footer-bg-size:           cover;
 $page-footer-display:           block;
-$page-footer-padding:           $spacer-alpha $spacer-delta 100vh;
+$page-footer-padding:           $spacer-alpha $spacer-delta 80vh;
 
 $page-sample-margin-sm:         $spacer-bravo 0;
 $page-sample-margin-md:         $spacer-alpha;
-$page-sample-transition:        all 0.5s ease;
+$page-sample-transition:        all 0.75s ease;
 
 $page-sample-content-border:    1px solid $grey-base;
 $page-sample-content-margin:    0 0 $spacer-charlie;
@@ -50,11 +50,13 @@ $page-sample-link-position:     absolute;
     background-repeat: $page-header-bg-repeat;
     background-size: $page-header-bg-size;
     display: $page-header-display;
+    height: 100vh;
     padding: $page-header-padding-sm;
 
+
     @include media($medium) {
-      background-attachment: $page-header-bg-attachment;
       padding: $page-header-padding-md;
+      height: 80vh;
     }
   }
 
@@ -71,13 +73,29 @@ $page-sample-link-position:     absolute;
 
   // Page Footer
   &__footer {
-    background-attachment: $page-footer-bg-attachment;
     background-image: $page-footer-bg-image;
     background-position: $page-footer-bg-position;
     background-repeat: $page-footer-bg-repeat;
     background-size: $page-footer-bg-size;
     display: $page-footer-display;
     padding: $page-footer-padding;
+
+    @include media($medium) {
+      background-attachment: $page-footer-bg-attachment;
+    }
+  }
+}
+
+@keyframes(fade-in-up){
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -86,7 +104,13 @@ $page-sample-link-position:     absolute;
 .sample {
   @include span-columns(4 of 4);
   margin: $page-sample-margin-sm;
+  opacity: 0;
   transition: $page-sample-transition;
+
+  &.scroll-in {
+    animation: fade-in-up 2.0s ease-in;
+    opacity: 1;
+  }
 
   @include media($medium) {
     @include span-columns(6 of 12);
