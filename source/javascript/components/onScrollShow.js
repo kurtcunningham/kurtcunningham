@@ -22,7 +22,7 @@ text.each(function(i) {
 $(window).scroll(function(d,h) {
   tiles.each(function(i) {
     a = $(this).offset().top + $(this).height();
-    b = $(window).scrollTop() + $(window).height();
+    b = $(window).scrollTop() + $(window).height() + 400;
     if (a < b) $(this).addClass('scroll-in');
     if (a < b) $(this).attr('aria-hidden', 'false');
   });

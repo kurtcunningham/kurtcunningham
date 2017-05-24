@@ -17,5 +17,5 @@ $fg-gutter:     $gutter;
 // Breakpoints
 $small:           new-breakpoint(min-width $small 4);
 $medium:          new-breakpoint(min-width $medium 9);
-$large:           new-breakpoint(min-width $large orientation landscape 12);
+$large:           new-breakpoint(min-width $large 12);
 $extra-large:     new-breakpoint(min-width $extra-large 12);

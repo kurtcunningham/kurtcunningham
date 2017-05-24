@@ -2,11 +2,15 @@
 // ========================================
 
 // Variables
+$page-position:                 relative;
+$page-z-index:                  999;
+
 $page-header-bg-attachment:     fixed;
 $page-header-bg-image:          image-url('images/img-top.jpg');
-$page-header-bg-position:       right bottom;
+$page-header-bg-position-sm:    right bottom;
+$page-header-bg-position-xlg:   200px bottom;
 $page-header-bg-repeat:         no-repeat;
-$page-header-bg-size:           100%;
+$page-header-bg-size:           contain;
 $page-header-display:           block;
 $page-header-padding-sm:        $spacer-charlie;
 $page-header-padding-md:        $spacer-alpha $spacer-delta;
@@ -42,20 +46,27 @@ $page-sample-link-position:     absolute;
 
 // Structure
 .page {
+  @include position($page-position);
+  z-index: $page-z-index;
 
   // Page Header
   &__header {
     background-image: $page-header-bg-image;
-    background-position: $page-header-bg-position;
+    background-position: $page-header-bg-position-sm;
     background-repeat: $page-header-bg-repeat;
     background-size: $page-header-bg-size;
     display: $page-header-display;
     height: 100vh;
     padding: $page-header-padding-sm;
 
+    @include media($extra-large) {
+      background-position: $page-header-bg-position-xlg;
+      height: 90vh;
+    }
 
-    @include media($medium) {
-      padding: $page-header-padding-md;
+    // NOTE: Custom for homepage header
+    @include media(1440px) {
+      background-position: $page-header-bg-position-sm;
       height: 80vh;
     }
   }
