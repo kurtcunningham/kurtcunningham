@@ -59,6 +59,10 @@ $page-sample-link-position:     absolute;
     height: 100vh;
     padding: $page-header-padding-sm;
 
+    @include media($large) {
+      padding: $page-header-padding-md;
+    }
+
     @include media($extra-large) {
       background-position: $page-header-bg-position-xlg;
       height: 90vh;
