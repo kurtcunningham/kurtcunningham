@@ -1,17 +1,16 @@
-// Typography Variables
-// ========================================
+// Typography Variables Settings Stylesheet
+// ===============================================
 
 // Font Families
-$primary-sans-serif: 'din-condensed', 'Helvetica', sans-serif;
-$primary-serif:      'ff-tisa-web-pro', 'Georgia', serif;
+$primary-sans-serif:        'freight-sans-pro', sans-serif;;
 
 // Sizes
-$font-size-base:  15px;
+$font-size-base:  16px;
 
-$s-alpha:         45px;
-$s-bravo:         38px;
-$s-charlie:       32px;
-$s-delta:         24px;
+$s-alpha:         50px;
+$s-bravo:         36px;
+$s-charlie:       24px;
+$s-delta:         22px;
 $s-echo:          18px;
 $s-foxtrot:       $font-size-base;
 $s-golf:          12px;
@@ -20,6 +19,18 @@ $s-hotel:         10px;
 // Line Heights
 $base-line-height: 1.0;
 $base-line-small:  $font-size-base;
+
+// Weights
+$font-weight-light:   300;
+$font-weight-base:    400;
+$font-weight-bold:    700;
+
+// Weights List
+$font-weights: (
+  light   $font-weight-light,
+  base    $font-weight-base,
+  bold    $font-weight-bold
+);
 
 // Text Alignment
 $text-align-center:  center;
@@ -38,6 +49,17 @@ $text-alignments: (
 // Text Colors Map
 $type-colors: (
   'blue':      ( $blue-base  ),
-  'grey':      ( $grey-dark  ),
+  'grey':      ( $grey-base  ),
+  'grey-dark': ( $grey-dark  ),
   'white':     ( $white-base )
+);
+
+// Text Transforms
+$text-transform-capitalize:   capitalize;
+$text-transform-uppercase:    uppercase;
+
+// Text Transforms List
+$text-transforms: (
+  capitalize   $text-transform-capitalize,
+  uppercase    $text-transform-uppercase
 );

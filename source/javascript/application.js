@@ -3,6 +3,5 @@
 
 // Plugins
 // = require jquery
-// = require jribbble
 
 //= require_tree .

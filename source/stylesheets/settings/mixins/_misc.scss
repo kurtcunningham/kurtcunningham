@@ -2,30 +2,6 @@
 // ========================================
 
 
-// Background Image
-@mixin background-size($size){
-  -webkit-background-size: $size;
-  -moz-background-size:    $size;
-  -o-background-size:      $size;
-  background-size:         $size;
-}
-
-
-// Box Shadow
-@mixin box-shadow($dim: 0 0 0 0, $color: $black-base){
-  -webkit-box-shadow: $dim $color;
-  -moz-box-shadow:    $dim $color;
-  -o-box-shadow:      $dim $color;
-  box-shadow:         $dim $color;
-}
-
-// Vertical Center
-  // DEPERCATED DON'T USE!
-@mixin vertical-center {
-  @include position(absolute, 50% null null null);
-  @include transform(translateY(-50%));
-}
-
 // Vertical + Horizontal Align
 @mixin center($horizontal: true, $vertical: true) {
   position: absolute;

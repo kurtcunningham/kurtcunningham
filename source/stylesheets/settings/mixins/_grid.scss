@@ -1,0 +1,30 @@
+// Grid Mixin Settings Stylesheet
+// ========================================
+
+// Column Generate Mixin
+@mixin grid-columns($break-point, $column-count, $name) {
+  @include media($break-point){
+    @for $column from 1 to $column-count {
+      .columns-#{$column}__#{$name} {
+        @include span-columns($column);
+      }
+    }
+  }
+}
+
+// Offset Generate Mixin
+@mixin grid-offset($break-point, $column-count, $name) {
+  @include media($break-point){
+    @for $column from 1 to $column-count {
+      .offset-#{$column}__#{$name} {
+        @include shift($column);
+      }
+    }
+  }
+}
+
+// Omega Reset
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}

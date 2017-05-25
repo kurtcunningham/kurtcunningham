@@ -1,50 +1,25 @@
-// Grid Stylesheet
+// Grid Base Stylesheet
 // ========================================
 
 // Variables
-$columns: 12;
+$columns-l:            12;
+$columns-m:            9;
+$columns-s:            4;
 
 // Container
-.container { @include outer-container; }
+.container { @include outer-container() }
 
 // Row
 .row { @include row }
 
-// Columns
-@for $column from 1 to $columns {
+// Small Grid
+@include grid-columns($small,$columns-s, s);
+@include grid-offset($small,$columns-s, s);
 
-  // Small Devices
-  .columns-#{$column}__s {
-    @include span-columns($column in 4);
-  }
+// Medium Grid
+@include grid-columns($medium,$columns-m, m);
+@include grid-offset($medium,$columns-m, m);
 
-  .offset-#{$column}__s {
-    @include shift($column in 4);
-  }
-
-  // Medium Devices
-  .columns-#{$column}__m {
-    @include media($medium) {
-      @include span-columns($column in 9);
-    }
-  }
-
-  .offset-#{$column}__m {
-    @include media($medium) {
-      @include shift($column in 9);
-    }
-  }
-
-  // Large Devices
-  .columns-#{$column}__l {
-    @include media($large) {
-      @include span-columns($column in 12);
-    }
-  }
-
-  .offset-#{$column}__l {
-    @include media($large) {
-      @include shift($column in 12);
-    }
-  }
-}
+// Large Grid
+@include grid-columns($large,$columns-l, l);
+@include grid-offset($large,$columns-l, l);
