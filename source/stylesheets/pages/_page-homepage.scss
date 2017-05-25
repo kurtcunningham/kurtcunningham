@@ -30,7 +30,7 @@ $page-footer-padding:           $spacer-alpha $spacer-delta 80vh;
 
 $page-sample-margin-sm:         $spacer-bravo 0;
 $page-sample-margin-md:         $spacer-alpha;
-$page-sample-transition:        all 0.75s ease;
+$page-sample-transition:        all 1.0s ease;
 
 $page-sample-content-border:    1px solid $grey-base;
 $page-sample-content-margin:    0 0 $spacer-charlie;
@@ -101,30 +101,17 @@ $page-sample-link-position:     absolute;
   }
 }
 
-@keyframes(fade-in-up){
-
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-
 // Page Samples
 .sample {
   @include span-columns(4 of 4);
   margin: $page-sample-margin-sm;
   opacity: 0;
+  transform: translateY(100px);
   transition: $page-sample-transition;
 
   &.scroll-in {
-    animation: fade-in-up 2.0s ease-in;
     opacity: 1;
+    transform: translateY(0px);
   }
 
   @include media($medium) {
