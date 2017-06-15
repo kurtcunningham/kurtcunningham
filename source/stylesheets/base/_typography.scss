@@ -107,6 +107,10 @@ i {
   font-style: italic;
 }
 
+.text--strikeout {
+  text-decoration: line-through;
+}
+
 // Text Alignment
 @each $text-alignment in $text-alignments {
   $name:   nth($text-alignment, 1);

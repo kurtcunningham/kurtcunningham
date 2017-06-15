@@ -61,8 +61,10 @@ ramblings:
     posts:
       - title: "Front-end Camp - Chicago"
         url:  http://chicagocamps.org/events/2017/front-end-camp/
+        date: 2017-06-03
       - title: "Squares - Dallas, TX"
         url: http://squaresconference.com/
+        date: 2017-04-28
 ---
 <header role="banner" aria-labelledby="site-introduction" class="page__header">
   <div class="container">
@@ -174,8 +176,20 @@ ramblings:
             <ul>
               <% i.posts.each do |p| %>
                 <li>
-                  <% link_to p.url, target: '_blank' do %>
-                    <%= p.title %>
+                  <% if p.date %>
+                    <% if p.date <= Date.today %>
+                      <p class="text--strikeout">
+                        <%= p.title %>
+                      </p>
+                    <% else %>
+                      <% link_to p.url, target: '_blank' do %>
+                        <%= p.title %>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <% link_to p.url, target: '_blank' do %>
+                      <%= p.title %>
+                    <% end %>
                   <% end %>
                 </li>
               <% end %>
