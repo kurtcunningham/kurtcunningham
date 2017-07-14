@@ -61,6 +61,12 @@ p {
   color: $grey-dark;
   line-height: 1.5;
   margin-bottom: $spacer-delta;
+  transition: color 0.5s ease;
+
+  &.text--dark {
+    color: $black-base;
+    transition: color 0.5s ease;
+  }
 }
 
 small {
@@ -75,6 +81,11 @@ dd{
   color: $grey-dark;
   line-height: normal;
   margin-bottom: $spacer-delta;
+
+  &.text--dark {
+    color: $black-base;
+    transition: color 0.5s ease;
+  }
 }
 
 

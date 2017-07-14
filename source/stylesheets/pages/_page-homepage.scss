@@ -161,3 +161,14 @@ $page-sample-link-position:     absolute;
     }
   }
 }
+
+// Text Trigger
+.text-trigger {
+  @include position(fixed, null 0 30px 0);
+  text-align: center;
+
+  @include media($large) {
+    @include position(fixed, 30px 30px null null);
+    text-align: right;
+  }
+}
