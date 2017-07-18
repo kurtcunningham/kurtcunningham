@@ -164,8 +164,9 @@ $page-sample-link-position:     absolute;
 
 // Text Trigger
 .text-trigger {
+  @extend .text--center;
   @include position(fixed, null 0 30px 0);
-  text-align: center;
+  @include size(auto 20px);
 
   @include media($large) {
     @include position(fixed, 30px 30px null null);
