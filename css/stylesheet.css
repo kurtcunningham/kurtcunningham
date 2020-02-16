@@ -1,0 +1,119 @@
+/* ==========================================================================
+ Website Styles
+ ========================================================================== */
+
+ /* Variables
+   ========================================================================== */
+:root {
+
+  /* Colors */
+  --black-base:         #000000;
+  --gray-light:         #E5E5E5;
+  --yellow-base:        #F4B653;
+
+  /* Spacers */
+  --spacer-0:           0;
+  --spacer-4:           4px;
+  --spacer-8:           8px;
+  --spacer-12:          12px;
+  --spacer-16:          16px;
+  --spacer-32:          32px;
+  --spacer-64:          64px;
+}
+
+/* Global
+  ========================================================================== */
+  html,
+  body {
+    background-color: var(--gray-light);
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+
+/* Layout
+  ========================================================================== */
+
+.container {
+  background-color: var(--yellow-base);
+  display: flex;
+  max-width: 1440px;
+  padding: var(--spacer-64) var(--spacer-32);
+}
+
+.container__left {
+  width: var(--spacer-64);
+  text-align: center;
+}
+
+.container__middle {
+  flex: 1;
+  padding: var(--spacer-0) var(--spacer-32);
+}
+
+.container__right {
+  width: 600px;
+}
+
+.container__middle__article {
+  column-gap: var(--spacer-32);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.article__section {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.article__aside {
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+
+/* Typography
+  ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Quarto';
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Quarto';
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: var(--spacer-16);
+  line-height: 30px;
+}
+
+/* Hero Text */
+.hero-text {
+  font-family: 'Tungsten';
+  font-weight: 800;
+  font-size: calc(130px + (96 - 32) * (100vw - 664px)/(1400 - 664));
+  text-transform: uppercase;
+  line-height: 0.75;
+}
+
+.hero-text__container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--spacer-16);
+}
+
+.hero-text__section {
+  display: block;
+  margin-bottom: var(--spacer-32);
+  padding-bottom: var(--spacer-16);
+}
+
+.hero-text__section:not(:last-child) {
+  border-bottom: 4px solid var(--black-base);
+}
