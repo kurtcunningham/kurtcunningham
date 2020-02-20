@@ -95,7 +95,7 @@ p {
 
 /* Hero Text */
 .hero-text {
-  font-family: 'Tungsten';
+  font-family: 'Tungsten', 'System-ui', 'Helvetica', sans-serif;
   font-weight: 800;
   font-size: calc(130px + (96 - 32) * (100vw - 664px)/(1400 - 664));
   text-transform: uppercase;

@@ -11,6 +11,10 @@
     <!-- Stylesheets -->
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
   </head>
   <body>
     <div class="container">
@@ -37,12 +41,17 @@
       <section class="container__right">
         <div class="hero-text__container">
           <p class="hero-text">
-            <span class="hero-text__section">Digital<br/>designer.</span>
-            <span class="hero-text__section">Problem<br/>solver.</span>
-            <span class="hero-text__section">Hawkeye.</span>
+            <span class="hero-text__section responsive-headline">Digital<br/>designer.</span>
+            <span class="hero-text__section responsive-headline">Problem<br/>solver.</span>
+            <span class="hero-text__section responsive-headline">Hawkeye.</span>
           </p>
         </div>
       </section>
     </div>
+
+    <!-- Fit Text Script -->
+    <script>
+      jQuery(".responsive-headline").fitText(0.355);
+    </script>
   </body>
 </html>
