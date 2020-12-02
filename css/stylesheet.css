@@ -118,7 +118,7 @@ a:hover {
   background-color: var(--black-base);
   border-bottom-right-radius: var(--spacer-16);
   border-top-right-radius: var(--spacer-16);
-  max-width: 1440px;
+  max-width: var(--size-full);
   margin-bottom: var(--spacer-64);
   margin-right: var(--spacer-64);
   padding: 0 4vw;
@@ -246,7 +246,7 @@ a:hover {
 
 .card__title {
   font-family: var(--display-heading-alt);
-  font-size: calc(28px + (36 - 28) * (100vw - 664px)/(1800 - 664));
+  font-size: calc(28px + (48 - 28) * (100vw - 664px)/(1800 - 664));
   font-weight: 600;
   margin-bottom: var(--spacer-8);
   line-height: 1;
@@ -254,7 +254,6 @@ a:hover {
 
 .card__title a {
   color: var(--blue-base);
-  font-size: inherit;
   text-decoration: none;
   transition: color 0.35s ease-in-out;
 }
