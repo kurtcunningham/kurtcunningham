@@ -43,34 +43,35 @@
         </div>
         <div class="page-header__right">
           <figure class="page-header__hero-figure">
-              <picture>
-                <img
-                  sizes="(max-width: 1344px) 100vw, 1344px"
-                  srcset="
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_200.jpg 200w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_345.jpg 345w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_451.jpg 451w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_539.jpg 539w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_627.jpg 627w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_694.jpg 694w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_758.jpg 758w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_815.jpg 815w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_869.jpg 869w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_925.jpg 925w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_973.jpg 973w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1022.jpg 1022w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1067.jpg 1067w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1113.jpg 1113w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1160.jpg 1160w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1205.jpg 1205w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1249.jpg 1249w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1294.jpg 1294w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1340.jpg 1340w,
-                    ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1344.jpg 1344w"
-                  src="./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1344.jpg"
-                  alt="kurt cunningham headshot"
-                >
-              </picture>
+            <picture>
+              <img
+                alt="kurt cunningham headshot"
+                class="page-header__hero-img"
+                sizes="(max-width: 1344px) 100vw, 1344px"
+                srcset="
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_200.jpg 200w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_345.jpg 345w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_451.jpg 451w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_539.jpg 539w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_627.jpg 627w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_694.jpg 694w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_758.jpg 758w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_815.jpg 815w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_869.jpg 869w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_925.jpg 925w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_973.jpg 973w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1022.jpg 1022w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1067.jpg 1067w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1113.jpg 1113w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1160.jpg 1160w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1205.jpg 1205w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1249.jpg 1249w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1294.jpg 1294w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1340.jpg 1340w,
+                  ./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1344.jpg 1344w"
+                src="./images/hero/heading-hero-img-min_sygn0a_c_scale,w_1344.jpg"
+              >
+            </picture>
           </figure>
         </div>
       </header>
@@ -212,5 +213,14 @@
         </div>
       </footer>
     </div>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(){
+        var heroImage = document.querySelector(".page-header__hero-img");
+        setTimeout(function() {
+          heroImage.classList.add("page-header__hero-img--animate");
+        }, 200);
+      });
+    </script>
   </body>
 </html>

@@ -187,11 +187,22 @@ a:hover {
 }
 
 .page-header__hero-figure {
+  border-radius: var(--spacer-16);
   left: 24px;
-  /* max-height: calc(900px - var(--spacer-128)); */
   position: relative;
   top: var(--spacer-32);
   width: var(--size-full);
+}
+
+.page-header__hero-img {
+  filter: blur(var(--spacer-12));
+  transform: scale(3);
+  transition: all 1s linear;
+}
+
+.page-header__hero-img.page-header__hero-img--animate {
+  filter: blur(0);
+  transform: scale(1);
 }
 
 @media only screen and (min-width: 768px) {
