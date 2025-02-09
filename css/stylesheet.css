@@ -299,11 +299,13 @@ a:hover {
 .card-item:nth-child(1),
 .card-item:nth-child(2),
 .card-item:nth-child(3),
-.card-item:nth-child(4) {
+.card-item:nth-child(4),
+.card-item:nth-child(5) {
   margin-bottom: var(--spacer-32);
 }
 
 @media only screen and (min-width: 768px) {
+  .card-item:nth-child(5),
   .card-item:nth-child(6) {
     margin-bottom: var(--spacer-0);
   }
@@ -328,10 +330,18 @@ a:hover {
 
 .card__content {
   color: var(--black-base);
+  height: 293px;
+  overflow-y: scroll;
   padding: var(--spacer-8) 0 0 var(--spacer-8);
   position: absolute;
   top: var(--spacer-32);
   width: calc(var(--size-full) - 64px);
+}
+
+@media screen and (min-width: 768px) {
+  .card__content {
+    height: auto;
+  }
 }
 
 .card__title {
