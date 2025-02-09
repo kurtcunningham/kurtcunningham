@@ -318,7 +318,13 @@ a:hover {
 }
 
 .card:hover .card__image {
-  transform: translateY(calc(var(--size-full) - var(--spacer-64) ));
+  transform: translateY(100%);
+}
+
+@media only screen and (min-width: 768px) {
+  .card:hover .card__image {
+    transform: translateY(calc(var(--size-full) - var(--spacer-64) ));
+  }
 }
 
 .card__image img {
