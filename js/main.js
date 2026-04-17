@@ -154,6 +154,7 @@ let heroNameMinSize = 0;
  *      below this — it always fills that column.
  */
 function fitHeroText() {
+  if (window.innerWidth <= 600) return; // CSS handles sizing on mobile
   const el = document.getElementById('heroName');
   if (!el) return;
 
@@ -398,9 +399,18 @@ function buildCarousel(newsItems) {
 
   const mixed = interleave(clientItems, newsItems);
 
-  // Two identical passes so translateX(-50%) loops seamlessly
-  mixed.concat(mixed).forEach(function (item) {
-    track.appendChild(makeCard(item));
+  // First pass — originals (shown on all screen sizes, limited to 10 on mobile)
+  mixed.forEach(function (item, i) {
+    const card = makeCard(item);
+    if (i >= 10) card.classList.add('carousel-hidden-mobile');
+    track.appendChild(card);
+  });
+
+  // Second pass — clones for seamless desktop marquee loop (hidden on mobile)
+  mixed.forEach(function (item) {
+    const card = makeCard(item);
+    card.classList.add('carousel-clone');
+    track.appendChild(card);
   });
 }
 
@@ -480,7 +490,15 @@ async function init() {
 
   window.addEventListener('resize', function () {
     initHeaderMarquee();
-    fitHeroText();
+    if (window.innerWidth > 600) {
+      fitHeroText();
+    } else {
+      // Reset JS-driven sizing so CSS takes over on mobile
+      heroNameMaxSize = 0;
+      heroNameMinSize = 0;
+      const nameEl = document.getElementById('heroName');
+      if (nameEl) { nameEl.style.fontSize = ''; nameEl.style.transform = ''; }
+    }
     fitFooterText();
   });
 }
