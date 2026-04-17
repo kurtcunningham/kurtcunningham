@@ -144,6 +144,7 @@ function initHeaderMarquee() {
 
 let heroNameMaxSize = 0;
 let heroNameMinSize = 0;
+let heroSectionBaseHeight = 0;
 
 /**
  * Computes both the max and min font sizes for the hero name.
@@ -210,6 +211,33 @@ function fitFooterText() {
 
 
 /* ==========================================================================
+   Hero image — initial state + resize reset
+   ========================================================================== */
+
+function initHeroImage() {
+  const heroSection = document.getElementById('heroSection');
+  const photoWrap   = document.querySelector('.hero-photo-wrap');
+  const caption     = document.querySelector('.hero-caption');
+  const siteHeader  = document.getElementById('siteHeader');
+  if (!heroSection || !photoWrap) return;
+
+  if (window.innerWidth > 768) {
+    heroSection.style.paddingLeft  = '0';
+    heroSection.style.paddingRight = '16px';
+    photoWrap.style.width          = '100%';
+    if (caption) caption.style.opacity = '0';
+    heroSectionBaseHeight = heroSection.offsetHeight;
+  } else {
+    heroSection.style.paddingLeft  = '';
+    heroSection.style.paddingRight = '';
+    photoWrap.style.width          = '';
+    if (caption) caption.style.opacity = '';
+    heroSectionBaseHeight = 0;
+  }
+}
+
+
+/* ==========================================================================
    Name scroll animation
    ========================================================================== */
 
@@ -223,6 +251,8 @@ function fitFooterText() {
 function initNameScroll() {
   const nameEl      = document.getElementById('heroName');
   const heroSection = document.getElementById('heroSection');
+  const photoWrap   = document.querySelector('.hero-photo-wrap');
+  const caption     = document.querySelector('.hero-caption');
   if (!nameEl || !heroSection) return;
 
   let ticking = false;
@@ -232,16 +262,24 @@ function initNameScroll() {
     const siteHeader = document.getElementById('siteHeader');
     const headerH    = siteHeader ? siteHeader.offsetHeight : 0;
     const rect       = heroSection.getBoundingClientRect();
-    // `bottom` = distance from sticky header bottom to hero section bottom.
-    // Starts at heroSection.offsetHeight at scrollY=0; reaches 0 when hero is fully scrolled away.
+    // Use cached base height as denominator to prevent feedback loop as image shrinks.
+    const denom    = heroSectionBaseHeight || heroSection.offsetHeight;
     const bottom   = rect.bottom - headerH;
-    const progress = Math.min(1, Math.max(0, 1 - bottom / heroSection.offsetHeight));
+    const progress = Math.min(1, Math.max(0, 1 - bottom / denom));
     const size     = heroNameMaxSize - (heroNameMaxSize - heroNameMinSize) * progress;
     nameEl.style.fontSize = size + 'px';
 
+    // Mirror: image shrinks right-anchored as name shrinks left-anchored.
+    if (photoWrap && window.innerWidth > 768) {
+      const paddingNow = 16 * progress;
+      const widthNow   = 100 - 46 * progress; // 100% → 54%
+      heroSection.style.paddingLeft  = paddingNow + 'px';
+      heroSection.style.paddingRight = '16px';
+      photoWrap.style.width          = widthNow + '%';
+      if (caption) caption.style.opacity = String(progress);
+    }
+
     if (progress >= 1) {
-      // Hero section has scrolled away — translate the name up so it clips out
-      // of the header's overflow:hidden boundary, giving the illusion it scrolled off.
       const heroEndScrollY = heroSection.offsetTop + heroSection.offsetHeight - headerH;
       const extraScroll    = Math.max(0, window.scrollY - heroEndScrollY);
       nameEl.style.transform = 'translateY(-' + extraScroll + 'px)';
@@ -481,6 +519,7 @@ async function init() {
 
   initHeaderMarquee();
   fitHeroText();
+  initHeroImage();
   fitFooterText();
   initNameScroll();
   initPopup();
@@ -499,6 +538,7 @@ async function init() {
       const nameEl = document.getElementById('heroName');
       if (nameEl) { nameEl.style.fontSize = ''; nameEl.style.transform = ''; }
     }
+    initHeroImage();
     fitFooterText();
   });
 }
