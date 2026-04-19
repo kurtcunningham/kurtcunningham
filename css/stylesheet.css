@@ -70,6 +70,7 @@ body {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
   line-height: 1.2;
+  overflow-x: clip;
 }
 
 a {
@@ -173,6 +174,11 @@ img {
   gap: var(--gutter);
 }
 
+.site-main__text {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
 
 /* ==========================================================================
    Project
@@ -183,7 +189,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   padding: var(--gutter) 0;
   position: relative;
   will-change: transform;
@@ -388,5 +393,57 @@ img {
   letter-spacing: 0.08em;
   margin-top: var(--space-2);
   text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   Mobile (≤ 480px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    gap: var(--space-3);
+    grid-template-columns: 1fr;
+  }
+
+  .site-header__cta {
+    justify-content: flex-start;
+  }
+
+  .site-main {
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+  }
+
+  .site-main__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .project__text {
+    min-height: auto;
+    padding: var(--space-2) 0;
+  }
+
+  .site-main__media {
+    flex-direction: row;
+    overflow-x: scroll;
+    padding-bottom: var(--space-3);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-main__media::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project__media {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
 }
 

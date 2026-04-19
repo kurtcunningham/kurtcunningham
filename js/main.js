@@ -55,10 +55,14 @@
 
   function updateAll() {
     // --- Parallax ---
-    texts.forEach(function (text) {
-      var offset = text.getBoundingClientRect().top * FACTOR;
-      text.style.transform = 'translateY(' + offset + 'px)';
-    });
+    if (window.innerWidth > 768) {
+      texts.forEach(function (text) {
+        var offset = text.getBoundingClientRect().top * FACTOR;
+        text.style.transform = 'translateY(' + offset + 'px)';
+      });
+    } else {
+      texts.forEach(function (text) { text.style.transform = ''; });
+    }
 
     // --- Name animation ---
     if (nameHome && nameClone && headerEl && textCol) {
@@ -91,9 +95,9 @@
   // ===== Word explosion =====
 
   var WORDS = [
-    'Designer', 'Developer', 'Journalist', 'Partner',
+    'Designer', 'Developer', 'Former Journalist', 'Partner',
     'Thinker', 'Storyteller', 'Builder', 'Hawkeye',
-    'Writer', 'Strategist', 'Intentional', 'Creative',
+    'Strategist', 'Intentional', 'Creative', 'Type A',
     'Maker', 'Curious', 'Resilient', 'Collaborative', 'Snowboarder',
     'Skateboarder', 'Dog Lover', 'Coffee Drinker'
   ];
