@@ -183,13 +183,18 @@
   var popupBackdrop = document.getElementById('popupBackdrop');
 
   function openPopup(item) {
-    popupImg.src          = item.imgUrl;
-    popupImg.alt          = item.imgAlt || item.title;
+    if (item.imgUrl) {
+      popupImg.src   = item.imgUrl;
+      popupImg.alt   = item.imgAlt || item.title;
+      popupImg.style.display = '';
+    } else {
+      popupImg.style.display = 'none';
+    }
     popupCat.textContent  = item.category;
-    popupTitleEl.innerHTML   = item.title;
+    popupTitleEl.innerHTML = item.title;
     popupBody.innerHTML   = item.body;
     popupBtn.href         = item.link;
-    popupBtn.textContent  = item.type === 'work' ? 'View Case Study' : 'View Post';
+    popupBtn.textContent  = item.btnText || (item.type === 'work' ? 'View Case Study' : 'View Post');
     popupEl.classList.add('is-open');
     popupEl.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -205,6 +210,31 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closePopup();
   });
+
+
+  // ===== Hero image → work history =====
+
+  var heroFig = document.querySelector('.site-main__media .project__media');
+  if (heroFig) {
+    heroFig.style.cursor = 'pointer';
+    heroFig.addEventListener('click', function () {
+      openPopup({
+        imgUrl:  '',
+        category: 'Work History',
+        title:   'Kurt Cunningham',
+        body:    '<ol class="list-group__list">' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://unrelated.co" target="_blank" rel="noopener">Unrelated</a></p><p class="list-group__item__description">Principal &amp; Co-Founder</p></div><div class="list-group__item__right"><p class="list-group__item__date">2024 – Present</p></div></li>' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://madebymunsters.com" target="_blank" rel="noopener">Made by Munsters</a></p><p class="list-group__item__description">Principal &amp; Co-Founder</p></div><div class="list-group__item__right"><p class="list-group__item__date">2015 – 2024</p></div></li>' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://bloc.io" target="_blank" rel="noopener">Bloc</a></p><p class="list-group__item__description">Design &amp; Front-end Mentor</p></div><div class="list-group__item__right"><p class="list-group__item__date">2013 – 2018</p></div></li>' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://launchpadlab.com" target="_blank" rel="noopener">LaunchPad Lab</a></p><p class="list-group__item__description">UI/UX Designer &amp; Front-end Developer</p></div><div class="list-group__item__right"><p class="list-group__item__date">2013 – 2015</p></div></li>' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://thinkcerca.com" target="_blank" rel="noopener">ThinkCERCA</a></p><p class="list-group__item__description">UI/UX Designer</p></div><div class="list-group__item__right"><p class="list-group__item__date">2012 – 2013</p></div></li>' +
+          '<li class="list-group__item"><div class="list-group__item__left"><p class="list-group__item__title"><a href="https://tampico.com" target="_blank" rel="noopener">Tampico Beverages</a></p><p class="list-group__item__description">Senior Graphic Designer</p></div><div class="list-group__item__right"><p class="list-group__item__date">2010 – 2012</p></div></li>' +
+          '</ol>',
+        link:    'https://www.linkedin.com/in/kurt-c-0134b088/',
+        btnText: 'View LinkedIn'
+      });
+    });
+  }
 
 
   // ===== Content feed =====
