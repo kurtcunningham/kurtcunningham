@@ -1,546 +1,317 @@
-/**
- * main.js
- * Kurt Cunningham — Portfolio
- *
- *  - Sizes .hero-name and .footer-cta-text to fill the viewport width
- *  - Shrinks the hero name as the user scrolls past the hero section
- *  - Builds a mixed carousel of case studies and Unrelated news
- *  - Opens a slide-up popup with post details on card click
- */
+(function () {
 
-'use strict';
+  // ===== Marquee =====
 
+  const trackWrap = document.querySelector('.site-header__cta-track-wrap');
+  const track     = document.querySelector('.site-header__cta-track');
 
-/* ==========================================================================
-   Data — Case Studies
-   ========================================================================== */
+  function sizeMarquee() {
+    if (!trackWrap || !track) return;
 
-const CLIENTS = [
-  {
-    name: 'EFI Foundation',
-    image: 'https://unrelated.co/wp-content/uploads/2025/12/efi-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/efi-foundation/',
-    category: 'Nonprofit',
-    body: '<p>EFI Foundation is committed to accelerating the global transition to clean, affordable energy. Their mission spans policy advocacy, research, and coalition-building across the world\'s most complex energy markets. As their reach grew, they needed a digital presence that matched their impact.</p><p>Unrelated designed and developed a new digital experience for EFI Foundation — one that centers storytelling, elevates their research, and gives visitors a clear path to understanding their work.</p>'
-  },
-  {
-    name: 'Dare2tri',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/dare2tri-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/dare2tri/',
-    category: 'Nonprofit',
-    body: '<p>Dare2tri is a nonprofit that believes every person, regardless of ability, deserves access to competitive sports. They train hundreds of athletes with physical disabilities and visual impairments each year, fostering community and championing inclusion in triathlon.</p><p>Unrelated helped Dare2tri build a more welcoming, accessible digital experience — one that reflects their mission and makes it easier for athletes, volunteers, and donors to connect with the organization.</p>'
-  },
-  {
-    name: 'The Onion',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/onion-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/the-onion/',
-    category: 'Media',
-    body: '<p>The Onion is one of the most recognized satirical publishers in the world. When they needed to replatform their website, the challenge wasn\'t just technical — it was finding a solution that could handle their unique publishing workflow, audience scale, and iconic brand.</p><p>Unrelated led the engineering effort to migrate The Onion to a modern, high-performance platform — dramatically improving page speed, editorial workflows, and long-term scalability.</p>'
-  },
-  {
-    name: 'Illinois Answers Project',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/iap-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/illinois-answers-project/',
-    category: 'Media',
-    body: '<p>Illinois Answers Project is an independent, nonprofit newsroom producing investigative journalism that holds power accountable in Illinois. Their reporting requires a digital platform that reflects the rigor and credibility of their work.</p><p>Unrelated built a clean, fast, and accessible website for IAP — one designed to center their journalism and make complex investigations easy for readers to explore and share.</p>'
-  },
-  {
-    name: 'CNTI',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/cnti-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/center-for-news-technology-innovation/',
-    category: 'Media',
-    body: '<p>When the Center for News, Technology & Innovation (CNTI) partnered with Unrelated Studio, the goal was clear: build a digital platform that reflects CNTI\'s leadership in media research and innovation. Their work spans complex policy topics, original research, and deep analysis — but their previous website made it difficult for audiences to find and engage with that content effectively.</p><p>The solution is a redesigned WordPress site that strengthens CNTI\'s brand, modernizes its digital experience, and introduces a new AI-powered content chat system that helps users explore research and insights through natural language.</p>'
-  },
-  {
-    name: 'Rocky Mountain Institute',
-    image: 'https://unrelated.co/wp-content/uploads/2025/04/rmi-work-featured-img.jpg',
-    url: 'https://unrelated.co/clients/rmi/',
-    category: 'Clean Energy',
-    body: '<p>Rocky Mountain Institute (RMI) is a global nonprofit driving the clean energy transition through research, partnerships, and influence. Their communications team needed a reliable design partner who could translate complex climate science into compelling, shareable visuals.</p><p>Unrelated developed a suite of story-driven graphics and visual assets for RMI — helping their research reach policymakers, corporate partners, and the public in a way that drives action.</p>'
-  },
-  {
-    name: 'Current',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/current-feat-img.jpg',
-    url: 'https://unrelated.co/clients/current/',
-    category: 'Media',
-    body: '<p>Current is a public media organization dedicated to journalism about public broadcasting and the media industry. When they decided to rebuild their website, they saw an opportunity to invest in tools the broader public media community could benefit from.</p><p>Unrelated led the redesign and helped kickstart a community-led approach to shared WordPress development — making it easier for public media organizations to adopt and maintain high-quality digital tools.</p>'
-  },
-  {
-    name: 'Urban Initiatives',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/ui-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/urban-initiatives/',
-    category: 'Nonprofit',
-    body: '<p>Urban Initiatives uses the power of soccer to foster healthy development and social well-being in underserved Chicago youth. Their work is deeply community-rooted, and their website needed to reflect the energy and optimism of the kids they serve.</p><p>Unrelated designed and developed a modern website for Urban Initiatives — one that tells the story of their impact through photography, statistics, and clear pathways for donors and volunteers to get involved.</p>'
-  },
-  {
-    name: 'The Foley Foundation',
-    image: 'https://unrelated.co/wp-content/uploads/2026/01/foley-foundation-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/the-foley-foundation/',
-    category: 'Nonprofit',
-    body: '<p>The Foley Foundation supports emerging American diplomats through fellowships and programming that prepare the next generation of global leaders. As their alumni network grew, they needed a digital presence worthy of their mission.</p><p>Unrelated delivered a clean, modern website that positions The Foley Foundation as a premier institution in diplomatic education and reflects the ambition of the leaders they cultivate.</p>'
-  },
-  {
-    name: 'BW Research',
-    image: 'https://unrelated.co/wp-content/uploads/2026/03/bwresearch-feat-img-edited.jpg',
-    url: 'https://unrelated.co/clients/bw-research/',
-    category: 'Research',
-    body: '<p>BW Research is a leading economic and workforce research firm, publishing reports and studies that shape policy decisions across industries. Their existing digital presence didn\'t match the quality of their research or the breadth of their publishing output.</p><p>Unrelated built a modern publishing platform that makes it easy for BW Research to share new work, helps readers navigate their archive, and presents their findings with the credibility they deserve.</p>'
-  },
-  {
-    name: 'ASMFC',
-    image: 'https://unrelated.co/wp-content/uploads/2025/12/asmfc-feat-img.jpg',
-    url: 'https://unrelated.co/clients/asmfc/',
-    category: 'Research',
-    body: '<p>The Atlantic States Marine Fisheries Commission oversees the management of 27 fish species along the Atlantic Coast. Their work requires constant communication with fishermen, scientists, policymakers, and the public — and their digital platform wasn\'t keeping pace.</p><p>Unrelated rebuilt the ASMFC website with speed, clarity, and accessibility as core priorities — making it easier for stakeholders to find information and stay engaged with ongoing fisheries management.</p>'
-  },
-  {
-    name: 'Coronado News',
-    image: 'https://unrelated.co/wp-content/uploads/2025/04/beach-sign-scaled.jpg',
-    url: 'https://unrelated.co/clients/coronado-news/',
-    category: 'Media',
-    body: '<p>Coronado News is a weekly print newspaper serving the Coronado, California community. As they looked to grow their digital presence and streamline their publishing workflow, they needed a modern system built for both print rhythm and digital updates.</p><p>Unrelated built a custom publishing platform for Coronado News — one designed for weekly print production cycles, daily digital updates, and long-term editorial continuity.</p>'
-  }
-];
+    // Release constraints so we can measure the natural rendered width
+    trackWrap.style.width    = 'max-content';
+    trackWrap.style.overflow = 'visible';
 
+    // Track contains two identical copies — divide by 2 for one copy's width
+    const singleWidth = track.scrollWidth / 2;
 
-/* ==========================================================================
-   Data — News API
-   ========================================================================== */
-
-const NEWS_API = 'https://unrelated.co/wp-json/wp/v2/posts?per_page=10&_embed&_fields=title,link,date,content,_links,_embedded';
-
-
-/* ==========================================================================
-   Header CTA marquee
-   ========================================================================== */
-
-/**
- * Constrains the marquee wrapper to exactly one copy of the text so only
- * one instance is visible at a time.
- *
- * Uses a hidden probe inside the track to measure the plain text width with
- * the correct inherited font styles, avoiding the trailing &nbsp; gap that
- * makes scrollWidth/2 slightly too wide.
- */
-function initHeaderMarquee() {
-  const wrap  = document.querySelector('.header-cta-track-wrap');
-  const track = document.querySelector('.header-cta-track');
-  if (!wrap || !track) return;
-
-  const probe = document.createElement('span');
-  probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;';
-  probe.textContent   = "LET'S WORK TOGETHER";
-  track.appendChild(probe);
-  const textWidth = probe.offsetWidth;
-  track.removeChild(probe);
-
-  wrap.style.maxWidth = textWidth + 'px';
-}
-
-
-/* ==========================================================================
-   Hero name — viewport fill
-   ========================================================================== */
-
-let heroNameMaxSize = 0;
-let heroNameMinSize = 0;
-let heroSectionBaseHeight = 0;
-
-/**
- * Computes both the max and min font sizes for the hero name.
- *
- * Max: fills 75% of the viewport (left portion of the header).
- * Min: fills the space to the left of the hero photo (~44% of the
- *      viewport, since the photo occupies 54%). The name never shrinks
- *      below this — it always fills that column.
- */
-function fitHeroText() {
-  if (window.innerWidth <= 600) return; // CSS handles sizing on mobile
-  const el = document.getElementById('heroName');
-  if (!el) return;
-
-  const vw = window.innerWidth;
-
-  // — Max size: 75% of viewport
-  const maxTarget = Math.round(vw * 0.75) - 20;
-  let lo = 10, hi = 800, mid;
-  for (let i = 0; i < 24; i++) {
-    mid = (lo + hi) / 2;
-    el.style.fontSize = mid + 'px';
-    el.scrollWidth > maxTarget ? (hi = mid) : (lo = mid);
-  }
-  heroNameMaxSize = lo;
-
-  // — Min size: fill the space next to the hero photo (~44% of viewport)
-  const minTarget = Math.round(vw * 0.44) - 20;
-  lo = 10; hi = heroNameMaxSize;
-  for (let i = 0; i < 24; i++) {
-    mid = (lo + hi) / 2;
-    el.style.fontSize = mid + 'px';
-    el.scrollWidth > minTarget ? (hi = mid) : (lo = mid);
-  }
-  heroNameMinSize = lo;
-
-  // Start at max
-  el.style.fontSize = heroNameMaxSize + 'px';
-}
-
-
-/* ==========================================================================
-   Footer CTA — viewport fill
-   ========================================================================== */
-
-/**
- * Same sizing algorithm applied to the footer CTA text.
- */
-function fitFooterText() {
-  const el = document.getElementById('footerCtaText');
-  if (!el) return;
-
-  const target = Math.round(window.innerWidth * 0.95);
-  let lo = 10, hi = 800, mid;
-
-  for (let i = 0; i < 24; i++) {
-    mid = (lo + hi) / 2;
-    el.style.fontSize = mid + 'px';
-    el.scrollWidth > target ? (hi = mid) : (lo = mid);
+    trackWrap.style.overflow = 'hidden';
+    trackWrap.style.width    = singleWidth + 'px';
   }
 
-  el.style.fontSize = lo + 'px';
-}
 
+  // ===== Name animation + parallax =====
 
-/* ==========================================================================
-   Hero image — initial state + resize reset
-   ========================================================================== */
+  const nameEl    = document.querySelector('.site-header__name');
+  const nameClone = document.querySelector('.site-header__name-clone');
+  const headerEl  = document.querySelector('.site-header');
+  const textCol   = document.querySelector('.site-main__text');
+  const texts     = document.querySelectorAll('.project__text');
+  const FACTOR    = 0.2;
+  const GUTTER    = 16;
+  let   ticking   = false;
+  let   nameHome  = null;
 
-function initHeroImage() {
-  const heroSection = document.getElementById('heroSection');
-  const photoWrap   = document.querySelector('.hero-photo-wrap');
-  const caption     = document.querySelector('.hero-caption');
-  const siteHeader  = document.getElementById('siteHeader');
-  if (!heroSection || !photoWrap) return;
-
-  if (window.innerWidth > 768) {
-    heroSection.style.paddingLeft  = '0';
-    heroSection.style.paddingRight = '16px';
-    photoWrap.style.width          = '100%';
-    if (caption) caption.style.opacity = '0';
-    heroSectionBaseHeight = heroSection.offsetHeight;
-  } else {
-    heroSection.style.paddingLeft  = '';
-    heroSection.style.paddingRight = '';
-    photoWrap.style.width          = '';
-    if (caption) caption.style.opacity = '';
-    heroSectionBaseHeight = 0;
+  function computeClamp(minPx, vwCoeff, maxPx) {
+    return Math.min(maxPx, Math.max(minPx, vwCoeff * window.innerWidth / 100));
   }
-}
 
+  function measureHome() {
+    if (!nameEl || !nameClone) return;
+    const rect = nameEl.getBoundingClientRect();
+    nameHome = {
+      docTop:   rect.top + window.scrollY,
+      left:     rect.left,
+      fontSize: computeClamp(44, 9, 180)
+    };
 
-/* ==========================================================================
-   Name scroll animation
-   ========================================================================== */
+    // Hand off rendering to the clone; h1 becomes a layout spacer only
+    nameEl.style.visibility      = 'hidden';
+    nameClone.style.visibility   = 'visible';
+    nameClone.style.fontSize     = nameHome.fontSize + 'px';
+    nameClone.style.top          = rect.top + 'px';
+    nameClone.style.left         = rect.left + 'px';
+  }
 
-/**
- * Shrinks the hero name from its full size down to heroNameMinSize
- * (the size that fills the space next to the hero photo) as the user
- * scrolls. Animation completes exactly when the hero section bottom
- * scrolls behind the sticky header — i.e. when the carousel comes
- * into view.
- */
-function initNameScroll() {
-  const nameEl      = document.getElementById('heroName');
-  const heroSection = document.getElementById('heroSection');
-  const photoWrap   = document.querySelector('.hero-photo-wrap');
-  const caption     = document.querySelector('.hero-caption');
-  if (!nameEl || !heroSection) return;
-
-  let ticking = false;
-
-  function update() {
-    if (!heroNameMaxSize || !heroNameMinSize) return;
-    const siteHeader = document.getElementById('siteHeader');
-    const headerH    = siteHeader ? siteHeader.offsetHeight : 0;
-    const rect       = heroSection.getBoundingClientRect();
-    // Use cached base height as denominator to prevent feedback loop as image shrinks.
-    const denom    = heroSectionBaseHeight || heroSection.offsetHeight;
-    const bottom   = rect.bottom - headerH;
-    const progress = Math.min(1, Math.max(0, 1 - bottom / denom));
-    const size     = heroNameMaxSize - (heroNameMaxSize - heroNameMinSize) * progress;
-    nameEl.style.fontSize = size + 'px';
-
-    // Mirror: image shrinks right-anchored as name shrinks left-anchored.
-    if (photoWrap && window.innerWidth > 768) {
-      const paddingNow = 16 * progress;
-      const widthNow   = 100 - 46 * progress; // 100% → 54%
-      heroSection.style.paddingLeft  = paddingNow + 'px';
-      heroSection.style.paddingRight = '16px';
-      photoWrap.style.width          = widthNow + '%';
-      if (caption) caption.style.opacity = String(progress);
+  function updateAll() {
+    // --- Parallax ---
+    if (window.innerWidth > 768) {
+      texts.forEach(function (text) {
+        var offset = text.getBoundingClientRect().top * FACTOR;
+        text.style.transform = 'translateY(' + offset + 'px)';
+      });
+    } else {
+      texts.forEach(function (text) { text.style.transform = ''; });
     }
 
-    if (progress >= 1) {
-      const heroEndScrollY = heroSection.offsetTop + heroSection.offsetHeight - headerH;
-      const extraScroll    = Math.max(0, window.scrollY - heroEndScrollY);
-      nameEl.style.transform = 'translateY(-' + extraScroll + 'px)';
-    } else {
-      nameEl.style.transform = '';
+    // --- Name animation ---
+    if (nameHome && nameClone && headerEl && textCol) {
+      const scrollY     = window.scrollY;
+      const scrollRange = headerEl.offsetHeight;
+      const progress    = Math.min(1, Math.max(0, scrollY / scrollRange));
+
+      const largeFontSize = nameHome.fontSize;
+      const smallFontSize = computeClamp(24, 4.5, 64);
+
+      const colRect     = textCol.getBoundingClientRect();
+      const homeViewTop = nameHome.docTop - scrollY;
+
+      const currentFontSize = largeFontSize + (smallFontSize - largeFontSize) * progress;
+      const currentTop      = homeViewTop  + (GUTTER - homeViewTop) * progress;
+      const currentLeft     = nameHome.left + (colRect.left - nameHome.left) * progress;
+
+      nameClone.style.fontSize = currentFontSize + 'px';
+      nameClone.style.top      = currentTop + 'px';
+      nameClone.style.left     = currentLeft + 'px';
+
+      // Drop behind text blocks once fully scaled
+      nameClone.style.zIndex        = progress >= 1 ? '0' : '10';
+      nameClone.style.pointerEvents = progress >= 1 ? 'none' : 'auto';
     }
 
     ticking = false;
   }
 
-  window.addEventListener('scroll', function () {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
-  }, { passive: true });
-}
+  // ===== Word explosion =====
 
+  var WORDS = [
+    'Designer', 'Developer', 'Former Journalist', 'Partner',
+    'Thinker', 'Storyteller', 'Builder', 'Hawkeye',
+    'Strategist', 'Intentional', 'Creative', 'Type A',
+    'Maker', 'Curious', 'Resilient', 'Collaborative', 'Snowboarder',
+    'Skateboarder', 'Dog Lover', 'Coffee Drinker'
+  ];
 
-/* ==========================================================================
-   News helpers
-   ========================================================================== */
+  var COLORS = [
+    'var(--secondary-aqua)',
+    'var(--secondary-blue)',
+    'var(--secondary-green)',
+    'var(--secondary-salmon)'
+  ];
 
-function categoryFromUrl(url) {
-  try {
-    const slug = new URL(url).pathname.replace(/^\/|\/$/g, '').split('/')[0];
-    const map  = { amplify: 'Amplify', company: 'Company', insights: 'Insights', media: 'Media' };
-    return map[slug] || 'News';
-  } catch (_) {
-    return 'News';
-  }
-}
+  function explodeWords(x, y) {
+    var words = shuffle(WORDS.slice()).slice(0, 2);
 
-function stripHtml(html) {
-  const el = document.createElement('div');
-  el.innerHTML = html;
-  return (el.textContent || el.innerText || '').trim();
-}
+    words.forEach(function (word, i) {
+      var el         = document.createElement('span');
+      el.className   = 'name-word';
+      el.textContent = word;
 
-/**
- * Returns the first `count` <p> elements from an HTML string as HTML.
- * Falls back to a plain-text excerpt if no paragraphs are found.
- */
-function extractParagraphs(html, count) {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  const ps = Array.from(div.querySelectorAll('p')).slice(0, count);
-  if (!ps.length) {
-    return '<p>' + stripHtml(html).substring(0, 500) + '</p>';
-  }
-  return ps.map(function (p) { return p.outerHTML; }).join('');
-}
+      var side  = i === 0 ? -1 : 1;
+      var vx    = side * (50 + Math.random() * 60);
+      var vyUp  = -(80 + Math.random() * 80);
+      var vyDown = 280 + Math.random() * 180;
 
+      el.style.left            = x + 'px';
+      el.style.top             = y + 'px';
+      el.style.backgroundColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+      el.style.setProperty('--vx', vx + 'px');
+      el.style.setProperty('--vy-up', vyUp + 'px');
+      el.style.setProperty('--vy-down', vyDown + 'px');
+      el.style.animationDelay  = (i * 60) + 'ms';
 
-/* ==========================================================================
-   News fetch
-   ========================================================================== */
-
-/**
- * Fetches the 10 most recent Unrelated posts.
- * Returns an empty array on failure so the carousel still renders.
- */
-async function fetchNews() {
-  try {
-    const res = await fetch(NEWS_API);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-
-    const posts = await res.json();
-
-    return posts.map(function (post) {
-      const url   = post.link || '';
-      const media = post._embedded?.['wp:featuredmedia']?.[0];
-      const image = media?.media_details?.sizes?.large?.source_url
-                 || media?.source_url
-                 || '';
-
-      // Prefer the category name embedded in the post
-      const termName = post._embedded?.['wp:term']?.[0]?.[0]?.name;
-      const category = termName || categoryFromUrl(url);
-
-      return {
-        type:     'news',
-        name:     stripHtml(post.title?.rendered || ''),
-        url,
-        image,
-        category,
-        body:     extractParagraphs(post.content?.rendered || '', 2)
-      };
+      document.body.appendChild(el);
+      el.addEventListener('animationend', function () { el.remove(); });
     });
-  } catch (err) {
-    console.warn('Unrelated news could not be loaded:', err);
-    return [];
   }
-}
 
-
-/* ==========================================================================
-   Carousel
-   ========================================================================== */
-
-// Keyed store for popup data — avoids encoding large bodies in the DOM.
-const CARD_DATA = {};
-let cardIdSeed = 0;
-
-/**
- * Interleaves two arrays: [a0, b0, a1, b1, ...]
- */
-function interleave(a, b) {
-  const out = [];
-  const len = Math.max(a.length, b.length);
-  for (let i = 0; i < len; i++) {
-    if (i < a.length) out.push(a[i]);
-    if (i < b.length) out.push(b[i]);
+  if (textCol) {
+    textCol.addEventListener('click', function (e) {
+      explodeWords(e.clientX, e.clientY);
+    });
   }
-  return out;
-}
 
-/**
- * Creates a single carousel card element and registers its popup data.
- */
-function makeCard(item) {
-  const id = 'c' + (++cardIdSeed);
-  CARD_DATA[id] = item;
 
-  const btn = document.createElement('button');
-  btn.type      = 'button';
-  btn.className = 'carousel-card';
-  btn.dataset.cardId = id;
+  // Rough initial measure so there's no invisible-name flash before fonts load
+  measureHome();
+  updateAll();
 
-  btn.innerHTML =
-    '<span class="card-label">' + escapeHtml(item.category) + '</span>' +
-    '<h3 class="card-title">' + escapeHtml(item.name) + '</h3>' +
-    '<div class="card-img-wrap">' +
-      '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" loading="lazy">' +
-    '</div>';
+  // Refined measure once fonts are fully rendered
+  document.fonts.ready.then(function () {
+    sizeMarquee();
 
-  btn.addEventListener('click', function () {
-    openPopup(CARD_DATA[btn.dataset.cardId]);
+    measureHome();
+    updateAll();
   });
 
-  return btn;
-}
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateAll);
+  }, { passive: true });
 
-/**
- * Builds and inserts the carousel: interleaved case studies + news,
- * duplicated for a seamless CSS marquee loop.
- */
-function buildCarousel(newsItems) {
-  const track = document.getElementById('carouselTrack');
-  if (!track) return;
-
-  const clientItems = CLIENTS.map(function (c) {
-    return { type: 'case-study', name: c.name, image: c.image, url: c.url, category: c.category, body: c.body };
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      sizeMarquee();
+  
+      measureHome();
+      updateAll();
+    }, 100);
   });
 
-  const mixed = interleave(clientItems, newsItems);
 
-  // First pass — originals (shown on all screen sizes, limited to 10 on mobile)
-  mixed.forEach(function (item, i) {
-    const card = makeCard(item);
-    if (i >= 10) card.classList.add('carousel-hidden-mobile');
-    track.appendChild(card);
-  });
+  // ===== Popup =====
 
-  // Second pass — clones for seamless desktop marquee loop (hidden on mobile)
-  mixed.forEach(function (item) {
-    const card = makeCard(item);
-    card.classList.add('carousel-clone');
-    track.appendChild(card);
-  });
-}
+  var popupEl       = document.getElementById('popup');
+  var popupImg      = document.getElementById('popupImage');
+  var popupCat      = document.getElementById('popupCategory');
+  var popupTitleEl  = document.getElementById('popupTitle');
+  var popupBody     = document.getElementById('popupBody');
+  var popupBtn      = document.getElementById('popupBtn');
+  var popupBackdrop = document.getElementById('popupBackdrop');
 
+  function openPopup(item) {
+    popupImg.src          = item.imgUrl;
+    popupImg.alt          = item.imgAlt || item.title;
+    popupCat.textContent  = item.category;
+    popupTitleEl.innerHTML   = item.title;
+    popupBody.innerHTML   = item.body;
+    popupBtn.href         = item.link;
+    popupBtn.textContent  = item.type === 'work' ? 'View Case Study' : 'View Post';
+    popupEl.classList.add('is-open');
+    popupEl.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 
-/* ==========================================================================
-   Popup
-   ========================================================================== */
+  function closePopup() {
+    popupEl.classList.remove('is-open');
+    popupEl.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-function openPopup(item) {
-  const popup    = document.getElementById('cardPopup');
-  const img      = document.getElementById('popupImage');
-  const category = document.getElementById('popupCategory');
-  const title    = document.getElementById('popupTitle');
-  const body     = document.getElementById('popupBody');
-  const btn      = document.getElementById('popupBtn');
-  if (!popup) return;
-
-  img.src          = item.image;
-  img.alt          = item.name;
-  category.textContent = item.category.toUpperCase();
-  title.textContent    = item.name;
-  body.innerHTML       = item.body;
-  btn.href             = item.url;
-  btn.textContent      = item.type === 'case-study' ? 'View Case Study' : 'Read Article';
-
-  popup.classList.add('is-open');
-  popup.removeAttribute('aria-hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePopup() {
-  const popup = document.getElementById('cardPopup');
-  if (!popup) return;
-  popup.classList.remove('is-open');
-  popup.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-
-function initPopup() {
-  document.getElementById('popupClose')?.addEventListener('click', closePopup);
-  document.getElementById('popupBackdrop')?.addEventListener('click', closePopup);
+  if (popupBackdrop) popupBackdrop.addEventListener('click', closePopup);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closePopup();
   });
-}
 
 
-/* ==========================================================================
-   Utility
-   ========================================================================== */
+  // ===== Content feed =====
 
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
+  var API   = 'https://unrelated.co/wp-json/wp/v2';
+  var EMBED = '&_embed';
+  var mediaFigs = document.querySelectorAll('.site-main__media .project__media');
 
-
-/* ==========================================================================
-   Init
-   ========================================================================== */
-
-async function init() {
-  // Wait for Geist to load before any text measurements
-  await document.fonts.ready;
-
-  initHeaderMarquee();
-  fitHeroText();
-  initHeroImage();
-  fitFooterText();
-  initNameScroll();
-  initPopup();
-
-  const newsItems = await fetchNews();
-  buildCarousel(newsItems);
-
-  window.addEventListener('resize', function () {
-    initHeaderMarquee();
-    if (window.innerWidth > 600) {
-      fitHeroText();
-    } else {
-      // Reset JS-driven sizing so CSS takes over on mobile
-      heroNameMaxSize = 0;
-      heroNameMinSize = 0;
-      const nameEl = document.getElementById('heroName');
-      if (nameEl) { nameEl.style.fontSize = ''; nameEl.style.transform = ''; }
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
     }
-    initHeroImage();
-    fitFooterText();
-  });
-}
+    return arr;
+  }
 
-init();
+  function decodeHtml(str) {
+    var d = document.createElement('div');
+    d.innerHTML = str;
+    return d.textContent || '';
+  }
+
+  function normalise(post) {
+    var media  = post._embedded && post._embedded['wp:featuredmedia'];
+    var terms  = post._embedded && post._embedded['wp:term'];
+    var imgUrl = media && media[0] && media[0].source_url || '';
+    var imgAlt = media && media[0] && media[0].alt_text   || '';
+
+    var category = '';
+    if (terms) {
+      if (post.type === 'work') {
+        for (var t = 0; t < terms.length; t++) {
+          if (terms[t] && terms[t][0] && terms[t][0].taxonomy === 'vertical') {
+            category = decodeHtml(terms[t][0].name);
+            break;
+          }
+        }
+      } else {
+        for (var t = 0; t < terms.length; t++) {
+          if (terms[t] && terms[t][0] && terms[t][0].name) {
+            category = decodeHtml(terms[t][0].name);
+            break;
+          }
+        }
+      }
+    }
+
+    var content = post.content && post.content.rendered || '';
+    var body    = '';
+
+    if (content) {
+      var parsed      = new DOMParser().parseFromString(content, 'text/html');
+      var firstSection = parsed.querySelector('section');
+      var source      = firstSection || parsed.body;
+      var allParas    = source.querySelectorAll('p');
+      var collected   = [];
+
+      for (var pi = 0; pi < allParas.length && collected.length < 2; pi++) {
+        var text = allParas[pi].textContent.trim();
+        if (text.length > 30) {
+          collected.push('<p>' + allParas[pi].innerHTML + '</p>');
+        }
+      }
+
+      body = collected.join('');
+    }
+
+    return {
+      id:       post.id,
+      type:     post.type,
+      title:    post.title.rendered,
+      body:     body,
+      link:     post.link,
+      category: category,
+      imgUrl:   imgUrl,
+      imgAlt:   imgAlt
+    };
+  }
+
+  function renderMedia(items) {
+    items.forEach(function (item, i) {
+      var fig = mediaFigs[i + 1]; // slot 0 is the hardcoded hero image
+      if (!fig) return;
+      var img = fig.querySelector('.project__image');
+      if (img && item.imgUrl) {
+        img.src = item.imgUrl;
+        img.alt = item.imgAlt || item.title;
+      }
+      fig.classList.add('project__media--feed');
+      fig.style.cursor   = 'pointer';
+      fig.dataset.postId   = item.id;
+      fig.dataset.postType = item.type;
+      fig.addEventListener('click', function () { openPopup(item); });
+    });
+  }
+
+  Promise.all([
+    fetch(API + '/work?per_page=10'  + EMBED).then(function (r) { return r.json(); }),
+    fetch(API + '/posts?per_page=10' + EMBED).then(function (r) { return r.json(); })
+  ]).then(function (results) {
+    var work  = Array.isArray(results[0]) ? results[0].map(normalise) : [];
+    var posts = Array.isArray(results[1]) ? results[1].map(normalise) : [];
+    var mixed = shuffle(work.concat(posts)).slice(0, 8);
+    window._feedItems = mixed;
+    renderMedia(mixed);
+  }).catch(function (err) {
+    console.warn('Content feed failed:', err);
+  });
+
+}());
