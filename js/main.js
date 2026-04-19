@@ -54,15 +54,21 @@
   }
 
   function updateAll() {
-    // --- Parallax ---
-    if (window.innerWidth > 768) {
-      texts.forEach(function (text) {
-        var offset = text.getBoundingClientRect().top * FACTOR;
-        text.style.transform = 'translateY(' + offset + 'px)';
-      });
-    } else {
-      texts.forEach(function (text) { text.style.transform = ''; });
-    }
+    // --- Parallax + text reveal ---
+    texts.forEach(function (text) {
+      var rect        = text.getBoundingClientRect();
+      var blockCenter = rect.top + rect.height / 2;
+      var progress    = Math.min(1, Math.max(0, (window.innerHeight - blockCenter) / (window.innerHeight / 2)));
+      var v           = Math.round(128 + 127 * progress);
+      var title       = text.querySelector('.project__title');
+      if (title) title.style.color = 'rgb(' + v + ',' + v + ',' + v + ')';
+
+      if (window.innerWidth > 768) {
+        text.style.transform = 'translateY(' + (rect.top * FACTOR) + 'px)';
+      } else {
+        text.style.transform = '';
+      }
+    });
 
     // --- Name animation ---
     if (nameHome && nameClone && headerEl && textCol) {

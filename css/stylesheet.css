@@ -195,11 +195,12 @@ img {
   z-index: 1;
 }
 
-.project__text span {
+/* .project__text span {
   color: var(--primary-gray);
-}
+} */
 
 .project__title {
+  color: var(--primary-gray);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
