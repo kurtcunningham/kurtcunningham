@@ -321,6 +321,10 @@ img {
   margin-bottom: var(--space-4);
 }
 
+.popup__body p + p:not(.list-group__item__description) {
+  margin-top: var(--space-3);
+}
+
 .popup__body a {
   text-decoration: underline;
 }
